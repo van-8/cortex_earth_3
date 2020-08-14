@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "884695817183",
+    "firebase_url": "https://cortex-5e9d5.firebaseio.com",
+    "project_id": "cortex-5e9d5",
+    "storage_bucket": "cortex-5e9d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884695817183:android:096b9d4e03ab1a4f2b026a",
+        "android_client_info": {
+          "package_name": "com.example.cortex_earth_3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884695817183-eojv3ocadugd8rt67fdlobjse62775i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgTa5yN8Xsr_9Lizinlw_8zRe6FUrqQ2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884695817183-eojv3ocadugd8rt67fdlobjse62775i2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884695817183-2f6sahfs4r4rb6alg5l20nsf1n9ufk7q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.neurone45"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
