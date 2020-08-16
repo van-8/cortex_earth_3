@@ -1,8 +1,7 @@
-import 'package:cortex_earth_3/widgets/todo_add_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:cortex_earth_3/widgets/todo_add_screen.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/todoController.dart';
@@ -11,8 +10,6 @@ import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/widgets/todo_tile.dart';
 
 class TodoScreen extends GetWidget<AuthController> {
-  // final TextEditingController _todoController = TextEditingController();
-  // final TextEditingController _todoDescController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

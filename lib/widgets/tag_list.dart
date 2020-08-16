@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
-import 'package:cortex_earth_3/controllers/userController.dart';
 import 'package:cortex_earth_3/controllers/tagController.dart';
-import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/widgets/tag_add.dart';
 
 class TagList extends GetWidget<AuthController> {

@@ -43,6 +43,7 @@ class TodoAddScreen extends GetWidget<AuthController> {
                             _todoDescController.text,
                           );
                           _todoController.clear();
+                          _todoDescController.clear();
                         }
                       },
                     ),

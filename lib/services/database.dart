@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/todo.dart';
 import 'package:cortex_earth_3/models/user.dart';
+import 'package:cortex_earth_3/models/articleAbstract.dart';
 
 class Database {
   final Firestore _firestore = Firestore.instance;
@@ -131,5 +132,54 @@ class Database {
       print(e);
       rethrow;
     }
+  }
+
+  Future<void> addAbstract(
+    String uid,
+    String title,
+    String journal,
+    String articleAbstract,
+    String researchOrganism,
+    String correspondingAuthor,
+    String keyFigureURL,
+    String sourceDOI,
+    // List<UserModel> contributors,
+    // List<TagModel> tags,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("abstracts")
+          .add({
+        'publicationDate': Timestamp.now(),
+        'title': title,
+        'journal': journal,
+        'articleAbstract': articleAbstract,
+        'researchOrganism': researchOrganism,
+        'correspondingAuthor': correspondingAuthor,
+        'keyFigureURL': keyFigureURL,
+        'sourceDOI': sourceDOI,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<ArticleAbstractModel>> abstractStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("abstracts")
+        .orderBy("title", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<ArticleAbstractModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(ArticleAbstractModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
   }
 }
