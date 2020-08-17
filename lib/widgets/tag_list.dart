@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/widgets/tag_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +13,6 @@ class TagList extends GetWidget<AuthController> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Text('Searchbar'),
-        ),
         GetX<TagController>(
           init: Get.put<TagController>(TagController()),
           builder: (TagController tagController) {
@@ -42,6 +40,9 @@ class TagList extends GetWidget<AuthController> {
           },
           icon: Icon(Icons.add),
           label: Text('New tag'),
+        ),
+        Container(
+          child: Text('Searchbar'),
         ),
       ],
     );

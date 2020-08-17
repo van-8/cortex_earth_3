@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:cortex_earth_3/widgets/todo_add_screen.dart';
+import 'package:cortex_earth_3/widgets/todo_add.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/todoController.dart';
-import 'package:cortex_earth_3/controllers/userController.dart';
-import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/widgets/todo_tile.dart';
 
 class TodoScreen extends GetWidget<AuthController> {

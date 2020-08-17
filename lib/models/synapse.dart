@@ -1,29 +1,34 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'tag.dart';
 import 'user.dart';
 
 class SynapseModel {
   String synapseID;
-  String sourceDOI;
   String content;
   int lineNumber;
+  String sourceDOI;
+  Timestamp dateCreated;
   UserModel correspondingAuthor;
   List<UserModel> contributors;
   List<TagModel> tags;
 
   SynapseModel(
       {this.synapseID,
-      this.sourceDOI,
       this.content,
       this.lineNumber,
+      this.sourceDOI,
+      this.dateCreated,
       this.correspondingAuthor,
       this.contributors,
       this.tags});
 
-  //     TagModel.fromDocumentSnapshot(
-  //   DocumentSnapshot documentSnapshot,
-  // ) {
-  //   tagID = documentSnapshot.documentID;
-  //   name = documentSnapshot.data["name"];
-  //   isFaved = documentSnapshot.data["isFaved"];
-  // }
+  SynapseModel.fromDocumentSnapshot(
+    DocumentSnapshot documentSnapshot,
+  ) {
+    synapseID = documentSnapshot.documentID;
+    content = documentSnapshot.data["content"];
+    lineNumber = documentSnapshot.data["lineNumber"];
+    sourceDOI = documentSnapshot.data["sourceDOI"];
+    dateCreated = documentSnapshot.data["dateCreated"];
+  }
 }

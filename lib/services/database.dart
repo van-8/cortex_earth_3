@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cortex_earth_3/models/synapse.dart';
 import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/todo.dart';
 import 'package:cortex_earth_3/models/user.dart';
@@ -178,6 +179,45 @@ class Database {
       List<ArticleAbstractModel> retVal = List();
       query.documents.forEach((element) {
         retVal.add(ArticleAbstractModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> addSynapse(
+    String uid,
+    String content,
+    int lineNumber,
+    String sourceDOI,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("synapses")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'content': content,
+        'lineNumber': lineNumber,
+        'sourceDOI': sourceDOI,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<SynapseModel>> synapseStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("synapses")
+        .orderBy("dateCreated", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<SynapseModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(SynapseModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });
