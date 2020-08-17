@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'tricorder_screen.dart';
 import 'voiceAssist_screen.dart';
 
-class ToolsScreen extends StatelessWidget {
+class ToolsTab extends StatelessWidget {
   final List<String> _list = [
     'VoiceAssist',
     'TriCorder',

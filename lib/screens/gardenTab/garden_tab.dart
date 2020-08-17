@@ -7,7 +7,7 @@ import 'methods_listscreen.dart';
 import 'models_listscreen.dart';
 import 'synapse_listscreen.dart';
 
-class GardenScreen extends StatelessWidget {
+class GardenTab extends StatelessWidget {
   final List<String> _list = [
     'Synapses',
     'Articles',

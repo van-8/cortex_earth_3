@@ -26,19 +26,19 @@ class _NavigationState extends State<Navigation> {
 
     switch (_selectedIndex) {
       case 0:
-        retVal = WildsScreen();
+        retVal = WildsTab();
         break;
       case 1:
-        retVal = GardenScreen();
+        retVal = GardenTab();
         break;
       case 2:
-        retVal = HomeScreen();
+        retVal = HomeTab();
         break;
       case 3:
-        retVal = ToolsScreen();
+        retVal = ToolsTab();
         break;
       case 4:
-        retVal = ProfileScreen();
+        retVal = ProfileTab();
         break;
     }
     return retVal;
@@ -98,11 +98,11 @@ class _NavigationState extends State<Navigation> {
             icon: Icon(Mdi.accountCogOutline),
             activeIcon: Icon(
               Mdi.accountCog,
-              color: Colors.white54,
+              color: Colors.grey,
             ),
             title: Text(
               'Settings',
-              style: TextStyle(color: Colors.white54),
+              style: TextStyle(color: Colors.grey),
             ),
           ),
         ],

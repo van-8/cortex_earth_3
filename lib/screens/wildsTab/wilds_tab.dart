@@ -6,7 +6,7 @@ import 'frolic_screen.dart';
 import 'groups_screen.dart';
 import 'journals.dart';
 
-class WildsScreen extends StatelessWidget {
+class WildsTab extends StatelessWidget {
   final List<String> _list = [
     'Feed',
     'Journals',

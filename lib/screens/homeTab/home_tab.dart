@@ -5,16 +5,14 @@ import 'cascades_listscreen.dart';
 import 'inbox_screen.dart';
 import 'lab_manager.dart';
 import 'project_listscreen.dart';
-import 'questions_listscreen.dart';
 import 'todo_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeTab extends StatelessWidget {
   final List<String> _list = [
     'Todos',
     'Inbox',
     'Projects',
     'Cascades',
-    'Questions',
     'Lab',
   ];
 
@@ -56,7 +54,6 @@ class HomeScreen extends StatelessWidget {
             InboxScreen(),
             ProjectsListScreen(),
             CascadesListScreen(),
-            QuestionsListScreen(),
             LabManager(),
           ],
         ),

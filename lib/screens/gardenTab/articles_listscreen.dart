@@ -2,7 +2,6 @@ import 'package:cortex_earth_3/widgets/abstract_tileX.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:cortex_earth_3/widgets/abstract_tile.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/articleAbstractController.dart';
