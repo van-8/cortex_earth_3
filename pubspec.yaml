@@ -33,6 +33,7 @@ dependencies:
   path_provider: ^1.6.11
   modal_bottom_sheet: ^0.2.0+1
   mdi: ^4.0.0
+  direct_select: ^1.0.2+1
 
 dev_dependencies:
   flutter_test:

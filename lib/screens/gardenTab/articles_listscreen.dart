@@ -7,6 +7,7 @@ import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/articleAbstractController.dart';
 import 'package:cortex_earth_3/widgets/abstract_add.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:cortex_earth_3/widgets/filterbar.dart';
 
 class ArticlesListScreen extends GetWidget<AuthController> {
   @override
@@ -45,10 +46,10 @@ class ArticlesListScreen extends GetWidget<AuthController> {
             children: [
               FlatButton.icon(
                 onPressed: () {
-                  // showCupertinoModalBottomSheet(
-                  //     backgroundColor: Colors.grey[800],
-                  //     context: context,
-                  //     builder: (context, controller) => AbstractAddScreen());
+                  showCupertinoModalBottomSheet(
+                      backgroundColor: Colors.white,
+                      context: context,
+                      builder: (context, controller) => FilterBar());
                 },
                 icon: Icon(Icons.filter_list),
                 label: Text('Filter'),
