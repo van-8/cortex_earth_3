@@ -1,12 +1,14 @@
+import 'package:cortex_earth_3/screens/toolsTab/reaction_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'tricorder_screen.dart';
+import 'timer_screen.dart';
 import 'voiceAssist_screen.dart';
 
 class ToolsTab extends StatelessWidget {
   final List<String> _list = [
     'VoiceAssist',
-    'TriCorder',
+    'Timer',
+    'Reaction',
   ];
 
   @override
@@ -18,7 +20,7 @@ class ToolsTab extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text("Wilds", style: TextStyle(color: Colors.black)),
+          title: Text("Tricorder", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
             IconButton(
                 icon: Icon(
@@ -44,7 +46,8 @@ class ToolsTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             VoiceAssistScreen(),
-            TricorderScreen(),
+            TimerPage(),
+            ReactionTest(),
           ],
         ),
       ),
