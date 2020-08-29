@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'articles_listscreen.dart';
 import 'books_listscreen.dart';
-import 'evidence_listscreen.dart';
+import 'data_listscreen.dart';
 import 'methods_listscreen.dart';
 import 'models_listscreen.dart';
 import 'synapse_listscreen.dart';
@@ -10,10 +10,10 @@ import 'synapse_listscreen.dart';
 class GardenTab extends StatelessWidget {
   final List<String> _list = [
     'Synapses',
+    'Models',
+    'Data',
     'Articles',
     'Books',
-    'Evidence',
-    'Models',
     'Methods',
   ];
 
@@ -25,8 +25,13 @@ class GardenTab extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          centerTitle: true,
-          title: Text("Garden", style: TextStyle(color: Colors.black)),
+          centerTitle: false,
+          title: Row(
+            children: [
+              Text("Garden", style: TextStyle(color: Colors.black)),
+              Text('Search'),
+            ],
+          ),
           actions: <Widget>[
             IconButton(
                 icon: Icon(
@@ -52,10 +57,10 @@ class GardenTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             SynapsesListScreen(),
+            ModelsListScreen(),
+            DataListScreen(),
             ArticlesListScreen(),
             BooksListScreen(),
-            EvidenceListScreen(),
-            ModelsListScreen(),
             MethodsListScreen(),
           ],
         ),

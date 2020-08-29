@@ -17,7 +17,10 @@ class TagTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      title: Text(tag.name),
+      title: Text(
+        tag.name,
+        style: TextStyle(fontSize: 12),
+      ),
     );
   }
 }

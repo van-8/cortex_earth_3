@@ -22,7 +22,7 @@ class WildsTab extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          centerTitle: true,
+          centerTitle: false,
           title: Text("Wilds", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
             IconButton(

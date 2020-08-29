@@ -14,7 +14,7 @@ class SynapsesListScreen extends GetWidget<AuthController> {
       children: [
         Expanded(flex: 1, child: TagList()),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: Column(
             children: [
               GetX<SynapseController>(
@@ -44,7 +44,7 @@ class SynapsesListScreen extends GetWidget<AuthController> {
                   Get.bottomSheet(SynapseAddScreen());
                 },
                 icon: Icon(Icons.add),
-                label: Text('New synapse'),
+                label: Text('synapse'),
               )
             ],
           ),

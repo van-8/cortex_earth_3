@@ -1,4 +1,3 @@
-import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/widgets/tag_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,15 +17,20 @@ class TagList extends GetWidget<AuthController> {
           builder: (TagController tagController) {
             if (tagController != null && tagController.tags != null) {
               return Expanded(
-                child: ListView.builder(
-                  itemCount: tagController.tags.length,
-                  itemBuilder: (_, index) {
-                    return TagTile(
-                      uid: controller.user.uid,
-                      tag: tagController.tags[index],
-                      onTap: () {},
-                    );
-                  },
+                child: Container(
+                  color: Colors.grey[100],
+                  child: ListView.builder(
+                    itemCount: tagController.tags.length,
+                    itemBuilder: (_, index) {
+                      return TagTile(
+                        uid: controller.user.uid,
+                        tag: tagController.tags[index],
+                        onTap: () {
+                          print('TAG ${tagController.tags[index].name} tapped');
+                        },
+                      );
+                    },
+                  ),
                 ),
               );
             } else {
@@ -35,14 +39,16 @@ class TagList extends GetWidget<AuthController> {
           },
         ),
         FlatButton.icon(
+          color: Colors.grey[100],
           onPressed: () {
             Get.bottomSheet(TagAddScreen());
           },
           icon: Icon(Icons.add),
-          label: Text('New tag'),
+          label: Text('tag'),
         ),
         Container(
-          child: Text('Searchbar'),
+          color: Colors.grey[100],
+          child: Text('Search'),
         ),
       ],
     );
