@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
 import 'package:cortex_earth_3/controllers/authController.dart';
-import 'package:cortex_earth_3/models/articleAbstract.dart';
+import 'package:cortex_earth_3/models/article.dart';
 import 'package:cortex_earth_3/services/database.dart';
 
 class ArticleAbstractController extends GetxController {
-  Rx<List<ArticleAbstractModel>> abstractList =
-      Rx<List<ArticleAbstractModel>>();
+  Rx<List<ArticleModel>> abstractList = Rx<List<ArticleModel>>();
 
-  List<ArticleAbstractModel> get abstracts => abstractList.value;
+  List<ArticleModel> get abstracts => abstractList.value;
 
   @override
   void onInit() {

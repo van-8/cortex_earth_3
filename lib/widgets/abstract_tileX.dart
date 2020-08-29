@@ -1,10 +1,10 @@
 import 'package:cortex_earth_3/widgets/action_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/models/articleAbstract.dart';
+import 'package:cortex_earth_3/models/article.dart';
 
 class AbstractTileX extends StatelessWidget {
   final String uid;
-  final ArticleAbstractModel articleAbstract;
+  final ArticleModel articleAbstract;
   final Function onTap;
 
   const AbstractTileX({

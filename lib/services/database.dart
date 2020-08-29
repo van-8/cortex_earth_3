@@ -3,7 +3,9 @@ import 'package:cortex_earth_3/models/synapse.dart';
 import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/todo.dart';
 import 'package:cortex_earth_3/models/user.dart';
-import 'package:cortex_earth_3/models/articleAbstract.dart';
+import 'package:cortex_earth_3/models/article.dart';
+
+//TODO:Refactor so all items have a new array of 'tags',
 
 class Database {
   final Firestore _firestore = Firestore.instance;
@@ -168,7 +170,7 @@ class Database {
     }
   }
 
-  Stream<List<ArticleAbstractModel>> abstractStream(String uid) {
+  Stream<List<ArticleModel>> abstractStream(String uid) {
     return _firestore
         .collection("users")
         .document(uid)
@@ -176,9 +178,9 @@ class Database {
         .orderBy("title", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
-      List<ArticleAbstractModel> retVal = List();
+      List<ArticleModel> retVal = List();
       query.documents.forEach((element) {
-        retVal.add(ArticleAbstractModel.fromDocumentSnapshot(element));
+        retVal.add(ArticleModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });

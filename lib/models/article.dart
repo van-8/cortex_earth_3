@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'tag.dart';
 import 'user.dart';
 
-class ArticleAbstractModel {
+class ArticleModel {
   String articleAbstractID;
   String sourceDOI;
   String title;
@@ -17,7 +17,7 @@ class ArticleAbstractModel {
   String keyFigureURL;
   String articleAbstract;
 
-  ArticleAbstractModel({
+  ArticleModel({
     this.articleAbstractID,
     this.sourceDOI,
     this.title,
@@ -31,7 +31,7 @@ class ArticleAbstractModel {
     this.articleAbstract,
   });
 
-  ArticleAbstractModel.fromDocumentSnapshot(
+  ArticleModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
     articleAbstractID = documentSnapshot.documentID;
