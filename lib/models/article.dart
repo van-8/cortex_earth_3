@@ -16,6 +16,7 @@ class ArticleModel {
   String researchOrganism;
   String keyFigureURL;
   String articleAbstract;
+  String content;
 
   ArticleModel({
     this.articleAbstractID,
@@ -29,6 +30,7 @@ class ArticleModel {
     this.researchOrganism,
     this.keyFigureURL,
     this.articleAbstract,
+    this.content,
   });
 
   ArticleModel.fromDocumentSnapshot(
@@ -43,6 +45,7 @@ class ArticleModel {
     correspondingAuthor = documentSnapshot.data["correspondingAuthor"];
     keyFigureURL = documentSnapshot.data["keyFigureURL"];
     sourceDOI = documentSnapshot.data["sourceDOI"];
+    content = documentSnapshot.data["content"];
     // contributors = documentSnapshot.data["contributors"];
     // tags = documentSnapshot.data["tags"];
   }

@@ -1,10 +1,11 @@
+import 'package:cortex_earth_3/screens/gardenTab/article_detailscreen.dart';
 import 'package:cortex_earth_3/widgets/abstract_tileX.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
-import 'package:cortex_earth_3/controllers/articleAbstractController.dart';
+import 'package:cortex_earth_3/controllers/articleController.dart';
 import 'package:cortex_earth_3/widgets/abstract_add.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:cortex_earth_3/widgets/filterbar.dart';
@@ -15,22 +16,24 @@ class ArticlesListScreen extends GetWidget<AuthController> {
     return Scaffold(
       body: Column(
         children: [
-          GetX<ArticleAbstractController>(
-            init:
-                Get.put<ArticleAbstractController>(ArticleAbstractController()),
-            builder: (ArticleAbstractController articleAbstractController) {
-              if (articleAbstractController != null &&
-                  articleAbstractController.abstracts != null) {
+          GetX<ArticleController>(
+            init: Get.put<ArticleController>(ArticleController()),
+            builder: (ArticleController articleController) {
+              if (articleController != null &&
+                  articleController.articles != null) {
                 return Expanded(
                   child: ListView.builder(
-                    itemCount: articleAbstractController.abstracts.length,
+                    itemCount: articleController.articles.length,
                     itemBuilder: (_, index) {
                       return AbstractTileX(
                         uid: controller.user.uid,
-                        articleAbstract:
-                            articleAbstractController.abstracts[index],
+                        articleAbstract: articleController.articles[index],
                         onTap: () {
                           print('tapped');
+                          Get.bottomSheet(
+                            ArticleDetailScreen(
+                                articleController.articles[index].content),
+                          );
                         },
                       );
                     },

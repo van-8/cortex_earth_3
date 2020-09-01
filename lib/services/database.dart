@@ -146,6 +146,7 @@ class Database {
     String correspondingAuthor,
     String keyFigureURL,
     String sourceDOI,
+    String content,
     // List<UserModel> contributors,
     // List<TagModel> tags,
   ) async {
@@ -153,7 +154,7 @@ class Database {
       await _firestore
           .collection("users")
           .document(uid)
-          .collection("abstracts")
+          .collection("articles")
           .add({
         'publicationDate': Timestamp.now(),
         'title': title,
@@ -163,6 +164,7 @@ class Database {
         'correspondingAuthor': correspondingAuthor,
         'keyFigureURL': keyFigureURL,
         'sourceDOI': sourceDOI,
+        'content': content,
       });
     } catch (e) {
       print(e);
@@ -170,11 +172,11 @@ class Database {
     }
   }
 
-  Stream<List<ArticleModel>> abstractStream(String uid) {
+  Stream<List<ArticleModel>> articlesStream(String uid) {
     return _firestore
         .collection("users")
         .document(uid)
-        .collection("abstracts")
+        .collection("articles")
         .orderBy("title", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
