@@ -1,10 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
+import 'package:cortex_earth_3/widgets/cascade_add.dart';
+import 'package:cortex_earth_3/widgets/cascade_tile.dart';
 
-class CascadesListScreen extends StatelessWidget {
+import 'package:cortex_earth_3/controllers/authController.dart';
+import 'package:cortex_earth_3/controllers/cascadeController.dart';
+
+class CascadesListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Starts with a questions, and a playlist of knols.'),
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(height: 20.0),
+          GetX<CascadeController>(
+            init: Get.put<CascadeController>(CascadeController()),
+            builder: (CascadeController cascadeController) {
+              if (cascadeController != null &&
+                  cascadeController.cascades != null) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: cascadeController.cascades.length,
+                    itemBuilder: (_, index) {
+                      return CascadeTile(
+                        uid: controller.user.uid,
+                        cascade: cascadeController.cascades[index],
+                        onTap: () {},
+                      );
+                    },
+                  ),
+                );
+              } else {
+                return Text('   loading...');
+              }
+            },
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Get.bottomSheet(CascadeAddScreen());
+        },
+      ),
     );
   }
 }

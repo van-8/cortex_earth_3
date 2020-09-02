@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:bezier_chart/bezier_chart.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import 'action_bar.dart';
+import 'dataTable_detail.dart';
 
 class DataChartDetailScreen extends StatelessWidget {
   @override
@@ -17,8 +19,9 @@ class DataChartDetailScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 color: Colors.white,
                 child: Text(
-                  'Long Press to display Indicator.',
+                  'Long Press to display DataIndicator.',
                   textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey),
                 )),
             Container(
               color: Colors.grey,
@@ -83,6 +86,21 @@ class DataChartDetailScreen extends StatelessWidget {
                     xAxisTextStyle:
                         TextStyle(color: Colors.black, fontSize: 10)),
               ),
+            ),
+            FlatButton(
+              onPressed: () {
+                showCupertinoModalBottomSheet(
+                    barrierColor: Colors.black54,
+                    expand: false,
+                    context: context,
+                    builder: (context, scrollController) => DataTableScreen());
+              },
+              child: Text('RAW DATA'),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child:
+                  Text('Populations-specific CNVs found in multiple inviduals'),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 25),

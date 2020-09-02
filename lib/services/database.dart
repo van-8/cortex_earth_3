@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cortex_earth_3/models/cascade.dart';
 import 'package:cortex_earth_3/models/synapse.dart';
 import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/todo.dart';
@@ -222,6 +223,44 @@ class Database {
       List<SynapseModel> retVal = List();
       query.documents.forEach((element) {
         retVal.add(SynapseModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> addCascade(
+    String uid,
+    String name,
+    String description,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("cascades")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'name': name,
+        'description': description,
+        'isFaved': false,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<CascadeModel>> cascadeStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("cascades")
+        .orderBy("dateCreated", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<CascadeModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(CascadeModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });

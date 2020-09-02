@@ -1,6 +1,8 @@
+import 'package:cortex_earth_3/screens/gardenTab/article_detailscreen.dart';
 import 'package:cortex_earth_3/widgets/action_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/constants.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class DataTableScreen extends StatefulWidget {
   @override
@@ -168,9 +170,11 @@ class _DataTableScreenState extends State<DataTableScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Text(
-                  'Populations and their average SNP and haplotype hterozygosities'),
+                'Populations and their average SNP and haplotype hterozygosities',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
             ),
             Container(
               child: ActionBar(),

@@ -29,11 +29,13 @@ class ArticlesListScreen extends GetWidget<AuthController> {
                         uid: controller.user.uid,
                         articleAbstract: articleController.articles[index],
                         onTap: () {
-                          print('tapped');
-                          Get.bottomSheet(
-                            ArticleDetailScreen(
-                                articleController.articles[index].content),
-                          );
+                          showCupertinoModalBottomSheet(
+                              barrierColor: Colors.black87,
+                              context: context,
+                              builder: (context, scrollController) =>
+                                  ArticleDetailScreen(
+                                    article: articleController.articles[index],
+                                  ));
                         },
                       );
                     },
