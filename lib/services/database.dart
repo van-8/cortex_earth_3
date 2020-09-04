@@ -138,7 +138,7 @@ class Database {
     }
   }
 
-  Future<void> addAbstract(
+  Future<void> addArticle(
     String uid,
     String title,
     String journal,
@@ -148,6 +148,7 @@ class Database {
     String keyFigureURL,
     String sourceDOI,
     String content,
+    String type,
     // List<UserModel> contributors,
     // List<TagModel> tags,
   ) async {
@@ -166,6 +167,7 @@ class Database {
         'keyFigureURL': keyFigureURL,
         'sourceDOI': sourceDOI,
         'content': content,
+        'type': type,
       });
     } catch (e) {
       print(e);

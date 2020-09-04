@@ -15,6 +15,7 @@ class AbstractAddScreen extends GetWidget<AuthController> {
       TextEditingController();
   final TextEditingController _keyFigureURLController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
+  final TextEditingController _typeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +70,13 @@ class AbstractAddScreen extends GetWidget<AuthController> {
                       height: 20.0,
                     ),
                     TextFormField(
+                      controller: _typeController,
+                      decoration: InputDecoration(hintText: 'Article Type...'),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    TextFormField(
                       controller: _keyFigureURLController,
                       decoration:
                           InputDecoration(hintText: 'Key Figure URL...'),
@@ -99,7 +107,7 @@ class AbstractAddScreen extends GetWidget<AuthController> {
                         icon: Icon(Icons.add),
                         onPressed: () {
                           if (_titleController.text != '') {
-                            Database().addAbstract(
+                            Database().addArticle(
                               controller.user.uid,
                               _titleController.text,
                               _journalController.text,
@@ -109,6 +117,7 @@ class AbstractAddScreen extends GetWidget<AuthController> {
                               _keyFigureURLController.text,
                               _sourceDOIController.text,
                               _contentController.text,
+                              _typeController.text,
                             );
                             _titleController.clear();
                             _journalController.clear();
@@ -118,6 +127,7 @@ class AbstractAddScreen extends GetWidget<AuthController> {
                             _keyFigureURLController.clear();
                             _sourceDOIController.clear();
                             _contentController.clear();
+                            _typeController.clear();
                           }
                         },
                       ),

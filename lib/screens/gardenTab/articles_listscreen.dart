@@ -1,12 +1,12 @@
 import 'package:cortex_earth_3/screens/gardenTab/article_detailscreen.dart';
-import 'package:cortex_earth_3/widgets/abstract_tileX.dart';
+import 'package:cortex_earth_3/widgets/article_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/articleController.dart';
-import 'package:cortex_earth_3/widgets/abstract_add.dart';
+import 'package:cortex_earth_3/widgets/article_add.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:cortex_earth_3/widgets/filterbar.dart';
 
@@ -25,9 +25,9 @@ class ArticlesListScreen extends GetWidget<AuthController> {
                   child: ListView.builder(
                     itemCount: articleController.articles.length,
                     itemBuilder: (_, index) {
-                      return AbstractTileX(
+                      return ArticleTile(
                         uid: controller.user.uid,
-                        articleAbstract: articleController.articles[index],
+                        article: articleController.articles[index],
                         onTap: () {
                           showCupertinoModalBottomSheet(
                               barrierColor: Colors.black87,
@@ -67,7 +67,7 @@ class ArticlesListScreen extends GetWidget<AuthController> {
                       builder: (context, controller) => AbstractAddScreen());
                 },
                 icon: Icon(Icons.add),
-                label: Text('New Abstract'),
+                label: Text('New Article'),
               ),
             ],
           ),

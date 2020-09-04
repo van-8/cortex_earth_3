@@ -16,3 +16,6 @@ const TextStyle kArticleBodyText =
 
 const TextStyle kArticleBodyTextReady =
     TextStyle(fontSize: 14, color: Colors.black38);
+
+const TextStyle kArticleBodyTextSynapse =
+    TextStyle(fontSize: 14, color: Colors.blue);

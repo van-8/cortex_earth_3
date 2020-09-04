@@ -2,15 +2,15 @@ import 'package:cortex_earth_3/widgets/action_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/article.dart';
 
-class AbstractTileX extends StatelessWidget {
+class ArticleTile extends StatelessWidget {
   final String uid;
-  final ArticleModel articleAbstract;
+  final ArticleModel article;
   final Function onTap;
 
-  const AbstractTileX({
+  const ArticleTile({
     Key key,
     this.uid,
-    this.articleAbstract,
+    this.article,
     this.onTap,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ class AbstractTileX extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              articleAbstract.title,
+              article.title,
               style: TextStyle(fontSize: 15),
             ),
             RichText(
@@ -33,36 +33,40 @@ class AbstractTileX extends StatelessWidget {
                 children: <TextSpan>[
                   TextSpan(text: '2012'),
                   TextSpan(text: ' ∙ '),
-                  TextSpan(text: articleAbstract.correspondingAuthor),
+                  TextSpan(text: article.correspondingAuthor),
                 ],
               ),
             ),
             Container(
               padding: EdgeInsets.symmetric(vertical: 8),
-              child: Placeholder(
-                color: Colors.blueGrey,
-                fallbackHeight: 200,
+              child: Image(
+                image: AssetImage(article.keyFigureURL),
               ),
             ),
             RichText(
               text: TextSpan(
                 style: TextStyle(color: Colors.grey, fontSize: 10),
                 children: <TextSpan>[
-                  TextSpan(text: 'Hypothesis & Theory'),
+                  TextSpan(text: article.type),
                   TextSpan(text: ' ∙ '),
-                  TextSpan(text: articleAbstract.journal),
+                  TextSpan(text: article.journal),
                 ],
               ),
             ),
             Container(
               padding: EdgeInsets.symmetric(vertical: 4),
               child: Text(
-                articleAbstract.articleAbstract,
+                article.articleAbstract,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             ActionBar(),
+            SizedBox(height: 10),
+            Container(
+              height: 1.0,
+              color: Colors.grey[200],
+            ),
           ],
         ),
       ),

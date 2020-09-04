@@ -36,6 +36,8 @@ dependencies:
   direct_select: ^1.0.2+1
   markdown_widget: ^1.2.3
   bezier_chart: ^1.0.17+1
+  carousel_slider: ^2.2.1
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -51,9 +53,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    # - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

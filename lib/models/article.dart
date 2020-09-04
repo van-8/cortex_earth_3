@@ -9,6 +9,7 @@ class ArticleModel {
   String title;
   String journal;
   Timestamp publicationDate;
+  String type;
   //should be User Model if I figure out how to write to Firebase
   String correspondingAuthor;
   List<UserModel> contributors;
@@ -24,6 +25,7 @@ class ArticleModel {
     this.title,
     this.journal,
     this.publicationDate,
+    this.type,
     this.contributors,
     this.correspondingAuthor,
     this.tags,
@@ -46,6 +48,7 @@ class ArticleModel {
     keyFigureURL = documentSnapshot.data["keyFigureURL"];
     sourceDOI = documentSnapshot.data["sourceDOI"];
     content = documentSnapshot.data["content"];
+    type = documentSnapshot.data["type"];
     // contributors = documentSnapshot.data["contributors"];
     // tags = documentSnapshot.data["tags"];
   }
