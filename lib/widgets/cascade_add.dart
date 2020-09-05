@@ -2,6 +2,7 @@ import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdi/mdi.dart';
 
 class CascadeAddScreen extends GetWidget<AuthController> {
   final TextEditingController _nameController = TextEditingController();
@@ -9,54 +10,88 @@ class CascadeAddScreen extends GetWidget<AuthController> {
 
   @override
   Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildMainInput(),
+            _buildDetails(),
+            _buildActions(),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMainInput() {
     return Container(
-      color: Colors.grey[50],
-      child: Column(
+        padding: EdgeInsets.fromLTRB(14, 10, 14, 0),
+        child: TextFormField(
+            autofocus: true,
+            controller: _nameController,
+            keyboardType: TextInputType.multiline,
+            decoration: InputDecoration(
+                hintText: 'Cascade name...', border: InputBorder.none)));
+  }
+
+  Widget _buildDetails() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 20.0),
-          Card(
-            margin: EdgeInsets.all(20),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(hintText: 'Cascade name...'),
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  TextFormField(
-                    controller: _descController,
-                    decoration: InputDecoration(hintText: 'Description...'),
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    child: IconButton(
-                      icon: Icon(Icons.add),
-                      onPressed: () {
-                        if (_nameController.text != '') {
-                          Database().addCascade(
-                            controller.user.uid,
-                            _nameController.text,
-                            _descController.text,
-                          );
-                          _nameController.clear();
-                          _descController.clear();
-                        }
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Icon(Mdi.bookmarkOutline),
+          Expanded(
+              child: TextFormField(
+                  autofocus: false,
+                  controller: _descController,
+                  keyboardType: TextInputType.url,
+                  decoration: InputDecoration(
+                      hintText: ' Description...', border: InputBorder.none))),
         ],
       ),
+    );
+  }
+
+  Widget _buildActions() {
+    return Row(
+      children: [
+        Container(
+          child: Row(
+            children: [
+              IconButton(
+                icon: Icon(Mdi.accountCircleOutline),
+                onPressed: () {
+                  Get.snackbar('Assignee pressed', 'ype ype');
+                },
+              ),
+              Text('Shared with...'),
+            ],
+          ),
+        ),
+        Spacer(),
+        FlatButton(
+          child: Text(
+            'Create',
+            style: TextStyle(color: Colors.blueAccent),
+          ),
+          onPressed: () {
+            if (_nameController.text != '') {
+              Database().addCascade(
+                controller.user.uid,
+                _nameController.text,
+                _descController.text,
+              );
+              _nameController.clear();
+              _descController.clear();
+            }
+          },
+        ),
+      ],
     );
   }
 }

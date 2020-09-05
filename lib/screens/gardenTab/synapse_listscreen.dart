@@ -6,6 +6,7 @@ import 'package:get/state_manager.dart';
 import 'package:cortex_earth_3/widgets/synapse_add.dart';
 import 'package:cortex_earth_3/widgets/synapse_tile.dart';
 import 'package:cortex_earth_3/widgets/tag_list.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class SynapsesListScreen extends GetWidget<AuthController> {
   @override
@@ -41,7 +42,13 @@ class SynapsesListScreen extends GetWidget<AuthController> {
               ),
               FlatButton.icon(
                 onPressed: () {
-                  Get.bottomSheet(SynapseAddScreen());
+                  showCupertinoModalBottomSheet(
+                      expand: false,
+                      barrierColor: Colors.black87,
+                      context: context,
+                      builder: (context, scrollController) => Material(
+                            child: SynapseAddScreen(),
+                          ));
                 },
                 icon: Icon(Icons.add),
                 label: Text('synapse'),

@@ -3,7 +3,6 @@ import 'package:cortex_earth_3/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
-import 'package:cortex_earth_3/constants.dart';
 
 class TodoAddScreen extends GetWidget<AuthController> {
   final TextEditingController _taskController = TextEditingController();

@@ -19,7 +19,7 @@ class TagTile extends StatelessWidget {
       onTap: onTap,
       title: Text(
         tag.name,
-        style: TextStyle(fontSize: 12),
+        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
       ),
     );
   }

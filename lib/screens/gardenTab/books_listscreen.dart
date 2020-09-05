@@ -7,26 +7,13 @@ import 'package:get/get.dart';
 class BooksListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
-    return GetX<SynapseController>(
-      init: Get.put<SynapseController>(SynapseController()),
-      builder: (SynapseController synapseController) {
-        if (synapseController != null && synapseController.synapses != null) {
-          return Expanded(
-            child: ListView.builder(
-              itemCount: synapseController.synapses.length,
-              itemBuilder: (_, index) {
-                return SynapseTile(
-                  uid: controller.user.uid,
-                  synapse: synapseController.synapses[index],
-                  onTap: () {},
-                );
-              },
-            ),
-          );
-        } else {
-          return Text('loading...');
-        }
-      },
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: Center(
+          child: Text(
+        'List of books, data in Markdown, \ndesigned like Articles.',
+        textAlign: TextAlign.center,
+      )),
     );
   }
 }

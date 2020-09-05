@@ -256,7 +256,7 @@ class Database {
         .collection("users")
         .document(uid)
         .collection("articles")
-        .orderBy("title", descending: true)
+        .orderBy("title", descending: false)
         .snapshots()
         .map((QuerySnapshot query) {
       List<ArticleModel> retVal = List();

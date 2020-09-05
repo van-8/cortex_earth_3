@@ -6,6 +6,7 @@ import 'package:get/state_manager.dart';
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/tagController.dart';
 import 'package:cortex_earth_3/widgets/tag_add.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class TagList extends GetWidget<AuthController> {
   @override
@@ -41,7 +42,13 @@ class TagList extends GetWidget<AuthController> {
         FlatButton.icon(
           color: Colors.grey[100],
           onPressed: () {
-            Get.bottomSheet(TagAddScreen());
+            showCupertinoModalBottomSheet(
+                expand: false,
+                barrierColor: Colors.black87,
+                context: context,
+                builder: (context, scrollController) => Material(
+                      child: TagAddScreen(),
+                    ));
           },
           icon: Icon(Icons.add),
           label: Text('tag'),

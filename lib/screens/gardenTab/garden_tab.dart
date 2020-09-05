@@ -10,10 +10,10 @@ import 'synapse_listscreen.dart';
 class GardenTab extends StatelessWidget {
   final List<String> _list = [
     'Synapses',
-    'Models',
     'Data',
     'Articles',
     'Books',
+    'Models',
     'Methods',
   ];
 
@@ -57,10 +57,10 @@ class GardenTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             SynapsesListScreen(),
-            ModelsListScreen(),
             DataListScreen(),
             ArticlesListScreen(),
             BooksListScreen(),
+            ModelsListScreen(),
             MethodsListScreen(),
           ],
         ),

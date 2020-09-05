@@ -33,7 +33,8 @@ class PostDetail extends StatelessWidget {
               ),
               Container(
                 color: Colors.grey[300],
-                margin: EdgeInsets.symmetric(vertical: 10.0),
+                height: 1,
+                margin: EdgeInsets.symmetric(vertical: 5.0),
               ),
               Expanded(
                   child: SingleChildScrollView(

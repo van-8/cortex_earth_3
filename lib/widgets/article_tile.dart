@@ -1,4 +1,5 @@
 import 'package:cortex_earth_3/widgets/action_bar.dart';
+import 'package:cortex_earth_3/widgets/action_bar_mini.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/article.dart';
 
@@ -61,7 +62,7 @@ class ArticleTile extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            ActionBar(),
+            ActionBarMini(),
             SizedBox(height: 10),
             Container(
               height: 1.0,
