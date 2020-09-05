@@ -1,10 +1,8 @@
 import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/models/article.dart';
-import 'package:cortex_earth_3/screens/gardenTab/synapse_listscreen.dart';
 import 'package:cortex_earth_3/widgets/action_bar.dart';
 import 'package:cortex_earth_3/widgets/image_carousel.dart';
 import 'package:cortex_earth_3/widgets/synapse_bottomsheet.dart';
-import 'package:cortex_earth_3/widgets/synapse_tile.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

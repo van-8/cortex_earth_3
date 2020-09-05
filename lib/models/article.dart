@@ -10,8 +10,7 @@ class ArticleModel {
   String journal;
   Timestamp publicationDate;
   String type;
-  //should be User Model if I figure out how to write to Firebase
-  String correspondingAuthor;
+  String correspondingAuthor; //convert to User Model when I learn Firebase
   List<UserModel> contributors;
   List<TagModel> tags;
   String researchOrganism;

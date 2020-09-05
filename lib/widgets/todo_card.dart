@@ -25,7 +25,7 @@ class TodoCard extends StatelessWidget {
             Checkbox(
                 value: todo.done,
                 onChanged: (newValue) {
-                  Database().updateTodo(newValue, uid, todo.todoID);
+                  Database().completeTask(newValue, uid, todo.todoID);
                 }),
             Expanded(
               child: Text(

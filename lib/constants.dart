@@ -19,3 +19,12 @@ const TextStyle kArticleBodyTextReady =
 
 const TextStyle kArticleBodyTextSynapse =
     TextStyle(fontSize: 14, color: Colors.blue);
+
+//Posts
+const TextStyle kPostTitle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    letterSpacing: -1,
+    color: Colors.black54);
+const TextStyle kPostAuthor = TextStyle(fontSize: 12, color: Colors.black54);
+const TextStyle kPostContent = TextStyle(fontSize: 14, color: Colors.black87);

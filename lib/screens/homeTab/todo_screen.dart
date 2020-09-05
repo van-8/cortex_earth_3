@@ -6,6 +6,7 @@ import 'package:cortex_earth_3/widgets/todo_add.dart';
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/todoController.dart';
 import 'package:cortex_earth_3/widgets/todo_tile.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class TodoScreen extends GetWidget<AuthController> {
   @override
@@ -40,7 +41,13 @@ class TodoScreen extends GetWidget<AuthController> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          Get.bottomSheet(TodoAddScreen());
+          showCupertinoModalBottomSheet(
+              expand: false,
+              barrierColor: Colors.black87,
+              context: context,
+              builder: (context, scrollController) => Material(
+                    child: TodoAddScreen(),
+                  ));
         },
       ),
     );

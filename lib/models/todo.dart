@@ -6,6 +6,7 @@ class TodoModel {
   String description;
   Timestamp dateCreated;
   bool done;
+  bool priority;
 
   TodoModel({
     this.todoID,
@@ -13,6 +14,7 @@ class TodoModel {
     this.description,
     this.dateCreated,
     this.done,
+    this.priority,
   });
 
   TodoModel.fromDocumentSnapshot(
@@ -23,5 +25,6 @@ class TodoModel {
     description = documentSnapshot.data["description"];
     dateCreated = documentSnapshot.data["dateCreated"];
     done = documentSnapshot.data["done"];
+    priority = documentSnapshot.data["priority"];
   }
 }

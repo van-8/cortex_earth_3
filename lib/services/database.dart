@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
+import 'package:cortex_earth_3/models/post.dart';
 import 'package:cortex_earth_3/models/synapse.dart';
 import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/todo.dart';
@@ -16,6 +17,8 @@ class Database {
       await _firestore.collection("users").document(user.id).setData({
         "name": user.name,
         "email": user.email,
+        "title": user.title,
+        "description": user.description,
       });
       return true;
     } catch (e) {
@@ -36,10 +39,9 @@ class Database {
     }
   }
 
-  Future<void> addTodo(
+  Future<void> addTask(
     String uid,
     String content,
-    String description,
   ) async {
     try {
       await _firestore
@@ -49,7 +51,6 @@ class Database {
           .add({
         'dateCreated': Timestamp.now(),
         'content': content,
-        'description': description,
         'done': false,
       });
     } catch (e) {
@@ -63,6 +64,7 @@ class Database {
         .collection("users")
         .document(uid)
         .collection("todos")
+        .where("done", isEqualTo: false)
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
@@ -74,7 +76,24 @@ class Database {
     });
   }
 
-  Future<void> updateTodo(bool newValue, String uid, String todoId) async {
+  Stream<List<TodoModel>> todoDoneStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("todos")
+        .where("done", isEqualTo: true)
+        .orderBy("dateCreated", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<TodoModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(TodoModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> completeTask(bool newValue, String uid, String todoId) async {
     try {
       _firestore
           .collection("users")
@@ -88,6 +107,63 @@ class Database {
     }
   }
 // Delete a todo.
+
+  Future<void> addPost(
+    String uid,
+    String title,
+    String authorID,
+    String content,
+    // bool isArchived,
+    // bool isPublished,
+    // int likeCount,
+    // int dislikeCount,
+    // int loveCount,
+    // int congratsCount,
+    // int questionCount,
+    // List<TagModel> tags;
+    // List<UserModel> mentions;
+    // List<UserModel> privateBetween;
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("posts")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'authorID': authorID,
+        'title': title,
+        'content': content,
+        'isArchived': false,
+        'isPublished': false,
+        'isRead': false,
+        'likeCount': 0,
+        'dislikeCount': 0,
+        'loveCount': 0,
+        'congratsCount': 0,
+        'questionCount': 0,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<PostModel>> postsStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("posts")
+        .orderBy("dateCreated", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<PostModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(PostModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
 
   Future<void> addTag(
     String uid,

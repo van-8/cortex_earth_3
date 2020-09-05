@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
-import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/constants.dart';
 
 class CascadeTile extends StatelessWidget {

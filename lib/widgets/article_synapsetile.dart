@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:cortex_earth_3/models/todo.dart';
-import 'package:cortex_earth_3/services/database.dart';
 import 'package:mdi/mdi.dart';
-import 'package:cortex_earth_3/constants.dart';
 
 class SynapseableTile extends StatefulWidget {
   final String uid;

@@ -31,7 +31,7 @@ class TodoTile extends StatelessWidget {
       leading: Checkbox(
           value: todo.done,
           onChanged: (newValue) {
-            Database().updateTodo(newValue, uid, todo.todoID);
+            Database().completeTask(newValue, uid, todo.todoID);
           }),
     );
   }

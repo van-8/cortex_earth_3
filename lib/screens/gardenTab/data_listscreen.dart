@@ -2,7 +2,6 @@ import 'package:cortex_earth_3/widgets/dataChart_detail.dart';
 import 'package:cortex_earth_3/widgets/dataTable_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/widgets/tag_list.dart';
-import 'package:get/get.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class DataListScreen extends StatelessWidget {
