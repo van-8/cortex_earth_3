@@ -18,21 +18,20 @@ class ArticleModel {
   String articleAbstract;
   String content;
 
-  ArticleModel({
-    this.articleAbstractID,
-    this.sourceDOI,
-    this.title,
-    this.journal,
-    this.publicationDate,
-    this.type,
-    this.contributors,
-    this.correspondingAuthor,
-    this.tags,
-    this.researchOrganism,
-    this.keyFigureURL,
-    this.articleAbstract,
-    this.content,
-  });
+  ArticleModel(
+      {this.articleAbstractID,
+      this.sourceDOI,
+      this.title,
+      this.journal,
+      this.publicationDate,
+      this.type,
+      this.contributors,
+      this.correspondingAuthor,
+      this.tags,
+      this.researchOrganism,
+      this.keyFigureURL,
+      this.articleAbstract,
+      this.content});
 
   ArticleModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,

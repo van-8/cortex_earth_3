@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../../constants.dart';
+
 class ProjectTasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class __StickyHeaderListState extends State<_StickyHeaderList> {
             leading: Checkbox(value: false, onChanged: null),
             title: Text(
               'Task #$i',
-              style: TextStyle(color: Colors.black87),
+              style: kListViewTitleStyle,
             ),
           ),
           childCount: 6,

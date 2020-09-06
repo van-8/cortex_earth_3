@@ -39,7 +39,8 @@ class TaskTile extends StatelessWidget {
                 style: TextStyle(
                     decoration: task.isDone ? TextDecoration.lineThrough : null,
                     fontSize: 14,
-                    color: Colors.black),
+                    color: Colors.black,
+                    fontWeight: FontWeight.w300),
               ),
             ),
           ],

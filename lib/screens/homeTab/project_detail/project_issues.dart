@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../../constants.dart';
+
 class ProjectIssues extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,8 @@ class ProjectIssues extends StatelessWidget {
             _StickyHeaderList(index: 1),
             _StickyHeaderList(index: 2),
             _StickyHeaderList(index: 3),
+            _StickyHeaderList(index: 4),
+            _StickyHeaderList(index: 5),
           ],
         ),
       ),
@@ -66,10 +70,9 @@ class __StickyHeaderListState extends State<_StickyHeaderList> {
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate(
           (context, i) => ListTile(
-            leading: Checkbox(value: false, onChanged: null),
             title: Text(
               'Issue #$i',
-              style: TextStyle(color: Colors.black87),
+              style: kListViewTitleStyle,
             ),
           ),
           childCount: 3,
@@ -102,7 +105,8 @@ class Header extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           title ?? 'Label #$index',
-          style: const TextStyle(color: Colors.white),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );

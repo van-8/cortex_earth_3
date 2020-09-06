@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
+import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:cortex_earth_3/models/post.dart';
 import 'package:cortex_earth_3/models/project.dart';
 import 'package:cortex_earth_3/models/synapse.dart';
@@ -66,7 +67,7 @@ class Database {
         .collection("users")
         .document(uid)
         .collection("tasks")
-        .orderBy("dateCreated", descending: true)
+        .orderBy("isDone", descending: false)
         .snapshots()
         .map((QuerySnapshot query) {
       List<TaskModel> retVal = List();
@@ -77,22 +78,22 @@ class Database {
     });
   }
 
-  Stream<List<TaskModel>> todoDoneStream(String uid) {
-    return _firestore
-        .collection("users")
-        .document(uid)
-        .collection("tasks")
-        .where("isDone", isEqualTo: true)
-        .orderBy("dateCreated", descending: true)
-        .snapshots()
-        .map((QuerySnapshot query) {
-      List<TaskModel> retVal = List();
-      query.documents.forEach((element) {
-        retVal.add(TaskModel.fromDocumentSnapshot(element));
-      });
-      return retVal;
-    });
-  }
+  // Stream<List<TaskModel>> todoDoneStream(String uid) {
+  //   return _firestore
+  //       .collection("users")
+  //       .document(uid)
+  //       .collection("tasks")
+  //       .where("isDone", isEqualTo: true)
+  //       .orderBy("dateCreated", descending: true)
+  //       .snapshots()
+  //       .map((QuerySnapshot query) {
+  //     List<TaskModel> retVal = List();
+  //     query.documents.forEach((element) {
+  //       retVal.add(TaskModel.fromDocumentSnapshot(element));
+  //     });
+  //     return retVal;
+  //   });
+  // }
 
   Future<void> updateTaskisDone(
       bool newValue, String uid, String taskId) async {
@@ -397,6 +398,53 @@ class Database {
       List<ProjectModel> retVal = List();
       query.documents.forEach((element) {
         retVal.add(ProjectModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> addNephron(
+    String uid,
+    String name,
+    String about,
+    int subscriberCount,
+    // List<UserModel> contributors,
+    // List<TagModel> tags,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("nephrons")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'name': name,
+        'about': about,
+        'subscriberCount': subscriberCount,
+        // 'researchOrganism': researchOrganism,
+        // 'correspondingAuthor': correspondingAuthor,
+        // 'keyFigureURL': keyFigureURL,
+        // 'sourceDOI': sourceDOI,
+        // 'content': content,
+        // 'type': type,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<NephronModel>> nephronStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("nephron")
+        .orderBy("name", descending: false)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<NephronModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(NephronModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });

@@ -14,7 +14,6 @@ class CascadesListScreen extends GetWidget<AuthController> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 20.0),
           GetX<CascadeController>(
             init: Get.put<CascadeController>(CascadeController()),
             builder: (CascadeController cascadeController) {

@@ -20,6 +20,9 @@ const TextStyle kArticleBodyTextReady =
 const TextStyle kArticleBodyTextSynapse =
     TextStyle(fontSize: 14, color: Colors.blue);
 
+const TextStyle kListViewTitleStyle =
+    TextStyle(color: Colors.black87, fontWeight: FontWeight.w300);
+
 //Icons
 Color kIconActiveColor = Colors.grey[600];
 

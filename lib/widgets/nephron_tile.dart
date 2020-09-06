@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/models/project.dart';
+import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:mdi/mdi.dart';
 
 import '../constants.dart';
 
-class ProjectTile extends StatelessWidget {
+class NephronTile extends StatelessWidget {
   final String uid;
-  final ProjectModel project;
+  final NephronModel nephron;
   final Function onTap;
   final Function longPressCallback;
-  final Function onTapMore;
 
-  const ProjectTile({
+  const NephronTile({
     Key key,
     this.uid,
-    this.project,
+    this.nephron,
     this.onTap,
     this.longPressCallback,
-    this.onTapMore,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        project.name,
+        nephron.name,
         style: kListViewTitleStyle,
       ),
       // subtitle: Text(
       //   project.correspondingAuthor,
       //   style: kListViewTitleStyle,
       // ),
-      leading: Icon(Mdi.circleSlice5),
-      // trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: null),
+      leading: Icon(Mdi.beakerCheckOutline),
+      trailing: Text(nephron.subscriberCount.toString()),
       onTap: onTap,
       onLongPress: longPressCallback,
     );

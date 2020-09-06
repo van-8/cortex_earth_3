@@ -3,14 +3,14 @@ import 'package:mdi/mdi.dart';
 
 import 'feed_screen.dart';
 import 'frolic_screen.dart';
-import 'groups_screen.dart';
-import 'journals.dart';
+import 'flocks_screen.dart';
+import 'nephron_screen.dart';
 
 class WildsTab extends StatelessWidget {
   final List<String> _list = [
     'Feed',
-    'Journals',
-    'Groups',
+    'Nephrons',
+    'Flocks',
     'Frolic',
   ];
 
@@ -49,8 +49,8 @@ class WildsTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             FeedScreen(),
-            JournalsScreen(),
-            GroupsScreen(),
+            NephronScreen(),
+            FlocksScreen(),
             FrolicScreen(),
           ],
         ),
