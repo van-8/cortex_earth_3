@@ -27,8 +27,11 @@ class SynapseBottom extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(author),
-          SizedBox(height: 20),
-          Text(content),
+          SizedBox(height: 10),
+          Text(
+            content,
+            style: TextStyle(color: Colors.grey),
+          ),
           ActionBar(),
         ],
       ),

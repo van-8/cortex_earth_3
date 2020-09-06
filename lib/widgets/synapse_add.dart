@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class SynapseAddScreen extends GetWidget<AuthController> {
   final TextEditingController _synapseContentController =
       TextEditingController();
@@ -22,6 +24,12 @@ class SynapseAddScreen extends GetWidget<AuthController> {
           _buildDetails(),
           Row(
             children: [
+              IconButton(
+                icon: Icon(Mdi.tag, color: kIconActiveColor),
+                onPressed: () {
+                  Get.snackbar('Tags pressed', 'ype ype');
+                },
+              ),
               Spacer(),
               FlatButton(
                 child: Text(
@@ -54,7 +62,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
 
   Widget _buildMainInput() {
     return Container(
-        padding: EdgeInsets.fromLTRB(14, 10, 14, 0),
+        padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
         child: TextFormField(
             autofocus: true,
             minLines: 2,
@@ -72,7 +80,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Icon(Mdi.pound, size: 12),
+            Icon(Mdi.pound, size: 12, color: kIconActiveColor),
             Container(
                 width: 50,
                 child: TextFormField(
@@ -81,7 +89,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
                     // keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         hintText: '   ...', border: InputBorder.none))),
-            Icon(Mdi.bookmarkOutline),
+            Icon(Mdi.bookmarkOutline, color: kIconActiveColor),
             Expanded(
                 child: TextFormField(
                     autofocus: false,

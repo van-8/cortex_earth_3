@@ -60,13 +60,5 @@ class _SynapseableTileState extends State<SynapseableTile> {
         ),
       ),
     );
-
-    // ListTile(
-    //     onTap: _selected(),
-    //     title: Text(
-    //       text,
-    //       style: TextStyle(color: isSelected ? Colors.grey : Colors.black87),
-    //     ),
-    //     leading: isSelected ? Icon(Mdi.circleOutline) : Icon(Mdi.circle));
   }
 }

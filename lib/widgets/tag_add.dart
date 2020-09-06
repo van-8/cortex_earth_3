@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class TagAddScreen extends GetWidget<AuthController> {
   final TextEditingController _tagController = TextEditingController();
 
@@ -18,7 +20,7 @@ class TagAddScreen extends GetWidget<AuthController> {
             children: [
               Container(
                   padding: EdgeInsets.fromLTRB(0, 0, 14, 0),
-                  child: Icon(Mdi.tagMultipleOutline)),
+                  child: Icon(Mdi.tagMultipleOutline, color: kIconActiveColor)),
               Expanded(
                 child: Container(
                     child: TextFormField(

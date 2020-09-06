@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class CascadeAddScreen extends GetWidget<AuthController> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _descController = TextEditingController();
@@ -64,7 +66,7 @@ class CascadeAddScreen extends GetWidget<AuthController> {
           child: Row(
             children: [
               IconButton(
-                icon: Icon(Mdi.accountCircleOutline),
+                icon: Icon(Mdi.accountCircleOutline, color: kIconActiveColor),
                 onPressed: () {
                   Get.snackbar('Assignee pressed', 'ype ype');
                 },

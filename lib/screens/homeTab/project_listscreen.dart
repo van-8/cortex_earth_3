@@ -6,7 +6,7 @@ import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/projectController.dart';
 
 import 'package:cortex_earth_3/widgets/project_tile.dart';
-// import 'package:cortex_earth_3/widgets/project_detail.dart';
+import 'package:cortex_earth_3/screens/homeTab/project_detail/project_detail.dart';
 import 'package:cortex_earth_3/widgets/project_add.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
@@ -29,13 +29,13 @@ class ProjectListScreen extends GetWidget<AuthController> {
                         uid: controller.user.uid,
                         project: projectController.projects[index],
                         onTap: () {
-                          // showCupertinoModalBottomSheet(
-                          //     barrierColor: Colors.black87,
-                          //     context: context,
-                          //     builder: (context, scrollController) =>
-                          //         ProjectDetail(
-                          //           post: projectController.projects[index],
-                          //         ));
+                          showCupertinoModalBottomSheet(
+                              barrierColor: Colors.black87,
+                              context: context,
+                              builder: (context, scrollController) =>
+                                  ProjectDetailScreen(
+                                    project: projectController.projects[index],
+                                  ));
                         },
                       );
                     },

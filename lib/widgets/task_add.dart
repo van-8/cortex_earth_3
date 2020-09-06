@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class TaskAddScreen extends GetWidget<AuthController> {
   final TextEditingController _taskController = TextEditingController();
   // final TextEditingController _todoDescController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Material(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -27,7 +29,7 @@ class TaskAddScreen extends GetWidget<AuthController> {
 
   Widget _buildInput() {
     return Container(
-      padding: EdgeInsets.fromLTRB(14, 10, 14, 0),
+      padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
       child: Row(
         children: [
           Expanded(
@@ -36,8 +38,7 @@ class TaskAddScreen extends GetWidget<AuthController> {
                   controller: _taskController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      hintText: 'How will you make the world better?',
-                      border: InputBorder.none))),
+                      hintText: 'Task name...', border: InputBorder.none))),
           IconButton(
             icon: Icon(
               Mdi.microphone,
@@ -64,7 +65,8 @@ class TaskAddScreen extends GetWidget<AuthController> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Mdi.accountCircleOutline),
+                    icon:
+                        Icon(Mdi.accountCircleOutline, color: kIconActiveColor),
                     onPressed: () {
                       Get.snackbar('Assignee pressed', 'ype ype');
                     },
@@ -79,7 +81,8 @@ class TaskAddScreen extends GetWidget<AuthController> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Mdi.calendarBlankOutline),
+                    icon:
+                        Icon(Mdi.calendarBlankOutline, color: kIconActiveColor),
                     onPressed: () {
                       Get.snackbar('DueDate pressed', 'ype ype');
                     },
@@ -100,19 +103,19 @@ class TaskAddScreen extends GetWidget<AuthController> {
         child: Row(
           children: [
             IconButton(
-              icon: Icon(Mdi.calendarBlankOutline),
+              icon: Icon(Mdi.calendarBlankOutline, color: kIconActiveColor),
               onPressed: () {
                 Get.snackbar('DueDate pressed', 'ype ype');
               },
             ),
             IconButton(
-              icon: Icon(Mdi.alertDecagramOutline),
+              icon: Icon(Mdi.alertDecagramOutline, color: kIconActiveColor),
               onPressed: () {
                 Get.snackbar('Priority pressed', ' ype');
               },
             ),
             IconButton(
-              icon: Icon(Mdi.accountMultiple),
+              icon: Icon(Mdi.accountMultiple, color: kIconActiveColor),
               onPressed: () {
                 Get.snackbar('Project pressed', ' ype');
               },
@@ -139,5 +142,3 @@ class TaskAddScreen extends GetWidget<AuthController> {
     );
   }
 }
-
-//

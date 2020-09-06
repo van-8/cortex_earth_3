@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class ProjectAddScreen extends GetWidget<AuthController> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _authorController = TextEditingController();
@@ -93,7 +95,8 @@ class ProjectAddScreen extends GetWidget<AuthController> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Mdi.accountCircleOutline),
+                    icon:
+                        Icon(Mdi.accountCircleOutline, color: kIconActiveColor),
                     onPressed: () {
                       Get.snackbar('User List', 'User search menu');
                     },
@@ -116,7 +119,8 @@ class ProjectAddScreen extends GetWidget<AuthController> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Mdi.calendarBlankOutline),
+                    icon:
+                        Icon(Mdi.calendarBlankOutline, color: kIconActiveColor),
                     onPressed: () {
                       Get.snackbar('DueDate pressed', 'ype ype');
                     },
@@ -140,14 +144,14 @@ class ProjectAddScreen extends GetWidget<AuthController> {
         child: Row(
           children: [
             IconButton(
-              icon: Icon(Mdi.pinOutline),
+              icon: Icon(Mdi.pinOutline, color: kIconActiveColor),
               onPressed: () {
                 Get.snackbar(
                     'Pinned pressed', 'Keep this project pinned to top.');
               },
             ),
             IconButton(
-              icon: Icon(Mdi.accountMultiplePlus),
+              icon: Icon(Mdi.accountMultiplePlus, color: kIconActiveColor),
               onPressed: () {
                 Get.snackbar('Add Collaborators', ' ype');
               },

@@ -23,7 +23,7 @@ class TaskTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
         child: Row(
           children: [
             Checkbox(

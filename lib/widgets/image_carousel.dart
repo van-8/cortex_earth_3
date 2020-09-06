@@ -75,13 +75,17 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 padding: EdgeInsets.all(20),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Figure 1',
                       style: kArticleTitle,
                     ),
-                    Text('Lisa Feldman Barrett 2016'),
+                    SizedBox(height: 10),
+                    Text(
+                      'Lisa Feldman Barrett 2016',
+                      style: TextStyle(color: Colors.grey),
+                    ),
                     SizedBox(height: 20),
                     CarouselSlider(
                       items: imageSliders,
@@ -106,42 +110,44 @@ class _ImageCarouselState extends State<ImageCarousel> {
 
   Widget _buildCaption() {
     return Container(
-      child: SingleChildScrollView(
-        child: RichText(
-            text: TextSpan(
-          style: kArticleBodyText,
-          children: [
-            TextSpan(
-                text:
-                    'The classical view of emotion. The classical view of emotion includes basic emotion theories (e.g. for a review, see'),
-            TextSpan(
-                text: ' Tracy and Randles, 2011 ',
-                style: kArticleBodyTextSynapse,
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    _showTracyRandles();
-                  }),
-            TextSpan(text: 'causal appraisal theories (e.g. '),
-            TextSpan(
-                text: 'Scherer 2009',
-                style: kArticleBodyTextSynapse,
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    _showScherer();
-                  }),
-            TextSpan(text: ', '),
-            TextSpan(
-                text: 'Roseman 2011',
-                style: kArticleBodyTextSynapse,
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    _showRoseman();
-                  }),
-            TextSpan(
-                text:
-                    ') and theories of emotion that rely on black-box functionalism (Davis, 1992; Anderson and Adolphs, 2014). Each emotion faculty is assumed to have its own innate ‘essence’ that distinguishes it from all other emotions. This might be a Lockean essence (an underlying causal mechanism that all in- stances of an emotion category share, making them that kind of emotion and not some other kind of emotion, depicted by the circles in the figure). Lockean essences might be a biological, such as a set of dedicated neurons, or psychological, such as a set of evaluative mechanisms called ‘appraisals’. An emotion category is usually assumed to have a Platonic essence [a physical fingerprint that instances of that emotion share, but that other emotions do not, such a set of facial movements (an ‘ex- pression’), a pattern of autonomic nervous system activity, and/or a pattern of appraisals]. Of course, no one is expecting complete invariance, but it is assumed that in- stances of a category are similar enough to be easily diagnosed as the same emotion using objective (perceiver-independent) measures alone.'),
-          ],
-        )),
+      child: Expanded(
+        child: SingleChildScrollView(
+          child: RichText(
+              text: TextSpan(
+            style: kArticleBodyText,
+            children: [
+              TextSpan(
+                  text:
+                      'The classical view of emotion. The classical view of emotion includes basic emotion theories (e.g. for a review, see'),
+              TextSpan(
+                  text: ' Tracy and Randles, 2011 ',
+                  style: kArticleBodyTextSynapse,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      _showTracyRandles();
+                    }),
+              TextSpan(text: 'causal appraisal theories (e.g. '),
+              TextSpan(
+                  text: 'Scherer 2009',
+                  style: kArticleBodyTextSynapse,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      _showScherer();
+                    }),
+              TextSpan(text: ', '),
+              TextSpan(
+                  text: 'Roseman 2011',
+                  style: kArticleBodyTextSynapse,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      _showRoseman();
+                    }),
+              TextSpan(
+                  text:
+                      ') and theories of emotion that rely on black-box functionalism (Davis, 1992; Anderson and Adolphs, 2014). Each emotion faculty is assumed to have its own innate ‘essence’ that distinguishes it from all other emotions. This might be a Lockean essence (an underlying causal mechanism that all in- stances of an emotion category share, making them that kind of emotion and not some other kind of emotion, depicted by the circles in the figure). Lockean essences might be a biological, such as a set of dedicated neurons, or psychological, such as a set of evaluative mechanisms called ‘appraisals’. An emotion category is usually assumed to have a Platonic essence [a physical fingerprint that instances of that emotion share, but that other emotions do not, such a set of facial movements (an ‘ex- pression’), a pattern of autonomic nervous system activity, and/or a pattern of appraisals]. Of course, no one is expecting complete invariance, but it is assumed that in- stances of a category are similar enough to be easily diagnosed as the same emotion using objective (perceiver-independent) measures alone.'),
+            ],
+          )),
+        ),
       ),
     );
   }
@@ -163,7 +169,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
         builder: (context, scrollController) => Material(
                 child: SynapseBottom(
               title:
-                  'Emotions are emergent processes: they re- quire a dynamic computational architecture',
+                  'Emotions are emergent processes: they require a dynamic computational architecture',
               author: 'Scherer, K.R. (2009)',
               content:
                   'Philosophical Transactions of the Royal Society B: Biological Sciences, 364 (1535), 3459–74.',
@@ -186,9 +192,9 @@ class _ImageCarouselState extends State<ImageCarousel> {
 }
 
 final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+  'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1427&q=80',
+  'https://images.unsplash.com/photo-1576086476234-1103be98f096?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80',
+  'https://images.unsplash.com/photo-1579684288538-c76a2fab9617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1903&q=80',
   'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
   'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:get/get.dart';
 
-class ActionBar extends StatelessWidget {
+class ActionBar extends StatefulWidget {
+  @override
+  _ActionBarState createState() => _ActionBarState();
+}
+
+class _ActionBarState extends State<ActionBar> {
   int appropriateTest;
   int detailed;
   int original;
-
-  ActionBar({
-    this.appropriateTest,
-    this.detailed,
-    this.original,
-  });
+  bool isSaved = false;
 
   @override
   Widget build(BuildContext context) {
@@ -96,14 +96,19 @@ class ActionBar extends StatelessWidget {
                 );
               }),
           IconButton(
-              icon: Icon(Icons.playlist_add),
-              tooltip: 'Add to Cascade',
+              icon: isSaved ? Icon(Mdi.bookmark) : Icon(Mdi.bookmarkOutline),
+              tooltip: 'Save',
               onPressed: () {
-                Get.snackbar(
-                  'Add to Cascade',
-                  'List of User cascades',
-                  snackPosition: SnackPosition.BOTTOM,
-                );
+                setState(() {
+                  isSaved = !isSaved;
+                });
+                isSaved
+                    ? Get.snackbar(
+                        'Saved to \'Unread\' Cascade',
+                        'Task to \'Read this article\' added',
+                        snackPosition: SnackPosition.BOTTOM,
+                      )
+                    : null;
               }),
           IconButton(
               icon: Icon(Mdi.share),

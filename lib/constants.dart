@@ -20,6 +20,9 @@ const TextStyle kArticleBodyTextReady =
 const TextStyle kArticleBodyTextSynapse =
     TextStyle(fontSize: 14, color: Colors.blue);
 
+//Icons
+Color kIconActiveColor = Colors.grey[600];
+
 //Posts
 const TextStyle kPostTitle = TextStyle(
     fontSize: 16,
@@ -28,3 +31,7 @@ const TextStyle kPostTitle = TextStyle(
     color: Colors.black54);
 const TextStyle kPostAuthor = TextStyle(fontSize: 12, color: Colors.black54);
 const TextStyle kPostContent = TextStyle(fontSize: 14, color: Colors.black87);
+
+//Projects
+const TextStyle kProjectTitle =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.normal, letterSpacing: -1);

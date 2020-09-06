@@ -1,4 +1,3 @@
-import 'package:cortex_earth_3/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/project.dart';
 import 'package:mdi/mdi.dart';
@@ -24,7 +23,7 @@ class ProjectTile extends StatelessWidget {
     return ListTile(
       title: Text(project.name),
       subtitle: Text(project.correspondingAuthor),
-      leading: Icon(Mdi.circleSlice6),
+      leading: Icon(Mdi.circleSlice5),
       trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: null),
       onTap: onTap,
       onLongPress: longPressCallback,
