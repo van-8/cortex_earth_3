@@ -40,7 +40,17 @@ class CascadesListScreen extends GetWidget<AuthController> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                  colors: [Colors.greenAccent, Colors.blueAccent],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight)),
+          child: Icon(Icons.add),
+        ),
         onPressed: () {
           showCupertinoModalBottomSheet(
               barrierColor: Colors.black87,

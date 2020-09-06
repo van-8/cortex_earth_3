@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
-import 'package:cortex_earth_3/constants.dart';
+// import 'package:cortex_earth_3/constants.dart';
+import 'package:mdi/mdi.dart';
 
 class CascadeTile extends StatelessWidget {
   final String uid;
@@ -21,24 +22,14 @@ class CascadeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        onLongPress: longPressCallback,
-        onTap: onTap,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(cascade.name),
-            Text(
-              '5',
-              style: kSynapseTileSubtitle,
-            ),
-          ],
-        ),
-        trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: () {})
-        // leading: Checkbox(
-        //     value: cascade.,
-        //     onChanged: (newValue) {
-        //       Database().updateCascade(newValue, uid, cascade.cascadeID);
-        //     }),
-        );
+      onLongPress: longPressCallback,
+      onTap: onTap,
+      title: Text(
+        cascade.name,
+        overflow: TextOverflow.ellipsis,
+      ),
+      trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
+      leading: Icon(Mdi.playlistPlay),
+    );
   }
 }

@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
 import 'package:cortex_earth_3/models/post.dart';
+import 'package:cortex_earth_3/models/project.dart';
 import 'package:cortex_earth_3/models/synapse.dart';
 import 'package:cortex_earth_3/models/tag.dart';
-import 'package:cortex_earth_3/models/todo.dart';
+import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/models/user.dart';
 import 'package:cortex_earth_3/models/article.dart';
 
@@ -47,11 +48,12 @@ class Database {
       await _firestore
           .collection("users")
           .document(uid)
-          .collection("todos")
+          .collection("tasks")
           .add({
         'dateCreated': Timestamp.now(),
         'content': content,
-        'done': false,
+        'isDone': false,
+        'priority': false,
       });
     } catch (e) {
       print(e);
@@ -59,48 +61,48 @@ class Database {
     }
   }
 
-  Stream<List<TodoModel>> todoStream(String uid) {
+  Stream<List<TaskModel>> taskStream(String uid) {
     return _firestore
         .collection("users")
         .document(uid)
-        .collection("todos")
-        .where("done", isEqualTo: false)
+        .collection("tasks")
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
-      List<TodoModel> retVal = List();
+      List<TaskModel> retVal = List();
       query.documents.forEach((element) {
-        retVal.add(TodoModel.fromDocumentSnapshot(element));
+        retVal.add(TaskModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });
   }
 
-  Stream<List<TodoModel>> todoDoneStream(String uid) {
+  Stream<List<TaskModel>> todoDoneStream(String uid) {
     return _firestore
         .collection("users")
         .document(uid)
-        .collection("todos")
-        .where("done", isEqualTo: true)
+        .collection("tasks")
+        .where("isDone", isEqualTo: true)
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
-      List<TodoModel> retVal = List();
+      List<TaskModel> retVal = List();
       query.documents.forEach((element) {
-        retVal.add(TodoModel.fromDocumentSnapshot(element));
+        retVal.add(TaskModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });
   }
 
-  Future<void> completeTask(bool newValue, String uid, String todoId) async {
+  Future<void> updateTaskisDone(
+      bool newValue, String uid, String taskId) async {
     try {
       _firestore
           .collection("users")
           .document(uid)
-          .collection("todos")
-          .document(todoId)
-          .updateData({"done": newValue});
+          .collection("tasks")
+          .document(taskId)
+          .updateData({"isDone": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -339,6 +341,62 @@ class Database {
       List<CascadeModel> retVal = List();
       query.documents.forEach((element) {
         retVal.add(CascadeModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> addProject(
+    String uid,
+    String name,
+    String description,
+    String correspondingAuthor,
+    // bool isPinned,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("projects")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'name': name,
+        'description': description,
+        'correspondingAuthor': correspondingAuthor,
+        // 'isPinned': isPinned,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Future<void> updateProjectPinned(
+      bool newValue, String uid, String projectID) async {
+    try {
+      _firestore
+          .collection("users")
+          .document(uid)
+          .collection("tasks")
+          .document(projectID)
+          .updateData({"isPinned": newValue});
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<ProjectModel>> projectStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("projects")
+        .orderBy("dateCreated", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<ProjectModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(ProjectModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });

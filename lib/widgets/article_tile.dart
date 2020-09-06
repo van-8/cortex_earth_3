@@ -1,4 +1,3 @@
-import 'package:cortex_earth_3/widgets/action_bar.dart';
 import 'package:cortex_earth_3/widgets/action_bar_mini.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/article.dart';

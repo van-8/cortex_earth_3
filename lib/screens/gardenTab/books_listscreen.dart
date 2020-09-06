@@ -1,6 +1,4 @@
 import 'package:cortex_earth_3/controllers/authController.dart';
-import 'package:cortex_earth_3/controllers/synapseController.dart';
-import 'package:cortex_earth_3/widgets/synapse_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

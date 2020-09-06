@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
-class TodoAddScreen extends GetWidget<AuthController> {
+class TaskAddScreen extends GetWidget<AuthController> {
   final TextEditingController _taskController = TextEditingController();
   // final TextEditingController _todoDescController = TextEditingController();
 

@@ -1,30 +1,37 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TodoModel {
-  String todoID;
+class TaskModel {
+  String taskID;
   String content;
   String description;
   Timestamp dateCreated;
-  bool done;
+  bool isDone;
   bool priority;
+  // bool isMilestone;
+  // bool needsApproval;
+  // UserModel approver;
+  // UserModel assignee;
+  // ProjectModel project;
+  // dependent on other tasks;
+  // subtasks;
 
-  TodoModel({
-    this.todoID,
+  TaskModel({
+    this.taskID,
     this.content,
     this.description,
     this.dateCreated,
-    this.done,
+    this.isDone,
     this.priority,
   });
 
-  TodoModel.fromDocumentSnapshot(
+  TaskModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    todoID = documentSnapshot.documentID;
+    taskID = documentSnapshot.documentID;
     content = documentSnapshot.data["content"];
     description = documentSnapshot.data["description"];
     dateCreated = documentSnapshot.data["dateCreated"];
-    done = documentSnapshot.data["done"];
+    isDone = documentSnapshot.data["isDone"];
     priority = documentSnapshot.data["priority"];
   }
 }

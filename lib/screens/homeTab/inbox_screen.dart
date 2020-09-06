@@ -59,19 +59,29 @@ class InboxScreen extends GetWidget<AuthController> {
                 icon: Icon(Icons.filter_list),
                 label: Text('Filter'),
               ),
-              FlatButton.icon(
-                onPressed: () {
-                  showCupertinoModalBottomSheet(
-                      backgroundColor: Colors.grey[800],
-                      context: context,
-                      builder: (context, controller) => PostAddScreen());
-                },
-                icon: Icon(Icons.add),
-                label: Text('Post'),
-              ),
             ],
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                  colors: [Colors.greenAccent, Colors.blueAccent],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight)),
+          child: Icon(Icons.add),
+        ),
+        onPressed: () {
+          showCupertinoModalBottomSheet(
+              barrierColor: Colors.black87,
+              expand: false,
+              context: context,
+              builder: (context, scrollController) => PostAddScreen());
+        },
       ),
     );
   }

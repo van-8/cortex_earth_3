@@ -5,11 +5,11 @@ import 'cascades_listscreen.dart';
 import 'inbox_screen.dart';
 import 'lab_manager.dart';
 import 'project_listscreen.dart';
-import 'todo_screen.dart';
+import 'task_screen.dart';
 
 class HomeTab extends StatelessWidget {
   final List<String> _list = [
-    'Todos',
+    'Tasks',
     'Inbox',
     'Projects',
     'Cascades',
@@ -38,8 +38,8 @@ class HomeTab extends StatelessWidget {
             preferredSize: Size(400, 30),
             child: Container(
               child: TabBar(
-                indicatorColor: Colors.blue[800],
-                labelColor: Colors.blue[800],
+                indicatorColor: Colors.lightBlue,
+                labelColor: Colors.lightBlue,
                 isScrollable: true,
                 tabs: _list.map((String ss) {
                   return Tab(text: ss);
@@ -50,9 +50,9 @@ class HomeTab extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            TodoScreen(),
+            TaskScreen(),
             InboxScreen(),
-            ProjectsListScreen(),
+            ProjectListScreen(),
             CascadesListScreen(),
             LabManager(),
           ],

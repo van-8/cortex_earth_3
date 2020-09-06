@@ -1,33 +1,48 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cortex_earth_3/models/post.dart';
+import 'package:cortex_earth_3/models/tag.dart';
 import 'synapse.dart';
 import 'user.dart';
-import 'todo.dart';
+import 'task.dart';
 
 class ProjectModel {
   String projectID;
+  String name;
   String description;
   int taskTotal;
   Timestamp dateCreated;
-  UserModel correspondingAuthor;
+  String correspondingAuthor;
+  bool isPinned;
   List<UserModel> contributors;
-  List<SynapseModel> synapses;
-  List<TodoModel> todos;
+  List<SynapseModel> projectSynapses;
+  List<TaskModel> projectTasks;
+  List<TagModel> projectTags;
+  // List<IssueModel> projectIssues;
+  // Color projectColor;
 
-  ProjectModel(
-      {this.projectID,
-      this.description,
-      this.taskTotal,
-      this.dateCreated,
-      this.correspondingAuthor,
-      this.contributors,
-      this.synapses});
+  ProjectModel({
+    this.projectID,
+    this.name,
+    this.description,
+    this.taskTotal,
+    this.dateCreated,
+    this.correspondingAuthor,
+    this.isPinned,
+    this.contributors,
+    this.projectSynapses,
+    this.projectTasks,
+    this.projectTags,
+  });
 
   ProjectModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
     projectID = documentSnapshot.documentID;
+    name = documentSnapshot.data["name"];
     description = documentSnapshot.data["description"];
-    taskTotal = documentSnapshot.data["taskTotal"];
+    correspondingAuthor = documentSnapshot.data["correspondingAuthor"];
+    // taskTotal = documentSnapshot.data["taskTotal"];
     dateCreated = documentSnapshot.data["dateCreated"];
+    isPinned = documentSnapshot.data["isPinned"];
   }
 }

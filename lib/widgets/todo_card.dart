@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/models/todo.dart';
+import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/services/database.dart';
 
 class TodoCard extends StatelessWidget {
   final String uid;
-  final TodoModel todo;
+  final TaskModel task;
   final Function onTap;
 
   const TodoCard({
     Key key,
     this.uid,
-    this.todo,
+    this.task,
     this.onTap,
   }) : super(key: key);
 
@@ -23,13 +23,13 @@ class TodoCard extends StatelessWidget {
         child: Row(
           children: [
             Checkbox(
-                value: todo.done,
+                value: task.isDone,
                 onChanged: (newValue) {
-                  Database().completeTask(newValue, uid, todo.todoID);
+                  Database().updateTaskisDone(newValue, uid, task.taskID);
                 }),
             Expanded(
               child: Text(
-                todo.content,
+                task.content,
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
