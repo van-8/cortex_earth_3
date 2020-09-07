@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mdi/mdi.dart';
-
+import 'package:cortex_earth_3/constants.dart';
 import 'cascades_listscreen.dart';
 import 'inbox_screen.dart';
 import 'lab_manager.dart';
@@ -29,8 +28,8 @@ class HomeTab extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 icon: Icon(
-                  Mdi.cogOutline,
-                  color: Colors.grey,
+                  Icons.more_horiz,
+                  color: kIconActiveColor,
                 ),
                 onPressed: null)
           ],
