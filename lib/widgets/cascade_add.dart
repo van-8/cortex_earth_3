@@ -13,17 +13,19 @@ class CascadeAddScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _buildMainInput(),
-            _buildDetails(),
-            _buildActions(),
-            SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom,
-            )
-          ],
+      child: SafeArea(
+        child: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildMainInput(),
+              _buildDetails(),
+              _buildActions(),
+              SizedBox(
+                height: MediaQuery.of(context).viewInsets.bottom,
+              )
+            ],
+          ),
         ),
       ),
     );

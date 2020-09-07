@@ -19,8 +19,8 @@ class ProjectAddScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
-        child: SafeArea(
+      child: SafeArea(
+        child: Container(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

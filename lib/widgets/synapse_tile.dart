@@ -31,20 +31,22 @@ class SynapseTile extends StatelessWidget {
               // overflow: TextOverflow.ellipsis,
               // maxLines: 6,
             ),
-            Row(
-              children: [
-                Text(
-                  synapse.sourceDOI,
-                  style: kSynapseTileSubtitle,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  synapse.lineNumber.toString(),
-                  style: kSynapseTileSubtitle,
-                ),
-              ],
+            Container(
+              child: Row(
+                children: [
+                  Text(
+                    synapse.sourceDOI,
+                    style: kSynapseTileSubtitle,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    synapse.lineNumber.toString(),
+                    style: kSynapseTileSubtitle,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

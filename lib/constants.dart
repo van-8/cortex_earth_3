@@ -38,3 +38,8 @@ const TextStyle kPostContent = TextStyle(fontSize: 14, color: Colors.black87);
 //Projects
 const TextStyle kProjectTitle =
     TextStyle(fontSize: 16, fontWeight: FontWeight.normal, letterSpacing: -1);
+
+//Colors
+// how to convert color value to string
+Color pickercolor = Color(0xff5EFFC0);
+int colorINT = pickercolor.value;

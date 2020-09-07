@@ -16,13 +16,14 @@ class NephronModel {
   int editorCount;
   int modCount;
   int subscriberCount;
+  bool isFavorite;
+  String iconMdiCodepoint;
   List<UserModel> editors;
   List<UserModel> board;
   List<UserModel> mods;
   List<PostModel> announcements;
   List<UserModel> workingGroup;
   List<CascadeModel> cascades;
-  //TODO: bool Favoritre
 
   NephronModel(
       {this.nephronID,
@@ -34,9 +35,11 @@ class NephronModel {
       this.codeOfConduct,
       this.dateCreated,
       this.lastUpdate,
+      this.iconMdiCodepoint,
       this.editorCount,
       this.modCount,
       this.subscriberCount,
+      this.isFavorite,
       this.editors,
       this.board,
       this.mods,
@@ -52,6 +55,8 @@ class NephronModel {
     name = documentSnapshot.data["name"];
     about = documentSnapshot.data["about"];
     subscriberCount = documentSnapshot.data["subscriberCount"];
+    iconMdiCodepoint = documentSnapshot.data["iconMdiCodepoint"];
+    // isFavorite = documentSnapshot.data["isFavorite"];
     // readme = documentSnapshot.data["readme"];
     // iconURL = documentSnapshot.data["iconURL"];
     // email = documentSnapshot.data["email"];

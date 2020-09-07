@@ -408,6 +408,7 @@ class Database {
     String name,
     String about,
     int subscriberCount,
+    String iconMdiCodepoint,
     // List<UserModel> contributors,
     // List<TagModel> tags,
   ) async {
@@ -421,6 +422,7 @@ class Database {
         'name': name,
         'about': about,
         'subscriberCount': subscriberCount,
+        'iconMdiCodepoint': iconMdiCodepoint,
         // 'researchOrganism': researchOrganism,
         // 'correspondingAuthor': correspondingAuthor,
         // 'keyFigureURL': keyFigureURL,
@@ -438,8 +440,8 @@ class Database {
     return _firestore
         .collection("users")
         .document(uid)
-        .collection("nephron")
-        .orderBy("name", descending: false)
+        .collection("nephrons")
+        .orderBy("subscriberCount", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<NephronModel> retVal = List();

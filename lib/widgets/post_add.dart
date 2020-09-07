@@ -14,16 +14,18 @@ class PostAddScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildTitle(),
-          _buildContent(),
-          _buildTaskActionBar(),
-          SizedBox(
-            height: MediaQuery.of(context).viewInsets.bottom,
-          )
-        ],
+      child: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildTitle(),
+            _buildContent(),
+            _buildTaskActionBar(),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
       ),
     );
   }

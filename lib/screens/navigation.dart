@@ -84,24 +84,24 @@ class _NavigationState extends State<Navigation> {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Mdi.magnify),
+            icon: Icon(Mdi.hammerWrench),
             activeIcon: Icon(
-              Mdi.featureSearch,
-              color: Colors.white54,
+              Mdi.hammerWrench,
+              color: Colors.blueAccent,
             ),
             title: Text(
               'Search',
-              style: TextStyle(color: Colors.white54),
+              style: TextStyle(color: Colors.blueAccent),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.accountCogOutline),
             activeIcon: Icon(
               Mdi.accountCog,
-              color: Colors.grey,
+              color: Colors.black87,
             ),
             title: Text(
-              'Settings',
+              'Profile',
               style: TextStyle(color: Colors.grey),
             ),
           ),

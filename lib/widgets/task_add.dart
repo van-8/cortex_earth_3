@@ -13,16 +13,18 @@ class TaskAddScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildInput(),
-          _buildBasic(),
-          _buildTaskActionBar(),
-          SizedBox(
-            height: MediaQuery.of(context).viewInsets.bottom,
-          )
-        ],
+      child: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildInput(),
+            _buildBasic(),
+            _buildTaskActionBar(),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
       ),
     );
   }

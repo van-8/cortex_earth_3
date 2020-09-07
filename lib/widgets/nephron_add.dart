@@ -11,22 +11,26 @@ class NephronAddScreen extends GetWidget<AuthController> {
   final TextEditingController _subscriberCountController =
       TextEditingController();
   final TextEditingController _aboutController = TextEditingController();
+  final TextEditingController _iconMdiCodepointController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _buildMainInput(),
-            _buildDetails(),
-            _buildActions(),
-            SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom,
-            )
-          ],
+      child: SafeArea(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildMainInput(),
+              _buildDetails(),
+              _buildActions(),
+              SizedBox(
+                height: MediaQuery.of(context).viewInsets.bottom,
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -76,6 +80,15 @@ class NephronAddScreen extends GetWidget<AuthController> {
                   // keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       hintText: ' ...', border: InputBorder.none))),
+          Icon(Mdi.nullIcon, size: 12, color: kIconActiveColor),
+          Container(
+              width: 80,
+              child: TextFormField(
+                  autofocus: false,
+                  controller: _iconMdiCodepointController,
+                  // keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      hintText: ' .......', border: InputBorder.none))),
           Spacer(),
           FlatButton(
             child: Text(
@@ -89,10 +102,12 @@ class NephronAddScreen extends GetWidget<AuthController> {
                   _nameController.text,
                   _aboutController.text,
                   int.parse(_subscriberCountController.text),
+                  _iconMdiCodepointController.text,
                 );
                 _nameController.clear();
                 _aboutController.clear();
                 _subscriberCountController.clear();
+                _iconMdiCodepointController.clear();
               }
             },
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:mdi/mdi.dart';
+import 'dart:math' as math;
 
 import '../constants.dart';
 
@@ -20,37 +21,23 @@ class NephronTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int iconMdiCodepoint = int.parse(nephron.iconMdiCodepoint);
     return ListTile(
       title: Text(
         nephron.name,
         style: kListViewTitleStyle,
       ),
-      // subtitle: Text(
-      //   project.correspondingAuthor,
-      //   style: kListViewTitleStyle,
-      // ),
-      leading: Icon(Mdi.beakerCheckOutline),
-      trailing: Text(nephron.subscriberCount.toString()),
+      leading: Icon(MdiIconData(iconMdiCodepoint)),
+      trailing: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(nephron.subscriberCount.toString()),
+          Text('SUBSCRIBERS',
+              style: TextStyle(fontSize: 7, color: Colors.grey)),
+        ],
+      ),
       onTap: onTap,
       onLongPress: longPressCallback,
     );
   }
 }
-
-// GestureDetector(
-//       onTap: onTap,
-//       child: Container(
-//         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Text(project.name),
-//             SizedBox(width: 10),
-//             Text(
-//               project.correspondingAuthor,
-//               style: kSynapseTileSubtitle,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
