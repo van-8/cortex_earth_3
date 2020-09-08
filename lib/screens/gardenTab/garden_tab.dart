@@ -6,6 +6,7 @@ import 'data_listscreen.dart';
 import 'methods_listscreen.dart';
 import 'models_listscreen.dart';
 import 'synapse_listscreen.dart';
+import 'package:cortex_earth_3/constants.dart';
 
 class GardenTab extends StatelessWidget {
   final List<String> _list = [
@@ -44,9 +45,9 @@ class GardenTab extends StatelessWidget {
             preferredSize: Size(400, 30),
             child: Container(
               child: TabBar(
-                indicatorColor: Colors.lightGreen,
+                indicatorColor: kGardenTheme,
                 isScrollable: true,
-                labelColor: Colors.green,
+                labelColor: kGardenTheme,
                 tabs: _list.map((String ss) {
                   return Tab(text: ss);
                 }).toList(),

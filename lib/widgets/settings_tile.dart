@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
+
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
     Key key,
@@ -32,7 +34,10 @@ class SettingsTile extends StatelessWidget {
             //     borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Row(
               children: [
-                Icon(leadingIcon, size: 18),
+                Icon(
+                  leadingIcon,
+                  size: 18,
+                ),
                 Container(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Column(

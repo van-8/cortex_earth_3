@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 
+import '../constants.dart';
 import 'gardenTab/garden_tab.dart';
 import 'homeTab/home_tab.dart';
 import 'profileTab/profile_tab.dart';
@@ -54,33 +55,33 @@ class _NavigationState extends State<Navigation> {
             icon: Icon(Mdi.compassOutline),
             activeIcon: Icon(
               Mdi.compass,
-              color: Colors.brown[100],
+              color: kWildsTheme,
             ),
             title: Text(
               'Wilds',
-              style: TextStyle(color: Colors.brown[100]),
+              style: TextStyle(color: kWildsTheme),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.sproutOutline),
             activeIcon: Icon(
               Mdi.sprout,
-              color: Colors.green[100],
+              color: kGardenTheme,
             ),
             title: Text(
               'Garden',
-              style: TextStyle(color: Colors.green[100]),
+              style: TextStyle(color: kGardenTheme),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.homeLightbulbOutline),
             activeIcon: Icon(
               Mdi.homeLightbulb,
-              color: Colors.blue[100],
+              color: kHomeTheme,
             ),
             title: Text(
               'Home',
-              style: TextStyle(color: Colors.blue[100]),
+              style: TextStyle(color: kHomeTheme),
             ),
           ),
           BottomNavigationBarItem(

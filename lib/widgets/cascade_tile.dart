@@ -28,7 +28,6 @@ class CascadeTile extends StatelessWidget {
       onTap: onTap,
       title: Text(
         cascade.name,
-        overflow: TextOverflow.ellipsis,
         style: kListViewTitleStyle,
       ),
       // trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),

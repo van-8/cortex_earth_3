@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/toolsTab/experiment.dart';
 import 'package:cortex_earth_3/screens/toolsTab/reaction_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ import 'voiceAssist_screen.dart';
 class ToolsTab extends StatelessWidget {
   final List<String> _list = [
     'VoiceAssist',
-    'Timer',
+    'Experiment',
     'Reaction',
   ];
 
@@ -46,7 +47,7 @@ class ToolsTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             VoiceAssistScreen(),
-            TimerPage(),
+            ExperimentScreen(),
             ReactionTest(),
           ],
         ),

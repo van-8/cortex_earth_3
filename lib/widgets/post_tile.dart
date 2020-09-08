@@ -35,6 +35,9 @@ class PostTile extends StatelessWidget {
             ),
           ],
         ),
+        decoration: BoxDecoration(
+            border:
+                Border(bottom: BorderSide(width: 1, color: Colors.grey[200]))),
       ),
     );
   }

@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       initialBinding: AuthBinding(),
       theme: ThemeData.light(),
       home: Root(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

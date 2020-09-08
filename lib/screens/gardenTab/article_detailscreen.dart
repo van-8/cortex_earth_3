@@ -178,8 +178,16 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                       snackPosition: SnackPosition.BOTTOM);
                 });
               },
-              child: Icon(Mdi.checkboxMarkedCircleOutline),
-            )
+              child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                          colors: [Colors.greenAccent, Colors.blueAccent],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight)),
+                  child: Icon(Mdi.checkboxMarkedCircleOutline)))
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

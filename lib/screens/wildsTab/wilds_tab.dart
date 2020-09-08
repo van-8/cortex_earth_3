@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 
+import '../../constants.dart';
 import 'feed_screen.dart';
 import 'frolic_screen.dart';
 import 'flocks_screen.dart';
@@ -27,8 +28,8 @@ class WildsTab extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 icon: Icon(
-                  Mdi.cogOutline,
-                  color: Colors.grey[500],
+                  Icons.more_horiz,
+                  color: kIconActiveColor,
                 ),
                 onPressed: null)
           ],
@@ -36,8 +37,8 @@ class WildsTab extends StatelessWidget {
             preferredSize: Size(400, 30),
             child: Container(
               child: TabBar(
-                indicatorColor: Colors.brown[800],
-                labelColor: Colors.brown[800],
+                indicatorColor: kWildsTheme,
+                labelColor: kWildsTheme,
                 isScrollable: true,
                 tabs: _list.map((String ss) {
                   return Tab(text: ss);

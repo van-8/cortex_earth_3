@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const TextStyle kTextAction =
+    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold);
 const TextStyle kSynapseTileSubtitle =
     TextStyle(fontSize: 10, color: Colors.grey);
 
@@ -25,6 +27,9 @@ const TextStyle kListViewTitleStyle =
 
 //Icons
 Color kIconActiveColor = Colors.grey[600];
+Color kHomeTheme = Colors.blueAccent;
+Color kGardenTheme = Colors.lightGreen[700];
+Color kWildsTheme = Colors.brown[600];
 
 //Posts
 const TextStyle kPostTitle = TextStyle(
