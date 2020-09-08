@@ -91,7 +91,7 @@ class _NavigationState extends State<Navigation> {
               color: Colors.blueAccent,
             ),
             title: Text(
-              'Search',
+              'Tricorder',
               style: TextStyle(color: Colors.blueAccent),
             ),
           ),

@@ -9,7 +9,7 @@ import 'synapse_listscreen.dart';
 import 'package:cortex_earth_3/constants.dart';
 
 class GardenTab extends StatelessWidget {
-  final List<String> _list = [
+  final List<String> _tabs = [
     'Synapses',
     'Data',
     'Articles',
@@ -21,24 +21,16 @@ class GardenTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: _list.length,
+      length: _tabs.length,
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Row(
-            children: [
-              Text("Garden", style: TextStyle(color: Colors.black)),
-              Text('Search'),
-            ],
-          ),
+          title: Text("Garden", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
             IconButton(
-                icon: Icon(
-                  Icons.settings,
-                  color: Colors.black,
-                ),
+                icon: Icon(Icons.more_horiz, color: kIconActiveColor),
                 onPressed: null)
           ],
           bottom: PreferredSize(
@@ -48,7 +40,7 @@ class GardenTab extends StatelessWidget {
                 indicatorColor: kGardenTheme,
                 isScrollable: true,
                 labelColor: kGardenTheme,
-                tabs: _list.map((String ss) {
+                tabs: _tabs.map((String ss) {
                   return Tab(text: ss);
                 }).toList(),
               ),

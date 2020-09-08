@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/screens/toolsTab/experiment.dart';
 import 'package:cortex_earth_3/screens/toolsTab/reaction_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,8 @@ class ToolsTab extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 icon: Icon(
-                  Icons.settings,
-                  color: Colors.black,
+                  Icons.more_horiz,
+                  color: kIconActiveColor,
                 ),
                 onPressed: null)
           ],

@@ -27,7 +27,7 @@ const TextStyle kListViewTitleStyle =
 
 //Icons
 Color kIconActiveColor = Colors.grey[600];
-Color kHomeTheme = Colors.blueAccent;
+Color kHomeTheme = Colors.lightBlue;
 Color kGardenTheme = Colors.lightGreen[700];
 Color kWildsTheme = Colors.brown[600];
 
