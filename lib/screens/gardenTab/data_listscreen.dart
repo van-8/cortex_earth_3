@@ -1,6 +1,11 @@
 import 'package:cortex_earth_3/widgets/dataChart_detail.dart';
 import 'package:cortex_earth_3/widgets/dataTable_detail.dart';
 import 'package:cortex_earth_3/widgets/data_beforeAfter.dart';
+import 'package:cortex_earth_3/widgets/figures/bar_chart1.dart';
+import 'package:cortex_earth_3/widgets/figures/echarts/echart1.dart';
+import 'package:cortex_earth_3/widgets/figures/line_chart_sample1.dart';
+import 'package:cortex_earth_3/widgets/figures/scatter_chart_sample1.dart';
+import 'package:cortex_earth_3/widgets/figures/scatter_chart_sample2.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/widgets/tag_list.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -114,6 +119,66 @@ class DataListScreen extends StatelessWidget {
                     //     context: context,
                     //     builder: (context, scrollController) =>
                     //         DataChartDetailScreen());
+                  },
+                ),
+                ListTile(
+                  title: Text('(LINE CHART 1) '),
+                  subtitle: Text('Mingguan et al. / Genomics 2010'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            LineChartSample1());
+                  },
+                ),
+                // ListTile(
+                //   title: Text('(EChart 1) '),
+                //   subtitle: Text('Apache Foundation'),
+                //   onTap: () {
+                //     showCupertinoModalBottomSheet(
+                //         barrierColor: barrierColor,
+                //         expand: false,
+                //         context: context,
+                //         builder: (context, scrollController) =>
+                //             EChartSample1());
+                //   },
+                // ),
+                ListTile(
+                  title: Text('(Bar Chart 1) '),
+                  subtitle: Text('Mingguan et al. / Genomics 2010'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            BarChartSample1());
+                  },
+                ),
+                ListTile(
+                  title: Text('(SCATTER PLOT 1) '),
+                  subtitle: Text('Meg et al. / Genomics 2010'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            ScatterChartSample1());
+                  },
+                ),
+                ListTile(
+                  title: Text('(SCATTER PLOT 2) '),
+                  subtitle: Text('Whengo et al. / Genomics 2010'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            ScatterChartSample2());
                   },
                 ),
                 ListTile(
