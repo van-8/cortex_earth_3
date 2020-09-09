@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mdi/mdi.dart';
 
 import '../../constants.dart';
 import 'feed_screen.dart';

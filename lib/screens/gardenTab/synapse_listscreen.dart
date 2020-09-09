@@ -8,6 +8,8 @@ import 'package:cortex_earth_3/widgets/synapse_tile.dart';
 import 'package:cortex_earth_3/widgets/tag_list.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../constants.dart';
+
 class SynapsesListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class SynapsesListScreen extends GetWidget<AuthController> {
                 onPressed: () {
                   showCupertinoModalBottomSheet(
                       expand: false,
-                      barrierColor: Colors.black87,
+                      barrierColor: barrierColor,
                       context: context,
                       builder: (context, scrollController) => Material(
                             child: SynapseAddScreen(),

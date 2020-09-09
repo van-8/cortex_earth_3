@@ -8,6 +8,8 @@ import 'package:cortex_earth_3/controllers/taskController.dart';
 import 'package:cortex_earth_3/widgets/task_tile.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../constants.dart';
+
 class TaskScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class TaskScreen extends GetWidget<AuthController> {
         onPressed: () {
           showCupertinoModalBottomSheet(
               expand: false,
-              barrierColor: Colors.black87,
+              barrierColor: barrierColor,
               context: context,
               builder: (context, scrollController) => Material(
                     child: TaskAddScreen(),

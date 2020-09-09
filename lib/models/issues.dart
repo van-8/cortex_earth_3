@@ -1,13 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cortex_earth_3/models/post.dart';
-import 'package:cortex_earth_3/models/project.dart';
-
+import 'package:flutter/foundation.dart';
 import 'user.dart';
 import 'tag.dart';
+import 'post.dart';
+import 'project.dart';
+import 'milestone.dart';
+import 'label.dart';
 
 class IssueModel {
   IssueModel({
-    this.title,
+    this.issueID,
+    @required this.title,
+    this.description,
     this.isOpen,
     this.templateDescription,
     this.author,
@@ -25,7 +29,9 @@ class IssueModel {
     this.posts,
   });
 
+  String issueID;
   String title;
+  String description;
   bool isOpen;
   String templateDescription;
   UserModel author;
@@ -41,5 +47,5 @@ class IssueModel {
   List<TagModel> tags;
   List<LabelModel> labels;
   List<PostModel> posts;
-  //notifications?
+  List<UserModel> participantsNotified;
 }

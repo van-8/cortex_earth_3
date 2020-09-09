@@ -108,6 +108,7 @@ class _PostActionBarState extends State<PostActionBar> {
                         'Task to \'Read this article\' added',
                         snackPosition: SnackPosition.BOTTOM,
                       )
+                    // ignore: unnecessary_statements
                     : null;
               }),
           IconButton(

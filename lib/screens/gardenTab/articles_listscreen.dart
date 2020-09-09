@@ -11,6 +11,8 @@ import 'package:cortex_earth_3/widgets/article_add.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:cortex_earth_3/widgets/filterbar.dart';
 
+import '../../constants.dart';
+
 class ArticlesListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class ArticlesListScreen extends GetWidget<AuthController> {
                               article: articleController.articles[index],
                               onTap: () {
                                 showCupertinoModalBottomSheet(
-                                    barrierColor: Colors.black87,
+                                    barrierColor: barrierColor,
                                     context: context,
                                     builder: (context, scrollController) =>
                                         ArticleDetailScreen(

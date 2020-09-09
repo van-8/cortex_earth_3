@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:mdi/mdi.dart';
-import 'dart:math' as math;
+// import 'dart:math' as math;
 
 import '../constants.dart';
 

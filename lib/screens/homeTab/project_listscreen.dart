@@ -9,6 +9,8 @@ import 'package:cortex_earth_3/widgets/project_tile.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_detail.dart';
 import 'package:cortex_earth_3/widgets/project_add.dart';
 
+import '../../constants.dart';
+
 class ProjectListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class ProjectListScreen extends GetWidget<AuthController> {
                         project: projectController.projects[index],
                         onTap: () {
                           showCupertinoModalBottomSheet(
-                              barrierColor: Colors.black87,
+                              barrierColor: barrierColor,
                               context: context,
                               builder: (context, scrollController) =>
                                   ProjectDetailScreen(
@@ -61,7 +63,7 @@ class ProjectListScreen extends GetWidget<AuthController> {
         ),
         onPressed: () {
           showCupertinoModalBottomSheet(
-              barrierColor: Colors.black87,
+              barrierColor: barrierColor,
               expand: false,
               context: context,
               builder: (context, scrollController) => ProjectAddScreen());

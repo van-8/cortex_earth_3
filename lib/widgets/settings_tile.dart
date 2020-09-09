@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 
-import '../constants.dart';
+// import '../constants.dart';
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
@@ -12,13 +12,17 @@ class SettingsTile extends StatelessWidget {
     this.onTap,
   });
 
-  /// A widget to display before the title.
-  ///
-  /// Typically an [Icon] or a [CircleAvatar] widget.
-  final Function onTap;
-  final String title;
-  final String subtitle;
+  /// An icon [IconData] to display before the title.
   final IconData leadingIcon;
+
+  /// [Function] Called when the user taps this list tile, inoperative if [enabled] is false.
+  final Function onTap;
+
+  /// The title [String] of the tile.
+  final String title;
+
+  /// A [String] to describe the tile in detail.
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +50,10 @@ class SettingsTile extends StatelessWidget {
                       ],
                     )),
                 Spacer(),
-                Icon(Mdi.chevronRight)
+                Icon(Mdi.chevronRight),
               ],
             )),
       ),
     );
   }
 }
-
-// ListTile(
-//           visualDensity: VisualDensity.comfortable,
-//           onTap: onTap,
-//           leading: leading,
-//           title: title,
-//           subtitle: subtitle,
-//           trailing: trailing,
-//         ),

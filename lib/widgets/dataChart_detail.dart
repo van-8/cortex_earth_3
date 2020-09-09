@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:bezier_chart/bezier_chart.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:cortex_earth_3/constants.dart';
 
 import 'action_bar.dart';
 import 'dataTable_detail.dart';
 
-class DataChartDetailScreen extends StatelessWidget {
+class DataChartDetailScreen extends StatefulWidget {
+  @override
+  _DataChartDetailScreenState createState() => _DataChartDetailScreenState();
+}
+
+class _DataChartDetailScreenState extends State<DataChartDetailScreen> {
+  RangeValues _currentRangeValues = RangeValues(20, 80);
+  double _minValue = 0;
+  double _maxValue = 100;
+  int _divisions = 5;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -88,15 +99,16 @@ class DataChartDetailScreen extends StatelessWidget {
               ),
             ),
             FlatButton(
-              onPressed: () {
-                showCupertinoModalBottomSheet(
-                    barrierColor: Colors.black54,
-                    expand: false,
-                    context: context,
-                    builder: (context, scrollController) => DataTableScreen());
-              },
-              child: Text('RAW DATA'),
-            ),
+                onPressed: () {
+                  showCupertinoModalBottomSheet(
+                      barrierColor: Colors.black54,
+                      expand: false,
+                      context: context,
+                      builder: (context, scrollController) =>
+                          DataTableScreen());
+                },
+                child: Text('Data Range')),
+            _buildSlider(),
             Container(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
               child:
@@ -110,5 +122,25 @@ class DataChartDetailScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildSlider() {
+    return Container(
+        child: RangeSlider(
+      values: _currentRangeValues,
+      min: _minValue,
+      max: _maxValue,
+      divisions: _divisions,
+      activeColor: kSliderActiveColor,
+      onChanged: (RangeValues values) {
+        setState(() {
+          _currentRangeValues = values;
+        });
+      },
+      labels: RangeLabels(
+        _currentRangeValues.start.round().toString(),
+        _currentRangeValues.end.round().toString(),
+      ),
+    ));
   }
 }

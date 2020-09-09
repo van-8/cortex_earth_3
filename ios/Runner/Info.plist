@@ -38,9 +38,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Recognize speech &amp; convert to text.</string>
+	<string>Press OK to allow.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Use of the microphone.</string>
+	<string>Press OK to allow.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

@@ -1,8 +1,11 @@
 import 'package:cortex_earth_3/widgets/dataChart_detail.dart';
 import 'package:cortex_earth_3/widgets/dataTable_detail.dart';
+import 'package:cortex_earth_3/widgets/data_beforeAfter.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/widgets/tag_list.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
+import '../../constants.dart';
 
 class DataListScreen extends StatelessWidget {
   @override
@@ -21,7 +24,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('J. Xing et al. / Genomics 2010'),
                   onTap: () {
                     showCupertinoModalBottomSheet(
-                        barrierColor: Colors.black54,
+                        barrierColor: barrierColor,
                         expand: false,
                         context: context,
                         builder: (context, scrollController) =>
@@ -34,7 +37,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('J. Xing et al. / Genomics 2010'),
                   onTap: () {
                     showCupertinoModalBottomSheet(
-                        barrierColor: Colors.black54,
+                        barrierColor: barrierColor,
                         expand: false,
                         context: context,
                         builder: (context, scrollController) =>
@@ -46,11 +49,23 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('JJ Wong et al. 2013'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
-                    //     barrierColor: Colors.black54,
+                    //     barrierColor: barrierColor,
                     //     expand: false,
                     //     context: context,
                     //     builder: (context, scrollController) =>
                     //         DataChartDetailScreen());
+                  },
+                ),
+                ListTile(
+                  title: Text('(2D Before/After) '),
+                  subtitle: Text('Van Yang 2020'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            DataBeforeAfterScreen());
                   },
                 ),
                 ListTile(
@@ -70,7 +85,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('VK Yang et al. 2020'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
-                    //     barrierColor: Colors.black54,
+                    //     barrierColor: barrierColor,
                     //     expand: false,
                     //     context: context,
                     //     builder: (context, scrollController) =>
@@ -82,7 +97,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('VK Yang et al. 2009'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
-                    //     barrierColor: Colors.black54,
+                    //     barrierColor: barrierColor,
                     //     expand: false,
                     //     context: context,
                     //     builder: (context, scrollController) =>
@@ -94,7 +109,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('Barrett et al. 2017'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
-                    //     barrierColor: Colors.black54,
+                    //     barrierColor: barrierColor,
                     //     expand: false,
                     //     context: context,
                     //     builder: (context, scrollController) =>
@@ -106,7 +121,7 @@ class DataListScreen extends StatelessWidget {
                   subtitle: Text('Sylvester et al. 2014'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
-                    //     barrierColor: Colors.black54,
+                    //     barrierColor: barrierColor,
                     //     expand: false,
                     //     context: context,
                     //     builder: (context, scrollController) =>

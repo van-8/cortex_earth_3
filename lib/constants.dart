@@ -48,3 +48,10 @@ const TextStyle kProjectTitle =
 // how to convert color value to string
 Color pickercolor = Color(0xff5EFFC0);
 int colorINT = pickercolor.value;
+
+//BottomSheet Contants
+
+const Color barrierColor = Colors.black87;
+
+// Slider
+Color kSliderActiveColor = Colors.blue;

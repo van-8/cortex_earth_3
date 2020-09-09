@@ -1,3 +1,5 @@
+import 'package:cortex_earth_3/widgets/settings_tile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -43,6 +45,19 @@ class ProfileTab extends GetWidget<AuthController> {
             },
           ),
         ],
+      ),
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SettingsTile(
+                leadingIcon: Icons.alarm_add,
+                title: 'Alarm',
+              ),
+              ListTile(),
+            ],
+          ),
+        ),
       ),
     );
   }

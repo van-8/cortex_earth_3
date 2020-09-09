@@ -302,7 +302,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   void _showPav() {
     showCupertinoModalBottomSheet(
         expand: false,
-        barrierColor: Colors.black87,
+        barrierColor: barrierColor,
         context: context,
         builder: (context, scrollController) => Material(
                 child: SynapseBottom(
@@ -316,7 +316,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   void _showWierz() {
     showCupertinoModalBottomSheet(
-        barrierColor: Colors.black87,
+        barrierColor: barrierColor,
         context: context,
         builder: (context, scrollController) => Material(
                 child: SynapseBottom(

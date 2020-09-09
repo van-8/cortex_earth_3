@@ -8,6 +8,8 @@ import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/cascadeController.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../constants.dart';
+
 class CascadesListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class CascadesListScreen extends GetWidget<AuthController> {
         ),
         onPressed: () {
           showCupertinoModalBottomSheet(
-              barrierColor: Colors.black87,
+              barrierColor: barrierColor,
               expand: false,
               context: context,
               builder: (context, scrollController) => CascadeAddScreen());
