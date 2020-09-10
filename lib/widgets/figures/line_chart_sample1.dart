@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:mdi/mdi.dart';
 
 class LineChartSample1 extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class LineChartSample1 extends StatefulWidget {
 
 class LineChartSample1State extends State<LineChartSample1> {
   bool isShowingMainData;
+  double labelFontSize = 10;
 
   @override
   void initState() {
@@ -32,38 +34,37 @@ class LineChartSample1State extends State<LineChartSample1> {
         ),
         child: SafeArea(
           child: AspectRatio(
-            aspectRatio: 1.23,
+            aspectRatio: .7,
             child: Container(
               child: Stack(
                 children: <Widget>[
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      const SizedBox(
-                        height: 37,
-                      ),
-                      const Text(
-                        'Unfold Shop 2018',
-                        style: TextStyle(
-                          color: Color(0xff827daa),
-                          fontSize: 16,
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                        child: Text(
+                          'Distance-Duration-Speed Relationships in the Hippocampus',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              // fontWeight: FontWeight.bold,
+                              letterSpacing: .5),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      const Text(
-                        'Monthly Sales',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(
-                        height: 37,
+                      IconButton(
+                        icon: Icon(
+                          Mdi.fitToPageOutline,
+                          color: Colors.white
+                              .withOpacity(isShowingMainData ? 1.0 : 0.5),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            isShowingMainData = !isShowingMainData;
+                          });
+                        },
                       ),
                       Expanded(
                         child: Padding(
@@ -76,23 +77,19 @@ class LineChartSample1State extends State<LineChartSample1> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      Container(
+                        padding: EdgeInsets.all(16),
+                        child: Text(
+                          'Idealized overlapping place fields of three place cells with identical theta oscillation frequency, illustrating the relationship between T and t. The relationship between distances of place fields and time offsets (t) shows a linear relationship within the theta timescale (100–160 ms).',
+                          style: TextStyle(
+                            color: Color(0xff827daa),
+                            fontSize: 14,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.refresh,
-                      color: Colors.white
-                          .withOpacity(isShowingMainData ? 1.0 : 0.5),
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        isShowingMainData = !isShowingMainData;
-                      });
-                    },
-                  )
                 ],
               ),
             ),
@@ -118,41 +115,41 @@ class LineChartSample1State extends State<LineChartSample1> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             color: Color(0xff72719b),
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: labelFontSize,
           ),
           margin: 10,
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
-                return 'SEPT';
+                return '0.4';
               case 7:
-                return 'OCT';
+                return '0.8';
               case 12:
-                return 'DEC';
+                return '1.2';
             }
             return '';
           },
         ),
         leftTitles: SideTitles(
           showTitles: true,
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             color: Color(0xff75729e),
             fontWeight: FontWeight.bold,
-            fontSize: 14,
+            fontSize: labelFontSize,
           ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '1m';
+                return '10ms';
               case 2:
-                return '2m';
+                return '20ms';
               case 3:
-                return '3m';
+                return '30ms';
               case 4:
-                return '5m';
+                return '50ms';
             }
             return '';
           },
@@ -272,43 +269,43 @@ class LineChartSample1State extends State<LineChartSample1> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             color: Color(0xff72719b),
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: labelFontSize,
           ),
           margin: 10,
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
-                return 'SEPT';
+                return '0.4';
               case 7:
-                return 'OCT';
+                return '0.8';
               case 12:
-                return 'DEC';
+                return '1.2';
             }
             return '';
           },
         ),
         leftTitles: SideTitles(
           showTitles: true,
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             color: Color(0xff75729e),
             fontWeight: FontWeight.bold,
-            fontSize: 14,
+            fontSize: labelFontSize,
           ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '1m';
+                return '1ms';
               case 2:
-                return '2m';
+                return '2ms';
               case 3:
-                return '3m';
+                return '3ms';
               case 4:
-                return '5m';
+                return '5ms';
               case 5:
-                return '6m';
+                return '6ms';
             }
             return '';
           },

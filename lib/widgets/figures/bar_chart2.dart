@@ -44,14 +44,12 @@ class BarChartSample2State extends State<BarChartSample2> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        color: const Color(0xff2c4260),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
+    return Material(
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: Container(
+          padding: EdgeInsets.all(16),
+          color: Color(0xff2c4260),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -67,15 +65,15 @@ class BarChartSample2State extends State<BarChartSample2> {
                     width: 38,
                   ),
                   const Text(
-                    'Transactions',
-                    style: TextStyle(color: Colors.white, fontSize: 22),
+                    'Task-phase',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const SizedBox(
                     width: 4,
                   ),
                   const Text(
-                    'state',
-                    style: TextStyle(color: Color(0xff77839a), fontSize: 16),
+                    'anchored sequences',
+                    style: TextStyle(color: Color(0xff77839a), fontSize: 12),
                   ),
                 ],
               ),

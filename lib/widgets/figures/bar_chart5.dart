@@ -17,14 +17,20 @@ class BarChartSample5State extends State<BarChartSample5> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: SafeArea(
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: const [
+              Color(0xff2c274c),
+              Color(0xff46426c),
+            ],
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          ),
+        ),
         child: AspectRatio(
           aspectRatio: 0.8,
-          child: Card(
-            elevation: 4,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-            color: const Color(0xff020227),
+          child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: BarChart(
@@ -116,7 +122,7 @@ class BarChartSample5State extends State<BarChartSample5> {
                         if (value == 0) {
                           return '0';
                         }
-                        return '${value.toInt()}0k';
+                        return '${value.toInt()}';
                       },
                       interval: 5,
                       margin: 8,

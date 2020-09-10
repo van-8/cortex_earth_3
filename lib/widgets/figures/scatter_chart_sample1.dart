@@ -13,10 +13,10 @@ class _ScatterChartSample1State extends State {
   final maxY = 50.0;
   final radius = 8.0;
 
-  Color blue1 = const Color(0xFF0D47A1);
-  Color blue2 = const Color(0xFF42A5F5).withOpacity(0.8);
+  Color blue1 = Colors.lightBlueAccent;
+  Color blue2 = Colors.purpleAccent;
 
-  bool showFlutter = true;
+  bool showFlutter = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,19 @@ class _ScatterChartSample1State extends State {
         });
       },
       child: AspectRatio(
-        aspectRatio: 1,
-        child: Card(
-          color: const Color(0xffffffff),
-          elevation: 6,
+        aspectRatio: .6,
+        child: Container(
+          decoration: BoxDecoration(
+            // borderRadius: const BorderRadius.all(Radius.circular(18)),
+            gradient: LinearGradient(
+              colors: const [
+                Color(0xff2c274c),
+                Color(0xff46426c),
+              ],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          ),
           child: ScatterChart(
             ScatterChartData(
               scatterSpots: showFlutter ? flutterLogoData() : randomData(),
