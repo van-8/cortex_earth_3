@@ -3,8 +3,8 @@ import 'package:bezier_chart/bezier_chart.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:cortex_earth_3/constants.dart';
 
-import 'action_bar.dart';
-import 'dataTable_detail.dart';
+import '../action_bar.dart';
+import '../figures/dataTable_detail.dart';
 
 class DataChartDetailScreen extends StatefulWidget {
   @override

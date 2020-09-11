@@ -27,7 +27,7 @@ class GardenTab extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text("Garden", style: TextStyle(color: Colors.black)),
+          title: Text("Garden", style: TextStyle(color: kGardenColor)),
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.more_horiz, color: kIconActiveColor),
@@ -37,9 +37,9 @@ class GardenTab extends StatelessWidget {
             preferredSize: Size(400, 30),
             child: Container(
               child: TabBar(
-                indicatorColor: kGardenTheme,
+                indicatorColor: kGardenColor,
                 isScrollable: true,
-                labelColor: kGardenTheme,
+                labelColor: kGardenColor,
                 tabs: _tabs.map((String ss) {
                   return Tab(text: ss);
                 }).toList(),

@@ -25,15 +25,18 @@ const TextStyle kArticleBodyTextSynapse =
 const TextStyle kListViewTitleStyle =
     TextStyle(color: Colors.black87, fontWeight: FontWeight.w300);
 
+const TextStyle kProjectCREDIT =
+    TextStyle(color: Colors.black87, fontWeight: FontWeight.w300, fontSize: 12);
+
+const TextStyle kProjectContributors =
+    TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 12);
+
 //Speech to Text
 const TextStyle kDictationAutohighlighter =
     TextStyle(fontSize: 10, color: Colors.grey);
 
 //Icons
 Color kIconActiveColor = Colors.grey[600];
-Color kHomeTheme = Colors.lightBlue;
-Color kGardenTheme = Colors.lightGreen[700];
-Color kWildsTheme = Colors.brown[600];
 
 //Posts
 const TextStyle kPostTitle = TextStyle(
@@ -45,13 +48,25 @@ const TextStyle kPostAuthor = TextStyle(fontSize: 12, color: Colors.black54);
 const TextStyle kPostContent = TextStyle(fontSize: 14, color: Colors.black87);
 
 //Projects
-const TextStyle kProjectTitle =
-    TextStyle(fontSize: 16, fontWeight: FontWeight.normal, letterSpacing: -1);
+const TextStyle kProjectTitle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    letterSpacing: -1,
+    color: Colors.black);
 
 //Colors
 // how to convert color value to string
 Color pickercolor = Color(0xff5EFFC0);
 int colorINT = pickercolor.value;
+
+Color kHomeColor = Colors.lightBlue;
+Color kGardenColor = Colors.lightGreen[700];
+Color kWildsColor = Colors.brown[600];
+
+LinearGradient kGradientGreenBlue = LinearGradient(
+    colors: [Colors.greenAccent, Colors.blueAccent],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight);
 
 //BottomSheet Contants
 

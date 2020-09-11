@@ -52,11 +52,13 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                             size: 14,
                           ),
                           SizedBox(width: 10),
-                          Text(
-                            widget.project.name,
-                            style: kProjectTitle,
+                          Expanded(
+                            child: Text(
+                              widget.project.name,
+                              style: kProjectTitle,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                          Spacer(),
                           IconButton(
                               icon: Icon(
                                 Icons.group_add,
@@ -100,7 +102,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               Container(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                    'Protocol of the project. Templates to auto-create tasks with dependencies. Can leave device next to you and dictate what you did, then edit afterwards. But now we shift into realm of ELN Electronic Lab Notebooks? '),
+                    'Protocol of the project. \n\nTemplates to auto-create tasks with dependencies? \n\nCan leave device next to you and dictate what you did, then edit afterwards. But now we shift into realm of ELN Electronic Lab Notebooks? '),
               ),
               DataListScreen(),
               SynapsesListScreen(),

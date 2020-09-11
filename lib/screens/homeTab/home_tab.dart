@@ -24,7 +24,7 @@ class HomeTab extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text("Home", style: TextStyle(color: Colors.black)),
+          title: Text("Home", style: TextStyle(color: kHomeColor)),
           actions: <Widget>[
             IconButton(
                 icon: Icon(

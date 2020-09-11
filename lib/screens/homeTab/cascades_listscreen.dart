@@ -45,11 +45,7 @@ class CascadesListScreen extends GetWidget<AuthController> {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                  colors: [Colors.greenAccent, Colors.blueAccent],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight)),
+              shape: BoxShape.circle, gradient: kGradientGreenBlue),
           child: Icon(Icons.add),
         ),
         onPressed: () {

@@ -23,7 +23,7 @@ class WildsTab extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text("Wilds", style: TextStyle(color: Colors.black)),
+          title: Text("Wilds", style: TextStyle(color: kWildsColor)),
           actions: <Widget>[
             IconButton(
                 icon: Icon(
@@ -36,8 +36,8 @@ class WildsTab extends StatelessWidget {
             preferredSize: Size(400, 30),
             child: Container(
               child: TabBar(
-                indicatorColor: kWildsTheme,
-                labelColor: kWildsTheme,
+                indicatorColor: kWildsColor,
+                labelColor: kWildsColor,
                 isScrollable: true,
                 tabs: _list.map((String ss) {
                   return Tab(text: ss);

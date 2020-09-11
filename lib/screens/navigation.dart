@@ -59,12 +59,12 @@ class _NavigationState extends State<Navigation> {
                 Mdi.compass,
                 20,
                 LinearGradient(
-                    colors: [Colors.brown[100], kWildsTheme],
+                    colors: [Colors.brown[100], kWildsColor],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight)),
             title: Text(
               'Wilds',
-              style: TextStyle(color: kWildsTheme),
+              style: TextStyle(color: kWildsColor),
             ),
           ),
           BottomNavigationBarItem(
@@ -73,12 +73,12 @@ class _NavigationState extends State<Navigation> {
                 Mdi.sproutOutline,
                 20,
                 LinearGradient(
-                    colors: [Colors.lightGreenAccent, kGardenTheme],
+                    colors: [Colors.lightGreenAccent, kGardenColor],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight)),
             title: Text(
               'Garden',
-              style: TextStyle(color: kGardenTheme),
+              style: TextStyle(color: kGardenColor),
             ),
           ),
           BottomNavigationBarItem(
@@ -92,18 +92,12 @@ class _NavigationState extends State<Navigation> {
                     end: Alignment.bottomRight)),
             title: Text(
               'Home',
-              style: TextStyle(color: kHomeTheme),
+              style: TextStyle(color: kHomeColor),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.magnify),
-            activeIcon: GradientIcon(
-                Mdi.searchWeb,
-                20,
-                LinearGradient(
-                    colors: [Colors.grey[200], Colors.black],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight)),
+            activeIcon: GradientIcon(Mdi.searchWeb, 20, kGradientGreenBlue),
             title: Text(
               'Search',
               style: TextStyle(color: Colors.grey),
@@ -111,13 +105,7 @@ class _NavigationState extends State<Navigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.hammerWrench),
-            activeIcon: GradientIcon(
-                Mdi.hammerWrench,
-                20,
-                LinearGradient(
-                    colors: [Colors.greenAccent, Colors.blueAccent],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight)),
+            activeIcon: GradientIcon(Mdi.hammerWrench, 20, kGradientGreenBlue),
             title: Text(
               'Tricorder',
               style: TextStyle(color: Colors.blueAccent),

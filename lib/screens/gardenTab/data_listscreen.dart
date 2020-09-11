@@ -1,5 +1,5 @@
-import 'package:cortex_earth_3/widgets/dataChart_detail.dart';
-import 'package:cortex_earth_3/widgets/dataTable_detail.dart';
+import 'package:cortex_earth_3/widgets/figures/dataChart_detail.dart';
+import 'package:cortex_earth_3/widgets/figures/dataTable_detail.dart';
 import 'package:cortex_earth_3/widgets/figures/figure_beforeAfter.dart';
 import 'package:cortex_earth_3/widgets/figures/bar_chart1.dart';
 import 'package:cortex_earth_3/widgets/figures/bar_chart2.dart';
