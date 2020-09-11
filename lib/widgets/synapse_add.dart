@@ -17,45 +17,47 @@ class SynapseAddScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildMainInput(),
-          _buildDetails(),
-          Row(
-            children: [
-              IconButton(
-                icon: Icon(Mdi.tag, color: kIconActiveColor),
-                onPressed: () {
-                  Get.snackbar('Tags pressed', 'ype ype');
-                },
-              ),
-              Spacer(),
-              FlatButton(
-                child: Text(
-                  'Create',
-                  style: TextStyle(color: Colors.blueAccent),
+      child: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildMainInput(),
+            _buildDetails(),
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Mdi.tag, color: kIconActiveColor),
+                  onPressed: () {
+                    Get.snackbar('Tags pressed', 'ype ype');
+                  },
                 ),
-                onPressed: () {
-                  if (_synapseContentController.text != '') {
-                    Database().addSynapse(
-                      controller.user.uid,
-                      _synapseContentController.text,
-                      int.parse(_synapselineNumberController.text),
-                      _synapseSourceDOIController.text,
-                    );
-                    _synapseContentController.clear();
-                    _synapselineNumberController.clear();
-                    _synapseSourceDOIController.clear();
-                  }
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).viewInsets.bottom,
-          )
-        ],
+                Spacer(),
+                FlatButton(
+                  child: Text(
+                    'Create',
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                  onPressed: () {
+                    if (_synapseContentController.text != '') {
+                      Database().addSynapse(
+                        controller.user.uid,
+                        _synapseContentController.text,
+                        int.parse(_synapselineNumberController.text),
+                        _synapseSourceDOIController.text,
+                      );
+                      _synapseContentController.clear();
+                      _synapselineNumberController.clear();
+                      _synapseSourceDOIController.clear();
+                    }
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
       ),
     );
   }

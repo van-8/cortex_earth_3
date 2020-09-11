@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cortex_earth_3/models/cascade.dart';
+import 'project.dart';
 import 'tag.dart';
 import 'user.dart';
 
@@ -11,6 +13,8 @@ class SynapseModel {
   UserModel correspondingAuthor;
   List<UserModel> contributors;
   List<TagModel> tags;
+  List<CascadeModel> cascadesLinked;
+  List<ProjectModel> projectsLinked;
 
   SynapseModel(
       {this.synapseID,

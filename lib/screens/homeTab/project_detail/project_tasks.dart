@@ -54,7 +54,7 @@ class _StickyHeaderList extends StatefulWidget {
   }) : super(key: key);
 
   final int index;
-  bool isDone;
+  final bool isDone;
 
   @override
   __StickyHeaderListState createState() => __StickyHeaderListState();

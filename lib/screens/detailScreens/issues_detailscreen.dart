@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class IssuesScreen extends StatelessWidget {
+class IssuesDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

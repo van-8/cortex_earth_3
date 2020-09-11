@@ -1,5 +1,6 @@
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/controllers/synapseController.dart';
+import 'package:cortex_earth_3/widgets/synapse_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -32,7 +33,16 @@ class SynapsesListScreen extends GetWidget<AuthController> {
                           return SynapseTile(
                             uid: controller.user.uid,
                             synapse: synapseController.synapses[index],
-                            onTap: () {},
+                            onTap: () {
+                              showCupertinoModalBottomSheet(
+                                  barrierColor: barrierColor,
+                                  context: context,
+                                  builder: (context, scrollController) =>
+                                      SynapseDetailScreen(
+                                        synapse:
+                                            synapseController.synapses[index],
+                                      ));
+                            },
                           );
                         },
                       ),

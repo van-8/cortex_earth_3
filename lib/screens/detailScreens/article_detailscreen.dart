@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:cortex_earth_3/widgets/article_synapsetile.dart';
 import 'package:mdi/mdi.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:cortex_earth_3/widgets/action_quick.dart';
 
 class ArticleDetailScreen extends StatefulWidget {
   final ArticleModel article;
@@ -102,7 +103,9 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                       widget.article.correspondingAuthor,
                       style: TextStyle(fontSize: 16),
                     )),
-                onTap: () {},
+                onTap: () {
+                  //TODO: add link to author Detail.
+                },
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
@@ -165,6 +168,12 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                 setState(() {
                   _isSynapsing = !_isSynapsing;
                 });
+              },
+              onDoubleTap: () {
+                Get.defaultDialog(
+                  title: 'QuickAction',
+                  content: QuickActionScreen(),
+                );
               },
               child: SingleChildScrollView(
                 child: _isSynapsing ? _buildSynapsing() : _buildReading(),
@@ -348,7 +357,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   }
 
   final List<String> entries = <String>[
-    'We begin not with mental categories but with the structure and function of the brain, and from there deduce what the biological basis of emotions might be. The answer, I suggest, will look something like the theory of constructed emotion (Barrett, 2017), formerly, the con- ceptual act theory of emotion (Barrett, 2006b, 2011a, 2012, 2013, 2014).',
+    'We begin not with mental categories but with the structure and function of the brain, and from there deduce what the biological basis of emotions might be. The answer, I suggest, will look something like the theory of constructed emotion (Barrett, 2017), formerly, the conceptual act theory of emotion (Barrett, 2006b, 2011a, 2012, 2013, 2014).',
     'For a brain to effectively regulate its body in the world, it runs an internal model of that body in the world.',
     'As an animal\'s integrated physiological state changes constantly throughout the day, its immediate past determines the aspects of the sensory world that concern the animal in the present, which in turn influences what its niche will contain in the immediate future.',
   ];

@@ -1,5 +1,6 @@
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/services/database.dart';
+// import 'package:cortex_earth_3/widgets/speech2text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
@@ -47,7 +48,12 @@ class TaskAddScreen extends GetWidget<AuthController> {
               color: Colors.blueAccent,
             ),
             onPressed: () {
-              Get.snackbar('Dictation Mode', 'speak your message');
+              Get.defaultDialog(
+                  title: 'Task Dictation',
+                  content: Text('yeah now whatever'),
+                  textCancel: 'Cancel',
+                  textConfirm: 'Confirm',
+                  confirmTextColor: Colors.white);
             },
           ),
         ],

@@ -1,4 +1,4 @@
-import 'package:cortex_earth_3/screens/gardenTab/article_detailscreen.dart';
+import 'package:cortex_earth_3/screens/detailScreens/article_detailscreen.dart';
 import 'package:cortex_earth_3/widgets/article_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

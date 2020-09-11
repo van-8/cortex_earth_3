@@ -31,12 +31,15 @@ class SynapseTile extends StatelessWidget {
               // overflow: TextOverflow.ellipsis,
               // maxLines: 6,
             ),
+            SizedBox(height: 10),
             Container(
               child: Row(
                 children: [
-                  Text(
-                    synapse.sourceDOI,
-                    style: kSynapseTileSubtitle,
+                  Expanded(
+                    child: Text(
+                      synapse.sourceDOI,
+                      style: kSynapseTileSubtitle,
+                    ),
                   ),
                   SizedBox(
                     width: 10,

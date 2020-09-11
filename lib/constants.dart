@@ -25,6 +25,10 @@ const TextStyle kArticleBodyTextSynapse =
 const TextStyle kListViewTitleStyle =
     TextStyle(color: Colors.black87, fontWeight: FontWeight.w300);
 
+//Speech to Text
+const TextStyle kDictationAutohighlighter =
+    TextStyle(fontSize: 10, color: Colors.grey);
+
 //Icons
 Color kIconActiveColor = Colors.grey[600];
 Color kHomeTheme = Colors.lightBlue;

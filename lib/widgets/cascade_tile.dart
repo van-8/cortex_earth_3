@@ -31,7 +31,7 @@ class CascadeTile extends StatelessWidget {
         style: kListViewTitleStyle,
       ),
       // trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
-      leading: Icon(Mdi.playlistPlay),
+      leading: Icon(Mdi.playlistPlus),
     );
   }
 }
