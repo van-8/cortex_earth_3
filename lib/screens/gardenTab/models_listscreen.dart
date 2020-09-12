@@ -6,3 +6,7 @@ class ModelsListScreen extends StatelessWidget {
     return Container();
   }
 }
+
+/// find a 3 equations in neuroscience.
+
+///How a synapse works? animation for it.

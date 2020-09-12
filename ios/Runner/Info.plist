@@ -43,6 +43,8 @@
 	<string>Press OK to allow.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Press OK to allow.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Press OK to allow.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
