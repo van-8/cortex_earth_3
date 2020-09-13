@@ -61,7 +61,10 @@ int colorINT = pickercolor.value;
 
 Color kHomeColor = Colors.lightBlue;
 Color kGardenColor = Colors.lightGreen[700];
-Color kWildsColor = Colors.brown[600];
+Color kWildsColor = Colors.brown[800];
+Color kNephronColor = Colors.brown[800];
+Color kNephronUnselectedColor = Colors.white;
+Color kNephronPressedColor = Colors.brown[300];
 
 LinearGradient kGradientGreenBlue = LinearGradient(
     colors: [Colors.greenAccent, Colors.blueAccent],

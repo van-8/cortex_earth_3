@@ -8,6 +8,8 @@ import 'package:cortex_earth_3/controllers/nephronController.dart';
 import 'package:cortex_earth_3/widgets/nephron_tile.dart';
 import 'package:cortex_earth_3/widgets/nephron_add.dart';
 
+import 'nephron_detail.dart';
+
 class NephronScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
@@ -26,15 +28,15 @@ class NephronScreen extends GetWidget<AuthController> {
                       return NephronTile(
                         uid: controller.user.uid,
                         nephron: nephronController.nephrons[index],
-                        // onTap: () {
-                        //   showCupertinoModalBottomSheet(
-                        //       barrierColor: Colors.black87,
-                        //       context: context,
-                        //       builder: (context, scrollController) =>
-                        //           NephronDetailScreen(
-                        //             project: nephronController.nephrons[index],
-                        //           ));
-                        // },
+                        onTap: () {
+                          showCupertinoModalBottomSheet(
+                              barrierColor: Colors.black87,
+                              context: context,
+                              builder: (context, scrollController) =>
+                                  NephronDetailScreen(
+                                    nephron: nephronController.nephrons[index],
+                                  ));
+                        },
                       );
                     },
                   ),
