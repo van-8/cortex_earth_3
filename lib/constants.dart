@@ -31,6 +31,9 @@ const TextStyle kProjectCREDIT =
 const TextStyle kProjectContributors =
     TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 12);
 
+//Flock Add Text Size
+const TextStyle kFlockAddTextsize = TextStyle(fontSize: 10, color: Colors.grey);
+
 //Speech to Text
 const TextStyle kDictationAutohighlighter =
     TextStyle(fontSize: 10, color: Colors.grey);
@@ -46,6 +49,13 @@ const TextStyle kPostTitle = TextStyle(
     color: Colors.black54);
 const TextStyle kPostAuthor = TextStyle(fontSize: 12, color: Colors.black54);
 const TextStyle kPostContent = TextStyle(fontSize: 14, color: Colors.black87);
+
+//Nephron
+TextStyle kNephronTileEfferentDays =
+    TextStyle(fontSize: 12, color: Colors.grey[700]);
+
+TextStyle kNephronTileEfferentDaysOverdue =
+    TextStyle(fontSize: 12, color: Colors.red[300]);
 
 //Projects
 const TextStyle kProjectTitle = TextStyle(

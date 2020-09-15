@@ -24,7 +24,7 @@ class NephronDetailScreen extends StatefulWidget {
 }
 
 class _NephronDetailScreenState extends State<NephronDetailScreen> {
-  int _tabIndex = 4;
+  int _tabIndex = 0;
 
   final List<String> _tabs = [
     'Admin',
@@ -32,7 +32,6 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
     'Efferent',
     'Accepted',
     'Feed',
-    'Working Groups',
     'Flocks',
     'Events',
   ];
@@ -118,7 +117,6 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
               NephronAfferentScreen(),
               NephronEfferentScreen(),
               NephronAcceptedScreen(),
-              FeedScreen(),
               FlocksScreen(),
               ArticlesListScreen(),
               ArticlesListScreen(),

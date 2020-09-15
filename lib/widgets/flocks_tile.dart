@@ -1,30 +1,29 @@
+import 'package:cortex_earth_3/models/flock.dart';
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:mdi/mdi.dart';
-// import 'dart:math' as math;
 
 import '../constants.dart';
 
-class NephronTile extends StatelessWidget {
+class FlocksTile extends StatelessWidget {
   final String uid;
-  final NephronModel nephron;
+  final FlockModel flock;
   final Function onTap;
   final Function longPressCallback;
 
-  const NephronTile({
+  const FlocksTile({
     Key key,
     this.uid,
-    this.nephron,
+    this.flock,
     this.onTap,
     this.longPressCallback,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    int iconMdiCodepoint = int.parse(nephron.iconMdiCodepoint);
+    int iconMdiCodepoint = int.parse(flock.iconMdiCodepoint);
     return ListTile(
       title: Text(
-        nephron.name,
+        flock.name,
         style: kListViewTitleStyle,
       ),
       leading: Icon(MdiIconData(iconMdiCodepoint)),
@@ -32,9 +31,9 @@ class NephronTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(nephron.subscriberCount.toString()),
-          Text('SUBSCRIBERS',
-              style: TextStyle(fontSize: 7, color: Colors.grey)),
+          Text(flock.memberCount.toString()),
+          Text(flock.nickname,
+              style: TextStyle(fontSize: 9, color: Colors.grey)),
         ],
       ),
       onTap: onTap,

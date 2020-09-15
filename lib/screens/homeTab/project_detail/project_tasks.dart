@@ -25,17 +25,13 @@ class ProjectTasks extends StatelessWidget {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                  colors: [Colors.greenAccent, Colors.blueAccent],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight)),
+              shape: BoxShape.circle, gradient: kGradientGreenBlue),
           child: Icon(Icons.add),
         ),
         onPressed: () {
           showCupertinoModalBottomSheet(
               expand: false,
-              barrierColor: Colors.black87,
+              barrierColor: barrierColor,
               context: context,
               builder: (context, scrollController) => Material(
                     child: TaskAddScreen(),
@@ -57,10 +53,10 @@ class _StickyHeaderList extends StatefulWidget {
   final bool isDone;
 
   @override
-  __StickyHeaderListState createState() => __StickyHeaderListState();
+  _StickyHeaderListState createState() => _StickyHeaderListState();
 }
 
-class __StickyHeaderListState extends State<_StickyHeaderList> {
+class _StickyHeaderListState extends State<_StickyHeaderList> {
   @override
   Widget build(BuildContext context) {
     return SliverStickyHeader(

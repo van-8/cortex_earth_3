@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
+import 'package:cortex_earth_3/models/flock.dart';
 import 'package:cortex_earth_3/models/nephron.dart';
 import 'package:cortex_earth_3/models/post.dart';
 import 'package:cortex_earth_3/models/project.dart';
@@ -447,6 +448,57 @@ class Database {
       List<NephronModel> retVal = List();
       query.documents.forEach((element) {
         retVal.add(NephronModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> addFlock(
+    String uid,
+    String name,
+    String about,
+    int memberCount,
+    String nickname,
+    String iconMdiCodepoint,
+    // List<UserModel> contributors,
+    // List<TagModel> tags,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("flocks")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'name': name,
+        'about': about,
+        'memberCount': memberCount,
+        'nickname': nickname,
+        'iconMdiCodepoint': iconMdiCodepoint,
+        // 'researchOrganism': researchOrganism,
+        // 'correspondingAuthor': correspondingAuthor,
+        // 'keyFigureURL': keyFigureURL,
+        // 'sourceDOI': sourceDOI,
+        // 'content': content,
+        // 'type': type,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<FlockModel>> flockStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("flocks")
+        .orderBy("memberCount", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<FlockModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(FlockModel.fromDocumentSnapshot(element));
       });
       return retVal;
     });

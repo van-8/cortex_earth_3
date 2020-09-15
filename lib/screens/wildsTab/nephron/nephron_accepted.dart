@@ -70,8 +70,8 @@ class NephronAccepted extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Paper accepted, ready to be affirmed and released to the feed.'),
-        Text('Other stuff'),
+        Text(
+            'Paper accepted, \nready to be affirmed (instead of published?) and released to the feed.'),
       ],
     );
   }

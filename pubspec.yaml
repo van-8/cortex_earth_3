@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^3.4.4
+  get: ^3.10.2
   http: ^0.12.2
   firebase_auth: ^0.16.1
   cloud_firestore: ^0.13.7
@@ -47,6 +47,7 @@ dependencies:
   flappy_search_bar: ^1.7.2
   camera: ^0.5.8+5
   intl: ^0.16.1
+  english_words: ^3.1.5
   # firebase_ml_vision: ^0.9.6+2
   # lite_rolling_switch: ^0.1.1    Switch toggle on/off 
   # showcaseview: ^0.1.6   Showcase: creates a mini-tutorial highlighting parts of the app.

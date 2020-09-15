@@ -72,8 +72,20 @@ class NephronEfferentReviewing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Manuscript in hands of Reviewers'),
-        Text('Help reviewers?'),
+        Text(
+          'Manuscript in hands of Reviewers',
+          style: kSynapseTileSubtitle,
+        ),
+        ListTile(
+            title: Text(
+                'Finite scale of spatial representation in the hippocampus'),
+            subtitle: Text('Kjelstrup, K.B. et al.'),
+            trailing: Text('3w', style: kNephronTileEfferentDays)),
+        ListTile(
+            title: Text(
+                'Phase precession and phase-locking of hippocampal pyrmadial cells'),
+            subtitle: Text('Jones, M.W. and Wilson, M.A.'),
+            trailing: Text('5w', style: kNephronTileEfferentDaysOverdue)),
       ],
     );
   }
@@ -88,8 +100,16 @@ class NephronEfferentRevising extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Manuscripts in Revision by author'),
-        Text('Offer help?'),
+        Text('Manuscripts in hands of author', style: kSynapseTileSubtitle),
+        ListTile(
+            title: Text('Organization of cell assemblies in the hippocampus'),
+            subtitle: Text('Harris, K.D. et al.'),
+            trailing: Text('2w', style: kNephronTileEfferentDays)),
+        ListTile(
+            title: Text(
+                'Multi-plexed oscillations and phase-rate coding in the basal brain'),
+            subtitle: Text('Tingley, D. et al'),
+            trailing: Text('6w', style: kNephronTileEfferentDaysOverdue)),
       ],
     );
   }
