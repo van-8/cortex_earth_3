@@ -251,7 +251,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                     ') such as anger, sadness, fear, and disgust, and search for their elusive biological essences (i.e. their neural signatures or fingerprints), usually in subcortical regions. This inductive approach assumes that the emotion categories we experience and perceive as distinct must also be distinct in nature.'),
           ],
         )),
-        ImageCarousel(),
+        FigureImageCarousel(),
         Text(
             'If the history of science has taught us anything, however, it is that human experiences rarely reveal the way that the nat- ural world works: ‘Physical concepts are free creations of the human mind, and are not; however, it may seem, uniquely determined by the external world’ (Einstein et al., 1938, p. 33). The last two decades of neuroscience research have brought us to the brink of a paradigm shift in understanding the workings of the brain, setting the stage to revolutionize our study of emo- tions (or any mental category). So in this article, we turn the typical inductive approach on its head. We begin not with men- tal categories but with the structure and function of the brain, and from there deduce what the biological basis of emotions might be. The answer, I suggest, will look something like the theory of constructed emotion (Barrett, 2017), formerly, the con- ceptual act theory of emotion (Barrett, 2006b, 2011a, 2012, 2013, 2014).'),
       ],

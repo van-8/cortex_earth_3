@@ -33,7 +33,7 @@ class FlocksScreen extends GetWidget<AuthController> {
                               barrierColor: Colors.black87,
                               context: context,
                               builder: (context, scrollController) =>
-                                  FlockDetail(
+                                  FlockDetailScreen(
                                     flock: flockController.flocks[index],
                                   ));
                         },

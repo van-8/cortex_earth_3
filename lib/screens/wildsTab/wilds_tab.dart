@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'feed_screen.dart';
 import 'frolic_screen.dart';
-import 'flocks_screen.dart';
+import 'flocks/flocks_screen.dart';
 import 'nephron/nephron_screen.dart';
 
 class WildsTab extends StatelessWidget {

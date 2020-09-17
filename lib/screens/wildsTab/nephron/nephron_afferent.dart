@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/detailScreens/manuscript_detailscreen.dart';
 import 'package:cortex_earth_3/widgets/settings_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,7 @@ import 'package:cortex_earth_3/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:mdi/mdi.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class NephronAfferentScreen extends StatefulWidget {
   @override
@@ -90,10 +92,7 @@ class NephronAfferentInitial extends StatelessWidget {
                     Mdi.arrowLeftBoldHexagonOutline,
                     color: Colors.grey,
                   ),
-                  onPressed: () {
-                    Get.snackbar('Reject Manuscript',
-                        'Input a message, template provided, confirm');
-                  }),
+                  onPressed: () {}),
               SizedBox(width: 30),
               Icon(
                 Mdi.arrowRightBoldBoxOutline,
@@ -101,7 +100,14 @@ class NephronAfferentInitial extends StatelessWidget {
               ),
             ],
           ),
-          onTap: () {},
+          onTap: () {
+            showCupertinoModalBottomSheet(
+                expand: false,
+                barrierColor: barrierColor,
+                context: context,
+                builder: (context, scrollController) =>
+                    ManuscriptDetailScreen());
+          },
         ),
         ListTile(
             title: Text(

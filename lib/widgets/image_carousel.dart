@@ -8,14 +8,14 @@ import 'package:cortex_earth_3/constants.dart';
 
 import 'action_bar.dart';
 
-class ImageCarousel extends StatefulWidget {
+class FigureImageCarousel extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _ImageCarouselState();
+    return _FigureImageCarouselState();
   }
 }
 
-class _ImageCarouselState extends State<ImageCarousel> {
+class _FigureImageCarouselState extends State<FigureImageCarousel> {
   int _current = 0;
 
   @override

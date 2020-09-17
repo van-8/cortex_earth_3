@@ -1,38 +1,36 @@
-import 'package:cortex_earth_3/screens/gardenTab/articles_listscreen.dart';
-import 'package:cortex_earth_3/screens/wildsTab/flocks/flocks_screen.dart';
-import 'package:cortex_earth_3/screens/wildsTab/nephron/nephron_accepted.dart';
-import 'package:cortex_earth_3/screens/wildsTab/nephron/nephron_admin.dart';
-import 'package:cortex_earth_3/screens/wildsTab/nephron/nephron_afferent.dart';
-import 'package:cortex_earth_3/screens/wildsTab/nephron/nephron_efferent.dart';
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/models/nephron.dart';
+import 'package:cortex_earth_3/models/flock.dart';
 import 'package:cortex_earth_3/constants.dart';
 import 'package:mdi/mdi.dart';
 import 'package:get/get.dart';
 
-class NephronDetailScreen extends StatefulWidget {
-  final NephronModel nephron;
+import 'flock_info.dart';
+import 'flock_cascades.dart';
+import 'flock_chat.dart';
+import 'flock_meetings.dart';
+import 'flock_members.dart';
 
-  const NephronDetailScreen({
+class FlockDetailScreen extends StatefulWidget {
+  final FlockModel flock;
+
+  const FlockDetailScreen({
     Key key,
-    this.nephron,
+    this.flock,
   }) : super(key: key);
 
   @override
-  _NephronDetailScreenState createState() => _NephronDetailScreenState();
+  _FlockDetailScreenState createState() => _FlockDetailScreenState();
 }
 
-class _NephronDetailScreenState extends State<NephronDetailScreen> {
-  int _tabIndex = 0;
+class _FlockDetailScreenState extends State<FlockDetailScreen> {
+  int _tabIndex = 2;
 
   final List<String> _tabs = [
-    'Admin',
-    'Afferent',
-    'Efferent',
-    'Accepted',
-    'Feed',
-    'Flocks',
-    'Events',
+    'Members',
+    'Cascades',
+    'Info',
+    'Chat',
+    'Meetings',
   ];
 
   @override
@@ -54,14 +52,14 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                       child: Row(
                         children: [
                           Icon(
-                            Mdi.shieldAccount,
+                            Mdi.lockOpen,
                             color: Colors.black,
                             size: 14,
                           ),
                           SizedBox(width: 10),
                           Expanded(
                             child: Text(
-                              widget.nephron.name,
+                              widget.flock.name,
                               style: kProjectTitle,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -76,12 +74,12 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                               }),
                           IconButton(
                               icon: Icon(
-                                Icons.info_outline,
+                                Mdi.share,
                                 color: kIconActiveColor,
                               ),
                               onPressed: () {
-                                Get.snackbar(
-                                    'Nephron Info', 'About, history, etc...');
+                                Get.snackbar('Flock Share',
+                                    'Email, msg, QRCode to scan');
                               }),
                           IconButton(
                               icon: Icon(
@@ -89,7 +87,7 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                                 color: kIconActiveColor,
                               ),
                               onPressed: () {
-                                Get.snackbar('Nephron Settings', 'popup menu');
+                                Get.snackbar('Flock Settings', 'popup menu');
                               }),
                         ],
                       ),
@@ -112,13 +110,11 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
           ),
           body: TabBarView(
             children: <Widget>[
-              NephronAdminScreen(),
-              NephronAfferentScreen(),
-              NephronEfferentScreen(),
-              NephronAcceptedScreen(),
-              ArticlesListScreen(),
-              FlocksScreen(),
-              ArticlesListScreen(),
+              FlockMembersScreen(),
+              FlockCascadesScreen(),
+              FlockInfoScreen(),
+              FlockChatScreen(),
+              FlockMeetingsScreen(),
             ],
           ),
         ),
