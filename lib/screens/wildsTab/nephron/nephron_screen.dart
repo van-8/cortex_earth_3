@@ -8,6 +8,7 @@ import 'package:cortex_earth_3/controllers/nephronController.dart';
 import 'package:cortex_earth_3/widgets/nephron_tile.dart';
 import 'package:cortex_earth_3/widgets/nephron_add.dart';
 
+import '../../../constants.dart';
 import 'nephron_detail.dart';
 
 class NephronScreen extends GetWidget<AuthController> {
@@ -53,11 +54,7 @@ class NephronScreen extends GetWidget<AuthController> {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                  colors: [Colors.greenAccent, Colors.blueAccent],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight)),
+              shape: BoxShape.circle, gradient: kGradientBrownTan),
           child: Icon(Icons.add),
         ),
         onPressed: () {

@@ -55,13 +55,7 @@ class _NavigationState extends State<Navigation> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Mdi.compassOutline),
-            activeIcon: GradientIcon(
-                Mdi.compass,
-                20,
-                LinearGradient(
-                    colors: [Colors.brown[100], kWildsColor],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight)),
+            activeIcon: GradientIcon(Mdi.compass, 20, kGradientBrownTan),
             title: Text(
               'Wilds',
               style: TextStyle(color: kWildsColor),
@@ -82,7 +76,7 @@ class _NavigationState extends State<Navigation> {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Mdi.homeLightbulbOutline),
+            icon: Icon(Mdi.homeAccount),
             activeIcon: GradientIcon(
                 Mdi.homeAccount,
                 20,

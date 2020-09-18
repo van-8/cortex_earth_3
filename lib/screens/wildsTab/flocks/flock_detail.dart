@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/flock.dart';
 import 'package:cortex_earth_3/constants.dart';
@@ -8,7 +9,6 @@ import 'flock_info.dart';
 import 'flock_cascades.dart';
 import 'flock_chat.dart';
 import 'flock_meetings.dart';
-import 'flock_members.dart';
 
 class FlockDetailScreen extends StatefulWidget {
   final FlockModel flock;
@@ -23,13 +23,12 @@ class FlockDetailScreen extends StatefulWidget {
 }
 
 class _FlockDetailScreenState extends State<FlockDetailScreen> {
-  int _tabIndex = 2;
+  int _tabIndex = 1;
 
   final List<String> _tabs = [
-    'Members',
-    'Cascades',
-    'Info',
     'Chat',
+    'Info',
+    'Cascades',
     'Meetings',
   ];
 
@@ -51,11 +50,6 @@ class _FlockDetailScreenState extends State<FlockDetailScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 14),
                       child: Row(
                         children: [
-                          Icon(
-                            Mdi.lockOpen,
-                            color: Colors.black,
-                            size: 14,
-                          ),
                           SizedBox(width: 10),
                           Expanded(
                             child: Text(
@@ -65,27 +59,16 @@ class _FlockDetailScreenState extends State<FlockDetailScreen> {
                             ),
                           ),
                           IconButton(
-                              icon: Icon(
-                                Mdi.magnify,
-                                color: kIconActiveColor,
-                              ),
-                              onPressed: () {
-                                Get.snackbar('Search', 'Find anything here...');
-                              }),
+                            icon: GradientIcon(
+                                Mdi.accountLock, 25, kGradientBrownTan),
+                            onPressed: () {
+                              Get.snackbar('Group Settings',
+                                  'Members List, privacy, invite, kick out, mods, share QR code, etc,');
+                            },
+                          ),
                           IconButton(
-                              icon: Icon(
-                                Mdi.share,
-                                color: kIconActiveColor,
-                              ),
-                              onPressed: () {
-                                Get.snackbar('Flock Share',
-                                    'Email, msg, QRCode to scan');
-                              }),
-                          IconButton(
-                              icon: Icon(
-                                Icons.more_horiz,
-                                color: kIconActiveColor,
-                              ),
+                              icon: GradientIcon(
+                                  Icons.more_horiz, 25, kGradientBrownTan),
                               onPressed: () {
                                 Get.snackbar('Flock Settings', 'popup menu');
                               }),
@@ -95,7 +78,7 @@ class _FlockDetailScreenState extends State<FlockDetailScreen> {
                   ),
                   TabBar(
                       indicatorColor: kWildsColor,
-                      isScrollable: true,
+                      isScrollable: false,
                       labelStyle: kArticleTabbarLabel,
                       labelColor: kWildsColor,
                       labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
@@ -110,10 +93,9 @@ class _FlockDetailScreenState extends State<FlockDetailScreen> {
           ),
           body: TabBarView(
             children: <Widget>[
-              FlockMembersScreen(),
-              FlockCascadesScreen(),
-              FlockInfoScreen(),
               FlockChatScreen(),
+              FlockInfoScreen(),
+              FlockCascadesScreen(),
               FlockMeetingsScreen(),
             ],
           ),

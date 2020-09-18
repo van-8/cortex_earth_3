@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/detailScreens/cascade_detailscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -28,7 +29,16 @@ class CascadesListScreen extends GetWidget<AuthController> {
                       return CascadeTile(
                         uid: controller.user.uid,
                         cascade: cascadeController.cascades[index],
-                        onTap: () {},
+                        onTap: () {
+                          showCupertinoModalBottomSheet(
+                              barrierColor: barrierColor,
+                              expand: false,
+                              context: context,
+                              builder: (context, scrollController) =>
+                                  CascadeDetailScreen(
+                                    cascade: cascadeController.cascades[index],
+                                  ));
+                        },
                       );
                     },
                   ),

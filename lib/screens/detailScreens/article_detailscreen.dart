@@ -1,6 +1,6 @@
 import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/models/article.dart';
-import 'package:cortex_earth_3/widgets/action_bar.dart';
+import 'package:cortex_earth_3/widgets/actionbar.dart';
 import 'package:cortex_earth_3/widgets/image_carousel.dart';
 import 'package:cortex_earth_3/widgets/synapse_bottomsheet.dart';
 import 'package:flutter/gestures.dart';
@@ -191,11 +191,9 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                   width: 60,
                   height: 60,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                          colors: [Colors.greenAccent, Colors.blueAccent],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight)),
+                    shape: BoxShape.circle,
+                    gradient: kGradientGreenBlue,
+                  ),
                   child: Icon(Mdi.checkboxMarkedCircleOutline)))
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

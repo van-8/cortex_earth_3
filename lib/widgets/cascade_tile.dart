@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/cascade.dart';
 // import 'package:cortex_earth_3/constants.dart';
@@ -24,6 +25,7 @@ class CascadeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      visualDensity: VisualDensity.compact,
       onLongPress: longPressCallback,
       onTap: onTap,
       title: Text(
@@ -31,7 +33,7 @@ class CascadeTile extends StatelessWidget {
         style: kListViewTitleStyle,
       ),
       // trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
-      leading: Icon(Mdi.playlistPlus),
+      leading: GradientIcon((Mdi.playlistPlus), 25, kGradientGreenBlue),
     );
   }
 }

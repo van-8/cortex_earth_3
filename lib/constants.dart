@@ -38,9 +38,6 @@ const TextStyle kFlockAddTextsize = TextStyle(fontSize: 10, color: Colors.grey);
 const TextStyle kDictationAutohighlighter =
     TextStyle(fontSize: 10, color: Colors.grey);
 
-//Icons
-Color kIconActiveColor = Colors.grey[600];
-
 //Posts
 const TextStyle kPostTitle = TextStyle(
     fontSize: 16,
@@ -56,6 +53,9 @@ TextStyle kNephronTileEfferentDays =
 
 TextStyle kNephronTileEfferentDaysOverdue =
     TextStyle(fontSize: 12, color: Colors.red[300]);
+
+const TextStyle kManuscriptTimeline =
+    TextStyle(fontSize: 10, color: Colors.grey);
 
 //Projects
 const TextStyle kProjectTitle = TextStyle(
@@ -80,6 +80,14 @@ LinearGradient kGradientGreenBlue = LinearGradient(
     colors: [Colors.greenAccent, Colors.blueAccent],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight);
+
+LinearGradient kGradientBrownTan = LinearGradient(
+    colors: [Colors.brown[100], kWildsColor],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight);
+
+//Icons
+Color kIconActiveColor = Colors.grey[600];
 
 //BottomSheet Contants
 

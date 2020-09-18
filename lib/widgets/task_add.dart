@@ -1,5 +1,6 @@
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/services/database.dart';
+import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 // import 'package:cortex_earth_3/widgets/speech2text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,10 +44,7 @@ class TaskAddScreen extends GetWidget<AuthController> {
                   decoration: InputDecoration(
                       hintText: 'Task name...', border: InputBorder.none))),
           IconButton(
-            icon: Icon(
-              Mdi.microphone,
-              color: Colors.blueAccent,
-            ),
+            icon: GradientIcon(Icons.mic, 24, kGradientGreenBlue),
             onPressed: () {
               Get.defaultDialog(
                   title: 'Task Dictation',

@@ -53,7 +53,7 @@ class FlocksScreen extends GetWidget<AuthController> {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-              shape: BoxShape.circle, gradient: kGradientGreenBlue),
+              shape: BoxShape.circle, gradient: kGradientBrownTan),
           child: Icon(Icons.add),
         ),
         onPressed: () {

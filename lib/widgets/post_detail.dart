@@ -1,6 +1,8 @@
 import 'package:cortex_earth_3/models/post.dart';
+import 'package:cortex_earth_3/widgets/actionbar_post.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/constants.dart';
+import 'package:flutter/cupertino.dart';
 
 class PostDetail extends StatelessWidget {
   // final String authorID, title, content;
@@ -42,6 +44,11 @@ class PostDetail extends StatelessWidget {
                 post.content,
                 style: kPostContent,
               ))),
+              Container(
+                child: CupertinoTextField(),
+                margin: EdgeInsets.symmetric(vertical: 10),
+              ),
+              ActionBarPost(),
             ],
           ),
         ),

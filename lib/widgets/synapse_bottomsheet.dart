@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/constants.dart';
-import 'action_bar.dart';
+import 'actionbar.dart';
 
 class SynapseBottom extends StatelessWidget {
   final String title, author, content;
