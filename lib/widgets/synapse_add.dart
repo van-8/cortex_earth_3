@@ -13,6 +13,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
       TextEditingController();
   final TextEditingController _synapseSourceDOIController =
       TextEditingController();
+  final TextEditingController _synapseNotesController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildMainInput(),
+            _buildNotes(),
             _buildDetails(),
             Row(
               children: [
@@ -44,10 +46,12 @@ class SynapseAddScreen extends GetWidget<AuthController> {
                         _synapseContentController.text,
                         int.parse(_synapselineNumberController.text),
                         _synapseSourceDOIController.text,
+                        _synapseNotesController.text,
                       );
                       _synapseContentController.clear();
                       _synapselineNumberController.clear();
                       _synapseSourceDOIController.clear();
+                      _synapseNotesController.clear();
                     }
                   },
                 ),
@@ -73,6 +77,18 @@ class SynapseAddScreen extends GetWidget<AuthController> {
             keyboardType: TextInputType.multiline,
             decoration: InputDecoration(
                 hintText: 'Synapse text...', border: InputBorder.none)));
+  }
+
+  Widget _buildNotes() {
+    return Container(
+        padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
+        child: TextFormField(
+            autofocus: false,
+            maxLines: null,
+            controller: _synapseNotesController,
+            keyboardType: TextInputType.multiline,
+            decoration: InputDecoration(
+                hintText: 'Notes...', border: InputBorder.none)));
   }
 
   Widget _buildDetails() {

@@ -2,20 +2,18 @@ import 'package:cortex_earth_3/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_and_expandable_list/sticky_and_expandable_list.dart';
 
-class ListviewStickyExpandable extends StatefulWidget {
+class NephronAdminTasks extends StatefulWidget {
   @override
-  _ListviewStickyExpandableState createState() =>
-      _ListviewStickyExpandableState();
+  _NephronAdminTasksState createState() => _NephronAdminTasksState();
 }
 
-class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
+class _NephronAdminTasksState extends State<NephronAdminTasks> {
   var sectionList = _MockData.getExampleSections(6, 4);
 
   @override
   Widget build(BuildContext context) {
     return Material(
         child: Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
       child: ExpandableListView(
         builder: SliverExpandableChildDelegate<String, ExampleSection>(
           sectionList: sectionList,
@@ -25,7 +23,7 @@ class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
               visualDensity: VisualDensity.compact,
               leading: Container(
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle, gradient: kGradientGreenBlue),
+                    shape: BoxShape.circle, gradient: kGradientBrownTan),
                 child: CircleAvatar(
                   radius: 15,
                   child: Text("$index"),
@@ -103,7 +101,7 @@ class __SectionWidgetState extends State<_SectionWidget>
   Widget _buildHeader() {
     return Container(
       decoration: BoxDecoration(
-          gradient: kGradientGreenBlue,
+          gradient: kGradientBrownTan,
           borderRadius: BorderRadius.all(Radius.circular(3))),
       child: ListTile(
         visualDensity: VisualDensity.compact,
@@ -155,8 +153,8 @@ class _MockData {
     var sections = List<ExampleSection>();
     for (int i = 0; i < sectionSize; i++) {
       var section = ExampleSection()
-        ..header = "Header #$i"
-        ..items = List.generate(itemSize, (index) => "Cascade item $index")
+        ..header = "Work Group $i"
+        ..items = List.generate(itemSize, (index) => "Task $index")
         ..expanded = true;
       sections.add(section);
     }

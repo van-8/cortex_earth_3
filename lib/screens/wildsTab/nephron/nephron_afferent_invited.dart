@@ -2,22 +2,20 @@ import 'package:cortex_earth_3/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_and_expandable_list/sticky_and_expandable_list.dart';
 
-class ListviewStickyExpandable extends StatefulWidget {
+class NephronAfferentInvited extends StatefulWidget {
   @override
-  _ListviewStickyExpandableState createState() =>
-      _ListviewStickyExpandableState();
+  _NephronAfferentInvitedState createState() => _NephronAfferentInvitedState();
 }
 
-class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
-  var sectionList = _MockData.getExampleSections(6, 4);
+class _NephronAfferentInvitedState extends State<NephronAfferentInvited> {
+  var sectionList = _MockDataInvited.getExampleSections(6, 4);
 
   @override
   Widget build(BuildContext context) {
     return Material(
         child: Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
       child: ExpandableListView(
-        builder: SliverExpandableChildDelegate<String, ExampleSection>(
+        builder: SliverExpandableChildDelegate<String, _ExampleSectionInvited>(
           sectionList: sectionList,
           itemBuilder: (context, sectionIndex, itemIndex, index) {
             String item = sectionList[sectionIndex].items[itemIndex];
@@ -25,7 +23,7 @@ class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
               visualDensity: VisualDensity.compact,
               leading: Container(
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle, gradient: kGradientGreenBlue),
+                    shape: BoxShape.circle, gradient: kGradientBrownTan),
                 child: CircleAvatar(
                   radius: 15,
                   child: Text("$index"),
@@ -56,7 +54,7 @@ class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
 }
 
 class _SectionWidget extends StatefulWidget {
-  final ExampleSection section;
+  final _ExampleSectionInvited section;
   final ExpandableSectionContainerInfo containerInfo;
   final VoidCallback onStateChanged;
 
@@ -103,7 +101,7 @@ class __SectionWidgetState extends State<_SectionWidget>
   Widget _buildHeader() {
     return Container(
       decoration: BoxDecoration(
-          gradient: kGradientGreenBlue,
+          gradient: kGradientBrownTan,
           borderRadius: BorderRadius.all(Radius.circular(3))),
       child: ListTile(
         visualDensity: VisualDensity.compact,
@@ -147,16 +145,16 @@ class __SectionWidgetState extends State<_SectionWidget>
   }
 }
 
-class _MockData {
+class _MockDataInvited {
   ///return a example list, by default, we have 10 sections,
   ///each section has 5 items.
-  static List<ExampleSection> getExampleSections(
+  static List<_ExampleSectionInvited> getExampleSections(
       [sectionSize = 10, itemSize = 5]) {
-    var sections = List<ExampleSection>();
+    var sections = List<_ExampleSectionInvited>();
     for (int i = 0; i < sectionSize; i++) {
-      var section = ExampleSection()
-        ..header = "Header #$i"
-        ..items = List.generate(itemSize, (index) => "Cascade item $index")
+      var section = _ExampleSectionInvited()
+        ..header = "Keyword $i : Recommended reviewers"
+        ..items = List.generate(itemSize, (index) => "Manuscript $index")
         ..expanded = true;
       sections.add(section);
     }
@@ -168,7 +166,7 @@ class _MockData {
 ///
 ///Section model must implements ExpandableListSection<T>, each section has
 ///expand state, sublist. "T" is the model of each item in the sublist.
-class ExampleSection implements ExpandableListSection<String> {
+class _ExampleSectionInvited implements ExpandableListSection<String> {
   //store expand state.
   bool expanded;
   //return item model list.

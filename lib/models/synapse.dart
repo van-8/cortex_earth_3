@@ -9,6 +9,7 @@ class SynapseModel {
   String content;
   int lineNumber;
   String sourceDOI;
+  String notes;
   Timestamp dateCreated;
   UserModel correspondingAuthor;
   List<UserModel> contributors;
@@ -21,6 +22,7 @@ class SynapseModel {
       this.content,
       this.lineNumber,
       this.sourceDOI,
+      this.notes,
       this.dateCreated,
       this.correspondingAuthor,
       this.contributors,
@@ -34,5 +36,6 @@ class SynapseModel {
     content = documentSnapshot.data["content"];
     lineNumber = documentSnapshot.data["lineNumber"];
     sourceDOI = documentSnapshot.data["sourceDOI"];
+    notes = documentSnapshot.data["notes"];
   }
 }

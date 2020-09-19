@@ -276,6 +276,7 @@ class Database {
     String content,
     int lineNumber,
     String sourceDOI,
+    String notes,
   ) async {
     try {
       await _firestore
@@ -287,6 +288,7 @@ class Database {
         'content': content,
         'lineNumber': lineNumber,
         'sourceDOI': sourceDOI,
+        'notes': notes,
       });
     } catch (e) {
       print(e);

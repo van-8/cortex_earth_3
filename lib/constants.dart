@@ -82,7 +82,7 @@ LinearGradient kGradientGreenBlue = LinearGradient(
     end: Alignment.bottomRight);
 
 LinearGradient kGradientBrownTan = LinearGradient(
-    colors: [Colors.brown[100], kWildsColor],
+    colors: [Colors.brown[200], kWildsColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight);
 

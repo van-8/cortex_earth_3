@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 
 import '../constants.dart';
-import 'task_add.dart';
 
 class Speech2TextScreen extends StatefulWidget {
   @override
