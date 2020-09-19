@@ -97,7 +97,10 @@ class Database {
   // }
 
   Future<void> updateTaskisDone(
-      bool newValue, String uid, String taskId) async {
+    bool newValue,
+    String uid,
+    String taskId,
+  ) async {
     try {
       _firestore
           .collection("users")
@@ -105,6 +108,24 @@ class Database {
           .collection("tasks")
           .document(taskId)
           .updateData({"isDone": newValue});
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Future<void> updateTaskisPriority(
+    bool newValue,
+    String uid,
+    String taskId,
+  ) async {
+    try {
+      _firestore
+          .collection("users")
+          .document(uid)
+          .collection("tasks")
+          .document(taskId)
+          .updateData({"isPriority": newValue});
     } catch (e) {
       print(e);
       rethrow;

@@ -6,7 +6,7 @@ class TaskModel {
   String description;
   Timestamp dateCreated;
   bool isDone;
-  bool priority;
+  bool isPriority;
   // bool isMilestone;
   // bool needsApproval;
   // UserModel approver;
@@ -21,7 +21,7 @@ class TaskModel {
     this.description,
     this.dateCreated,
     this.isDone,
-    this.priority,
+    this.isPriority,
   });
 
   TaskModel.fromDocumentSnapshot(
@@ -32,6 +32,6 @@ class TaskModel {
     description = documentSnapshot.data["description"];
     dateCreated = documentSnapshot.data["dateCreated"];
     isDone = documentSnapshot.data["isDone"];
-    priority = documentSnapshot.data["priority"];
+    isPriority = documentSnapshot.data["isPriority"];
   }
 }

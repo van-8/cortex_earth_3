@@ -1,4 +1,5 @@
 import 'package:cortex_earth_3/controllers/authController.dart';
+import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 // import 'package:cortex_earth_3/widgets/speech2text.dart';
@@ -148,3 +149,22 @@ class TaskAddScreen extends GetWidget<AuthController> {
     );
   }
 }
+
+// class _PriorityButton extends StatefulWidget {
+//   @override
+//   __PriorityButtonState createState() => __PriorityButtonState();
+// }
+
+// class __PriorityButtonState extends State<_PriorityButton> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: IconButton(
+//         icon: Icon(Mdi.alertDecagramOutline, color: kIconActiveColor),
+//         onPressed: () {
+//           Get.snackbar('Priority pressed', ' ype');
+//         },
+//       ),
+//     );
+//   }
+// }

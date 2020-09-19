@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/widgets/figures/3d_figure.dart';
 import 'package:cortex_earth_3/widgets/figures/dataChart_detail.dart';
 import 'package:cortex_earth_3/widgets/figures/dataTable_detail.dart';
 import 'package:cortex_earth_3/widgets/figures/figure_beforeAfter.dart';
@@ -135,6 +136,18 @@ class DataListScreen extends StatelessWidget {
                   },
                 ),
                 ListTile(
+                  title: Text('(3D INTERACTIVE OBJECT) '),
+                  subtitle: Text('Lucas et al. 2013'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            Figure3DScreen());
+                  },
+                ),
+                ListTile(
                   title: Text('(2D ANIMATION) '),
                   subtitle: Text('Hank et al. 2011'),
                   onTap: () {
@@ -210,18 +223,6 @@ class DataListScreen extends StatelessWidget {
                 ListTile(
                   title: Text('(PACKAGE from JUPYTERLAB) '),
                   subtitle: Text('Sylvester et al. 2014'),
-                  onTap: () {
-                    // showCupertinoModalBottomSheet(
-                    //     barrierColor: barrierColor,
-                    //     expand: false,
-                    //     context: context,
-                    //     builder: (context, scrollController) =>
-                    //         DataChartDetailScreen());
-                  },
-                ),
-                ListTile(
-                  title: Text('(3D INTERACTIVE OBJECT) '),
-                  subtitle: Text('JJ Wong et al. 2013'),
                   onTap: () {
                     // showCupertinoModalBottomSheet(
                     //     barrierColor: barrierColor,

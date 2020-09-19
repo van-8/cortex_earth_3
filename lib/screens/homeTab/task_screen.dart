@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/widgets/task_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -28,7 +29,15 @@ class TaskScreen extends GetWidget<AuthController> {
                       return TaskTile(
                         uid: controller.user.uid,
                         task: taskController.tasks[index],
-                        onTap: () {},
+                        onTap: () {
+                          showCupertinoModalBottomSheet(
+                              barrierColor: barrierColor,
+                              context: context,
+                              builder: (context, scrollController) =>
+                                  TaskDetailScreen(
+                                    task: taskController.tasks[index],
+                                  ));
+                        },
                       );
                     },
                   ),

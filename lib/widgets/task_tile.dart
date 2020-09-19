@@ -62,18 +62,3 @@ class TaskTile extends StatelessWidget {
     );
   }
 }
-
-// ListTile(
-//       onLongPress: longPressCallback,
-//       onTap: onTap,
-//       title: Text(
-//         task.content,
-//         style: TextStyle(
-//             decoration: task.isDone ? TextDecoration.lineThrough : null),
-//       ),
-//       leading: Checkbox(
-//           value: task.isDone,
-//           onChanged: (newValue) {
-//             Database().completeTask(newValue, uid, task.taskID);
-//           }),
-//     );

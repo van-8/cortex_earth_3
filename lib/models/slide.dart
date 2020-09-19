@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/post.dart';
-import 'package:cortex_earth_3/models/tag.dart';
+// import 'package:cortex_earth_3/models/tag.dart';
 import 'package:flutter/material.dart';
 
 enum SlideDisplayType { TEXT, OBSERVATION, MIXED }
