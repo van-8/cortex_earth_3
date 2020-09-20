@@ -3,6 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:cortex_earth_3/constants.dart';
 
+import 'nephron_efferent_decision.dart';
+import 'nephron_efferent_revision.dart';
+import 'nephron_efferent_review.dart';
+
 class NephronEfferentScreen extends StatefulWidget {
   @override
   _NephronEfferentScreenState createState() => _NephronEfferentScreenState();
@@ -59,75 +63,6 @@ class _NephronEfferentScreenState extends State<NephronEfferentScreen> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class NephronEfferentReviewing extends StatelessWidget {
-  const NephronEfferentReviewing({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Manuscript in hands of Reviewers',
-          style: kSynapseTileSubtitle,
-        ),
-        ListTile(
-            title: Text(
-                'Finite scale of spatial representation in the hippocampus'),
-            subtitle: Text('Kjelstrup, K.B. et al.'),
-            trailing: Text('3w', style: kNephronTileEfferentDays)),
-        ListTile(
-            title: Text(
-                'Phase precession and phase-locking of hippocampal pyrmadial cells'),
-            subtitle: Text('Jones, M.W. and Wilson, M.A.'),
-            trailing: Text('5w', style: kNephronTileEfferentDaysOverdue)),
-      ],
-    );
-  }
-}
-
-class NephronEfferentRevising extends StatelessWidget {
-  const NephronEfferentRevising({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Manuscripts in hands of author', style: kSynapseTileSubtitle),
-        ListTile(
-            title: Text('Organization of cell assemblies in the hippocampus'),
-            subtitle: Text('Harris, K.D. et al.'),
-            trailing: Text('2w', style: kNephronTileEfferentDays)),
-        ListTile(
-            title: Text(
-                'Multi-plexed oscillations and phase-rate coding in the basal brain'),
-            subtitle: Text('Tingley, D. et al'),
-            trailing: Text('6w', style: kNephronTileEfferentDaysOverdue)),
-      ],
-    );
-  }
-}
-
-class NephronEfferentDecision extends StatelessWidget {
-  const NephronEfferentDecision({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Manuscript in hand of editors'),
-        Text('Editor assess for decision'),
-        Text('Other stuff'),
-      ],
     );
   }
 }

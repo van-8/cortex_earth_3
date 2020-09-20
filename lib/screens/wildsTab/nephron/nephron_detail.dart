@@ -98,7 +98,7 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                   TabBar(
                       indicatorColor: kWildsColor,
                       isScrollable: true,
-                      labelStyle: kArticleTabbarLabel,
+                      // labelStyle: kArticleTabbarLabel,
                       labelColor: kWildsColor,
                       labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
                       tabs: _tabs.map((_tabTitle) {

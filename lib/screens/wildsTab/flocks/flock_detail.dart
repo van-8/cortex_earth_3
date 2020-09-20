@@ -78,8 +78,8 @@ class _FlockDetailScreenState extends State<FlockDetailScreen> {
                   ),
                   TabBar(
                       indicatorColor: kWildsColor,
-                      isScrollable: false,
-                      labelStyle: kArticleTabbarLabel,
+                      isScrollable: true,
+                      // labelStyle: kArticleTabbarLabel,
                       labelColor: kWildsColor,
                       labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
                       tabs: _tabs.map((_tabTitle) {

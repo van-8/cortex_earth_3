@@ -82,7 +82,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                   TabBar(
                       indicatorColor: Colors.lightBlue,
                       isScrollable: true,
-                      labelStyle: kArticleTabbarLabel,
+                      // labelStyle: kArticleTabbarLabel,
                       labelColor: Colors.lightBlue,
                       labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
                       tabs: _tabs.map((_tabTitle) {

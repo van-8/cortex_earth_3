@@ -89,11 +89,12 @@ flutter:
     # "family" key with the font family name, and a "fonts" key with a
     # list giving the asset and other descriptors for the font. For
     # # example:
-    # fonts:
-    #   - family: Rajdhani
-    #     fonts:
-    #       - asset: fonts/Rajdhani-Medium.ttf
-    # - asset: fonts/Rajdhani-Bold.ttf
+  fonts:
+    - family: RobotoSlab
+      fonts:
+        - asset: fonts/RobotoSlab-Regular.ttf
+        # - asset: fonts/Ubuntu-Regular.ttf
+        # - asset: fonts/Ubuntu-Light.ttf
     #   weight: 700
   #   - family: Trajan Pro
   #     fonts:

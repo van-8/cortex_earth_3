@@ -54,7 +54,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                     TabBar(
                       indicatorColor: Colors.blue,
                       isScrollable: true,
-                      labelStyle: kArticleTabbarLabel,
+                      // labelStyle: kArticleTabbarLabel,
                       labelColor: Colors.blue,
                       tabs: _list.map((String ss) {
                         return Tab(text: ss);

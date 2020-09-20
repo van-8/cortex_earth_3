@@ -37,11 +37,11 @@ class ProfileTab extends GetWidget<AuthController> {
           IconButton(
             icon: Icon(Icons.edit),
             onPressed: () {
-              if (Get.isDarkMode) {
-                Get.changeTheme(ThemeData.light());
-              } else {
-                Get.changeTheme(ThemeData.dark());
-              }
+              // if (Get.isDarkMode) {
+              //   Get.changeTheme(ThemeData.light());
+              // } else {
+              //   Get.changeTheme(ThemeData.dark());
+              // }
             },
           ),
         ],
