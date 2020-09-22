@@ -1,6 +1,6 @@
 import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/models/article.dart';
-import 'package:cortex_earth_3/widgets/actionbar.dart';
+import 'package:cortex_earth_3/widgets/actionbar_garden.dart';
 import 'package:cortex_earth_3/widgets/image_carousel.dart';
 import 'package:cortex_earth_3/widgets/synapse_bottomsheet.dart';
 import 'package:flutter/gestures.dart';

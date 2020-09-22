@@ -67,7 +67,7 @@ class _StickyHeaderListState extends State<_StickyHeaderList> {
             visualDensity: VisualDensity.compact,
             leading: Checkbox(value: false, onChanged: null),
             title: Text(
-              'Task #$i',
+              'Task $i',
               style: kListViewTitleStyle,
             ),
           ),

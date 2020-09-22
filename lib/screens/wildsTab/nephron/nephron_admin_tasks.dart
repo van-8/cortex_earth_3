@@ -112,7 +112,7 @@ class __SectionWidgetState extends State<_SectionWidget>
         trailing: RotationTransition(
           turns: _iconTurns,
           child: const Icon(
-            Icons.expand_less,
+            Icons.expand_more,
             color: Colors.white70,
           ),
         ),
@@ -153,7 +153,7 @@ class _MockData {
     var sections = List<ExampleSection>();
     for (int i = 0; i < sectionSize; i++) {
       var section = ExampleSection()
-        ..header = "Work Group $i"
+        ..header = "Working Group $i"
         ..items = List.generate(itemSize, (index) => "Task $index")
         ..expanded = true;
       sections.add(section);

@@ -6,7 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:cortex_earth_3/constants.dart';
 
-import 'actionbar.dart';
+import 'actionbar_garden.dart';
 
 class FigureImageCarousel extends StatefulWidget {
   @override

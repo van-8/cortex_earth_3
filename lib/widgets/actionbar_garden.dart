@@ -11,7 +11,8 @@ class _ActionBarState extends State<ActionBar> {
   int appropriateTest;
   int detailed;
   int original;
-  bool isSaved = false;
+  bool hasTasks = false;
+  bool isEndorsed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,17 @@ class _ActionBarState extends State<ActionBar> {
           GestureDetector(
             onTap: () {
               Get.snackbar(
-                'Appropriate Test of Hypothesis',
-                '17 peers',
+                'Endorsed',
+                'by 17 people you follow',
                 snackPosition: SnackPosition.BOTTOM,
               );
             },
             child: Row(
               children: [
                 Icon(
-                  Mdi.testTube,
+                  Mdi.starFourPoints,
                   size: 16,
-                  semanticLabel: 'Appropriate Test of Hypothesis',
+                  semanticLabel: 'Endorsed',
                 ),
                 Text(
                   ' 17   ',
@@ -96,20 +97,52 @@ class _ActionBarState extends State<ActionBar> {
                 );
               }),
           IconButton(
-              icon: isSaved ? Icon(Mdi.bookmark) : Icon(Mdi.bookmarkOutline),
-              tooltip: 'Save',
+              icon: isEndorsed
+                  ? Icon(
+                      Mdi.starFourPoints,
+                      color: Colors.amber,
+                    )
+                  : Icon(Mdi.starFourPointsOutline, color: Colors.grey),
+              tooltip: 'Endorse',
               onPressed: () {
                 setState(() {
-                  isSaved = !isSaved;
+                  isEndorsed = !isEndorsed;
                 });
-                isSaved
+                isEndorsed
                     ? Get.snackbar(
-                        'Saved to \'Unread\' Cascade',
-                        'Task to \'Read this article\' added',
+                        'Endorsed',
+                        'You endorse this item, improving its discoverability by people who follow you',
                         snackPosition: SnackPosition.BOTTOM,
                       )
-                    // ignore: unnecessary_statements
-                    : null;
+                    : Get.snackbar(
+                        'Endorsement withdrawn',
+                        '',
+                        snackPosition: SnackPosition.BOTTOM,
+                      );
+              }),
+          IconButton(
+              icon: hasTasks
+                  ? Icon(
+                      Mdi.checkboxMultipleMarkedOutline,
+                      color: Colors.blue,
+                    )
+                  : Icon(Mdi.checkboxMarkedOutline, color: Colors.grey),
+              tooltip: 'Tasks',
+              onPressed: () {
+                setState(() {
+                  hasTasks = !hasTasks;
+                });
+                hasTasks
+                    ? Get.snackbar(
+                        'List Tasks linked to this item',
+                        'Mini popup. add task if none.',
+                        snackPosition: SnackPosition.BOTTOM,
+                      )
+                    : Get.snackbar(
+                        'No Tasks linked to this item, add a task',
+                        'Mini popup',
+                        snackPosition: SnackPosition.BOTTOM,
+                      );
               }),
           IconButton(
               icon: Icon(Mdi.share),

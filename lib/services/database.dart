@@ -10,8 +10,6 @@ import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/models/user.dart';
 import 'package:cortex_earth_3/models/article.dart';
 
-//TODO:Refactor so all items have a new array of 'tags',
-
 class Database {
   final Firestore _firestore = Firestore.instance;
 

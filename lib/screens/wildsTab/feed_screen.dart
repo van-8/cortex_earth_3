@@ -1,5 +1,5 @@
 import 'package:cortex_earth_3/screens/detailScreens/article_detailscreen.dart';
-import 'package:cortex_earth_3/widgets/article_tile.dart';
+import 'package:cortex_earth_3/widgets/article_tile_wilds.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -25,7 +25,7 @@ class FeedScreen extends GetWidget<AuthController> {
                   child: ListView.builder(
                     itemCount: articleController.articles.length,
                     itemBuilder: (_, index) {
-                      return ArticleTile(
+                      return ArticleTileWilds(
                         uid: controller.user.uid,
                         article: articleController.articles[index],
                         onTap: () {
