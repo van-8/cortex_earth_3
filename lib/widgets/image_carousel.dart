@@ -25,7 +25,7 @@ class _FigureImageCarouselState extends State<FigureImageCarousel> {
         _saveFigure();
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(children: [
           Text(
             "Figure 1",
@@ -50,7 +50,8 @@ class _FigureImageCarouselState extends State<FigureImageCarousel> {
               return Container(
                 width: 4.0,
                 height: 4.0,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: _current == index
@@ -72,7 +73,7 @@ class _FigureImageCarouselState extends State<FigureImageCarousel> {
         builder: (context, scrollController) => Material(
               child: Container(
                 // height: MediaQuery.of(context).size.height / 2,
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -203,7 +204,7 @@ final List<String> imgList = [
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           child: Container(
-            margin: EdgeInsets.all(5.0),
+            margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
@@ -224,7 +225,7 @@ final List<Widget> imageSliders = imgList
                             end: Alignment.topCenter,
                           ),
                         ),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
                         child: Text(
                           '${imgList.indexOf(item)}',

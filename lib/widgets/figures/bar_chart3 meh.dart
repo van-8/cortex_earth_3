@@ -26,7 +26,7 @@ class BarChartSample3State extends State<BarChartSample3> {
                   enabled: false,
                   touchTooltipData: BarTouchTooltipData(
                     tooltipBgColor: Colors.transparent,
-                    tooltipPadding: const EdgeInsets.all(0),
+                    tooltipPadding: const const EdgeInsets.all(0),
                     tooltipBottomMargin: 8,
                     getTooltipItem: (
                       BarChartGroupData group,

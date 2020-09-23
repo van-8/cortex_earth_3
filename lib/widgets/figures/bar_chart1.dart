@@ -31,7 +31,7 @@ class BarChartSample1State extends State<BarChartSample1> {
     return Material(
       color: const Color(0xff81e5cd),
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SafeArea(
           child: AspectRatio(
             aspectRatio: .8,
@@ -69,7 +69,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: const const EdgeInsets.symmetric(horizontal: 8.0),
                     child: BarChart(
                       isPlaying ? randomData() : mainBarData(),
                       swapAnimationDuration: animDuration,

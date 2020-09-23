@@ -33,7 +33,7 @@ class CascadeAddScreen extends GetWidget<AuthController> {
 
   Widget _buildMainInput() {
     return Container(
-        padding: EdgeInsets.fromLTRB(14, 10, 14, 0),
+        padding: const EdgeInsets.fromLTRB(14, 10, 14, 0),
         child: TextFormField(
             autofocus: true,
             controller: _nameController,
@@ -44,7 +44,7 @@ class CascadeAddScreen extends GetWidget<AuthController> {
 
   Widget _buildDetails() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

@@ -20,7 +20,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
         Get.defaultDialog(
             title: 'Do it together!',
             content: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Text(
                 '👏🏿👏🏾👏🏽👏🏼👏🏻',
                 style: TextStyle(fontSize: 40),
@@ -38,7 +38,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
         Get.defaultDialog(
             title: 'Mmmm...tasty...',
             content: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Icon(Mdi.emoticonKissOutline),
             ));
       },
@@ -53,7 +53,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
         Get.defaultDialog(
             title: 'SCIENCE!!!',
             content: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Icon(Mdi.beaker),
             ));
       },
@@ -68,7 +68,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
         Get.defaultDialog(
             title: 'Order a burger',
             content: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Icon(Mdi.hamburger),
             ));
       },
@@ -107,7 +107,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Stack(
           children: <Widget>[
             Container(
@@ -119,14 +119,14 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
                   children: <Widget>[
                     // Text('Confidence: ${_confidence.toString()}'),
                     Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Text(
                           'Auto-highlight: together, delicious, science, burger, task',
                           textAlign: TextAlign.center,
                           style: kDictationAutohighlighter,
                         )),
                     Container(
-                      padding: const EdgeInsets.fromLTRB(30, 30, 30, 150),
+                      padding: const const EdgeInsets.fromLTRB(30, 30, 30, 150),
                       child: TextHighlight(
                         text: _text,
                         words: _highlights,
@@ -153,7 +153,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
                   repeatPauseDuration: const Duration(milliseconds: 100),
                   repeat: true,
                   child: Ink(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     decoration: const ShapeDecoration(
                       gradient: LinearGradient(
                           colors: [Colors.greenAccent, Colors.blueAccent],

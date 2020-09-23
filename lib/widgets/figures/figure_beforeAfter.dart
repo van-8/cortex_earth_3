@@ -29,7 +29,7 @@ class _DataBeforeAfterScreenState extends State<DataBeforeAfterScreen> {
   Widget _buildBeforeAfter() {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         child: BeforeAfter(
           beforeImage: Image.asset('assets/images/before-sample.jpg'),
           afterImage: Image.asset('assets/images/after-sample.jpg'),
@@ -47,7 +47,7 @@ class _DataBeforeAfterScreenState extends State<DataBeforeAfterScreen> {
   Widget _buildAction() {
     return Container(
       child: ActionBar(),
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
     );
   }
 }

@@ -10,7 +10,7 @@ class ProjectTasks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(0),
+        padding: const EdgeInsets.all(0),
         child: CustomScrollView(
           slivers: [
             _StickyHeaderList(index: 0),
@@ -97,7 +97,7 @@ class Header extends StatelessWidget {
       child: Container(
         height: 30,
         color: color,
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         alignment: Alignment.centerLeft,
         child: Text(
           title ?? 'Collaborator #$index',

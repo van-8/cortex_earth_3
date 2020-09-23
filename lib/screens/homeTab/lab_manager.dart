@@ -7,12 +7,12 @@ import '../../constants.dart';
 class LabManager extends StatelessWidget {
   final BoxDecoration sectionWrapper = BoxDecoration(
       color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10)));
-  final EdgeInsets sectionMetaPadding = EdgeInsets.fromLTRB(14, 20, 14, 10);
+  final const EdgeInsets sectionMetaPadding = const EdgeInsets.fromLTRB(14, 20, 14, 10);
   final BoxDecoration sectionMetaDecoration = BoxDecoration(
     color: Colors.transparent,
   );
   final TextStyle sectionTitleTextStyle = TextStyle(fontSize: 12);
-  final EdgeInsets sectionTitlePadding = EdgeInsets.fromLTRB(10, 0, 0, 10);
+  final const EdgeInsets sectionTitlePadding = const EdgeInsets.fromLTRB(10, 0, 0, 10);
   final CrossAxisAlignment sectionCrossAxisAlignment = CrossAxisAlignment.start;
 
   @override
@@ -24,14 +24,14 @@ class LabManager extends StatelessWidget {
           children: [
             Container(
               // color: Colors.amber,
-              padding: EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               child: Center(
                 child: Column(
                   children: [
                     Image(image: AssetImage('assets/images/IASL-logo.png')),
                     Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 100, vertical: 14),
+                            const EdgeInsets.symmetric(horizontal: 100, vertical: 14),
                         child: Text(
                             'Interdisciplinary Affective Science Laboratory',
                             textAlign: TextAlign.center,

@@ -6,7 +6,7 @@ class BooksListScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Center(
           child: Text(
         'List of books, data in Markdown, \ndesigned like Articles.',

@@ -90,7 +90,7 @@ import 'package:flutter/material.dart';
 //               children: <Widget>[
 //                 CameraPreview(_controller),
 //                 Container(
-//                   padding: EdgeInsets.all(20.0),
+//                   padding: const EdgeInsets.all(20.0),
 //                   alignment: Alignment.bottomCenter,
 //                   child: RaisedButton.icon(
 //                     icon: Icon(Icons.camera),
@@ -125,7 +125,7 @@ class OCRScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Stack(
         children: [
           Text(

@@ -55,7 +55,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
 
   Widget _buildMain() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -73,7 +73,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
   Widget _buildContent() {
     return Container(
         // color: Colors.amber,
-        padding: EdgeInsets.fromLTRB(14, 14, 14, 4),
+        padding: const EdgeInsets.fromLTRB(14, 14, 14, 4),
         child: Text(task.content, style: kProjectTitle));
   }
 
@@ -132,7 +132,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
 
   Widget _buildDesc() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
       child: Text('Description'),
     );
   }
@@ -140,7 +140,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
   Widget _buildNotified() {
     return GestureDetector(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         width: double.infinity,
         color: Colors.grey[200],
         child: Text('3 collaborators subscribed'),
@@ -151,7 +151,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
   Widget _buildPosts() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 12),
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
         color: Colors.grey[100],
         width: double.infinity,
         child: ListView(
@@ -204,7 +204,7 @@ class TaskDetailScreen extends GetWidget<AuthController> {
 
   Widget _buildInputText() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 14),
       child: TextFormField(
           autofocus: false,
           controller: _titleController,

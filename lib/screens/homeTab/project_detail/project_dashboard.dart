@@ -12,7 +12,7 @@ class _ProjectDashboardState extends State<ProjectDashboard> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 14),
         child: Column(
           children: [
             Text(
@@ -20,7 +20,7 @@ class _ProjectDashboardState extends State<ProjectDashboard> {
                 textAlign: TextAlign.center),
             SizedBox(height: 40),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
+              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 14),
               height: 1,
               color: Colors.grey[200],
             ),
@@ -28,7 +28,7 @@ class _ProjectDashboardState extends State<ProjectDashboard> {
             SizedBox(height: 14),
             Container(
               // color: Colors.amber,
-              padding: EdgeInsets.symmetric(horizontal: 14),
+              padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

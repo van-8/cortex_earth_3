@@ -12,7 +12,7 @@ class _ManuscriptDetailScreenState extends State<ManuscriptDetailScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 30, horizontal: 14),
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 14),
         child: Column(
           children: [
             Text('STATUS'),

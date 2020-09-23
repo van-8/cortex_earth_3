@@ -40,8 +40,8 @@ class _BeforeAfterState extends State<BeforeAfter> {
       children: <Widget>[
         Padding(
           padding: widget.isVertical
-              ? const EdgeInsets.symmetric(vertical: 24.0)
-              : const EdgeInsets.symmetric(horizontal: 24.0),
+              ? const const EdgeInsets.symmetric(vertical: 24.0)
+              : const const EdgeInsets.symmetric(horizontal: 24.0),
           child: SizedImage(
             widget.afterImage,
             widget.imageHeight,
@@ -51,8 +51,8 @@ class _BeforeAfterState extends State<BeforeAfter> {
         ),
         Padding(
           padding: widget.isVertical
-              ? const EdgeInsets.symmetric(vertical: 24.0)
-              : const EdgeInsets.symmetric(horizontal: 24.0),
+              ? const const EdgeInsets.symmetric(vertical: 24.0)
+              : const const EdgeInsets.symmetric(horizontal: 24.0),
           child: ClipPath(
             clipper: widget.isVertical
                 ? RectClipperVertical(_clipFactor)

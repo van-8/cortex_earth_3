@@ -15,7 +15,7 @@ class FlockCascadesScreen extends StatelessWidget {
 
   Widget _buildFeatured() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
       child: Column(
         children: [
           Text('List of 5 featured cascades'),
@@ -30,7 +30,7 @@ class FlockCascadesScreen extends StatelessWidget {
 
   Widget _buildAllCascades() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
       child: Column(
         children: [
           Text('List of cascades'),

@@ -116,14 +116,14 @@
 //                     elevation: 8,
 //                     color: Colors.white,
 //                     child: Padding(
-//                       padding: const EdgeInsets.all(16.0),
+//                       padding: const const EdgeInsets.all(16.0),
 //                       child: Column(
 //                         mainAxisSize: MainAxisSize.min,
 //                         crossAxisAlignment: CrossAxisAlignment.start,
 //                         children: <Widget>[
 //                           Row(),
 //                           Padding(
-//                             padding: const EdgeInsets.only(bottom: 8.0),
+//                             padding: const const EdgeInsets.only(bottom: 8.0),
 //                             child: Text(
 //                               "Identified emails",
 //                               style: TextStyle(

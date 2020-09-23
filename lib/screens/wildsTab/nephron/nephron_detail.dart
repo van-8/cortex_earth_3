@@ -50,7 +50,7 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14),
+                      padding: const EdgeInsets.symmetric(horizontal: 14),
                       child: Row(
                         children: [
                           Icon(
@@ -100,7 +100,7 @@ class _NephronDetailScreenState extends State<NephronDetailScreen> {
                       isScrollable: true,
                       // labelStyle: kArticleTabbarLabel,
                       labelColor: kWildsColor,
-                      labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                      labelPadding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                       tabs: _tabs.map((_tabTitle) {
                         return Tab(
                           text: _tabTitle,

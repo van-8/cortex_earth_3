@@ -68,7 +68,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
 
   Widget _buildMainInput() {
     return Container(
-        padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
+        padding: const EdgeInsets.fromLTRB(14, 4, 14, 0),
         child: TextFormField(
             autofocus: true,
             minLines: 2,
@@ -81,7 +81,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
 
   Widget _buildNotes() {
     return Container(
-        padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
+        padding: const EdgeInsets.fromLTRB(14, 4, 14, 0),
         child: TextFormField(
             autofocus: false,
             maxLines: null,
@@ -94,7 +94,7 @@ class SynapseAddScreen extends GetWidget<AuthController> {
   Widget _buildDetails() {
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

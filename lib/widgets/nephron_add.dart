@@ -19,7 +19,7 @@ class NephronAddScreen extends GetWidget<AuthController> {
     return Material(
       child: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 14),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -38,7 +38,7 @@ class NephronAddScreen extends GetWidget<AuthController> {
 
   Widget _buildMainInput() {
     return Container(
-        padding: EdgeInsets.fromLTRB(0, 4, 0, 0),
+        padding: const EdgeInsets.fromLTRB(0, 4, 0, 0),
         child: TextFormField(
             autofocus: true,
             controller: _nameController,
@@ -49,7 +49,7 @@ class NephronAddScreen extends GetWidget<AuthController> {
   Widget _buildDetails() {
     return Material(
       child: Container(
-        // padding: EdgeInsets.symmetric(horizontal: 10),
+        // padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

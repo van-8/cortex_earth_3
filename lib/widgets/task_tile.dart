@@ -25,7 +25,7 @@ class TaskTile extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
             child: Row(
               children: [
                 Checkbox(
@@ -55,7 +55,7 @@ class TaskTile extends StatelessWidget {
           Container(
             height: 1,
             color: Colors.grey[200],
-            margin: EdgeInsets.fromLTRB(56, 0, 0, 0),
+            margin: const EdgeInsets.fromLTRB(56, 0, 0, 0),
           ),
         ],
       ),

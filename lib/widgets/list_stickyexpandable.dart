@@ -15,7 +15,7 @@ class _ListviewStickyExpandableState extends State<ListviewStickyExpandable> {
   Widget build(BuildContext context) {
     return Material(
         child: Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       child: ExpandableListView(
         builder: SliverExpandableChildDelegate<String, ExampleSection>(
           sectionList: sectionList,

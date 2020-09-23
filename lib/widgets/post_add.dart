@@ -32,7 +32,7 @@ class PostAddScreen extends GetWidget<AuthController> {
 
   Widget _buildTitle() {
     return Container(
-      padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
+      padding: const EdgeInsets.fromLTRB(14, 4, 14, 0),
       child: Row(
         children: [
           Expanded(
@@ -58,7 +58,7 @@ class PostAddScreen extends GetWidget<AuthController> {
 
   Widget _buildContent() {
     return Container(
-      padding: EdgeInsets.fromLTRB(14, 0, 14, 0),
+      padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
       child: Row(
         children: [
           Expanded(

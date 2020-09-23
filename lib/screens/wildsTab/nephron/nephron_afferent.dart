@@ -30,7 +30,7 @@ class _NephronAfferentScreenState extends State<NephronAfferentScreen> {
         child: Column(
           children: <Widget>[
             const Padding(
-              padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             ),
             SizedBox(
               width: Get.width,
@@ -51,7 +51,7 @@ class _NephronAfferentScreenState extends State<NephronAfferentScreen> {
             Expanded(
               child: Container(
                 // color: Colors.amber,
-                padding: const EdgeInsets.symmetric(
+                padding: const const EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 12.0,
                 ),

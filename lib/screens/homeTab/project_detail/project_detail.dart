@@ -43,7 +43,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14),
+                      padding: const EdgeInsets.symmetric(horizontal: 14),
                       child: Row(
                         children: [
                           Icon(
@@ -84,7 +84,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                       isScrollable: true,
                       // labelStyle: kArticleTabbarLabel,
                       labelColor: Colors.lightBlue,
-                      labelPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                      labelPadding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                       tabs: _tabs.map((_tabTitle) {
                         return Tab(
                           text: _tabTitle,
@@ -100,7 +100,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               ProjectTasks(),
               ProjectIssues(),
               Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Text(
                     'Protocol of the project. \n\nTemplates to auto-create tasks with dependencies? \n\nCan leave device next to you and dictate what you did, then edit afterwards. But now we shift into realm of ELN Electronic Lab Notebooks? '),
               ),

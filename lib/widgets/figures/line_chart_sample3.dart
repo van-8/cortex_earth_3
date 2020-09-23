@@ -26,7 +26,7 @@ class LineChartSample3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 14),
+        padding: const EdgeInsets.symmetric(vertical: 14),
         child: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,

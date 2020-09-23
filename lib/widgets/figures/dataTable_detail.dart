@@ -76,7 +76,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Container(
-                padding: const EdgeInsets.all(10),
+                padding: const const EdgeInsets.all(10),
                 child: DataTable(
                   columnSpacing: 10,
                   sortAscending: sortContinent,
@@ -168,7 +168,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Text(
                 'Populations and their average SNP and haplotype hterozygosities',
                 style: TextStyle(fontStyle: FontStyle.italic),
@@ -176,7 +176,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
             ),
             Container(
               child: ActionBar(),
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
             ),
           ],
         ),

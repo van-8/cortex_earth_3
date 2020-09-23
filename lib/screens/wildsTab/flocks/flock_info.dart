@@ -23,7 +23,7 @@ class _FlockInfoScreenState extends State<FlockInfoScreen> {
 
   Widget _buildPurpose() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 14),
       child: Column(
         children: [
           Text('Purpose of this flock'),
@@ -36,7 +36,7 @@ class _FlockInfoScreenState extends State<FlockInfoScreen> {
 
   Widget _buildCurrentlyReading() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
       child: Column(
         children: [
           Text('Currently Reading'),
@@ -74,7 +74,7 @@ class _FlockInfoScreenState extends State<FlockInfoScreen> {
     String creator = "eddy@mail.com";
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       child: Polls(
         children: [
           // This cannot be less than 2, else will throw an exception

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SynapseDetailScreen extends StatelessWidget {
   final SynapseModel synapse;
-  final EdgeInsets _textpadding = EdgeInsets.fromLTRB(0, 0, 0, 10);
+  final const EdgeInsets _textpadding = const EdgeInsets.fromLTRB(0, 0, 0, 10);
   final TextStyle _lineNumberStyle = TextStyle(fontWeight: FontWeight.bold);
   final TextStyle _titleStyle = TextStyle(fontSize: 12);
 
@@ -15,7 +15,7 @@ class SynapseDetailScreen extends StatelessWidget {
       child: SafeArea(
           child: Container(
         height: MediaQuery.of(context).size.height / 2,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class SynapseDetailScreen extends StatelessWidget {
                       synapse.lineNumber.toString(),
                       style: _lineNumberStyle,
                     ),
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0)),
               ],
             ),
             Container(child: Text('Date Created'), padding: _textpadding),

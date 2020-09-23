@@ -25,14 +25,14 @@ class _MarksDetailState extends State<MarksDetail> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               child: Text(
                 'Marks provide dimensions of evaluation beyond citation count.',
                 style: kArticleMetaData,
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 14),
+              padding: const EdgeInsets.symmetric(vertical: 14),
               child: RichText(
                   text: TextSpan(
                 style: kArticleBodyText,

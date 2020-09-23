@@ -31,8 +31,8 @@ class SettingsTile extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-            // margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.all(14),
+            // margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.all(14),
             // decoration: BoxDecoration(
             //     color: Colors.white,
             //     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -43,7 +43,7 @@ class SettingsTile extends StatelessWidget {
                   size: 18,
                 ),
                 Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
                         Text(title),

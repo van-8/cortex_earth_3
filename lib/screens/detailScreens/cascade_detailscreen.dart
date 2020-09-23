@@ -16,7 +16,7 @@ class _CascadeDetailScreenState extends State<CascadeDetailScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
         // color: Colors.amber,
         child: SafeArea(
             child: Column(
@@ -32,7 +32,7 @@ class _CascadeDetailScreenState extends State<CascadeDetailScreen> {
 
   Widget _buildTopBar() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

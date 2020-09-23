@@ -34,7 +34,7 @@ class TaskAddScreen extends GetWidget<AuthController> {
 
   Widget _buildInput() {
     return Container(
-      padding: EdgeInsets.fromLTRB(14, 4, 14, 0),
+      padding: const EdgeInsets.fromLTRB(14, 4, 14, 0),
       child: Row(
         children: [
           Expanded(

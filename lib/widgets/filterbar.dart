@@ -115,10 +115,10 @@ class MySelectionItem extends StatelessWidget {
       child: isForList
           ? Padding(
               child: _buildItem(context),
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
             )
           : Card(
-              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              margin: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Stack(
                 children: <Widget>[
                   _buildItem(context),

@@ -26,7 +26,7 @@ class _DataChartDetailScreenState extends State<DataChartDetailScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width,
                 color: Colors.white,
                 child: Text(
@@ -110,12 +110,12 @@ class _DataChartDetailScreenState extends State<DataChartDetailScreen> {
                 child: Text('Data Range')),
             _buildSlider(),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
               child:
                   Text('Populations-specific CNVs found in multiple inviduals'),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: ActionBar(),
             ),
           ],

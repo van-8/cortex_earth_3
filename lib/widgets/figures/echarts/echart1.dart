@@ -87,7 +87,7 @@
 //               Padding(
 //                 child: Text('Reactive updating and tap event',
 //                     style: TextStyle(fontSize: 20)),
-//                 padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+//                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 20),
 //               ),
 //               Text('- data will be fetched in a few seconds'),
 //               Text('- tap the bar and trigger the snack'),
@@ -223,7 +223,7 @@
 //               Padding(
 //                 child: Text('Using WebGL for 3D charts',
 //                     style: TextStyle(fontSize: 20)),
-//                 padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+//                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 20),
 //               ),
 //               Text('- chart capture all gestures'),
 //               Container(
@@ -328,7 +328,7 @@
 //               ),
 //               Padding(
 //                 child: Text('Dark Theme', style: TextStyle(fontSize: 20)),
-//                 padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+//                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 20),
 //               ),
 //               Container(
 //                 child: Echarts(
@@ -392,7 +392,7 @@
 //               ),
 //               Padding(
 //                 child: Text('Data zoom', style: TextStyle(fontSize: 20)),
-//                 padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+//                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 20),
 //               ),
 //               Text('- chart capture all gestures'),
 //               Container(
@@ -484,7 +484,7 @@
 //               ),
 //               Padding(
 //                 child: Text('Using extension', style: TextStyle(fontSize: 20)),
-//                 padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+//                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
 //               ),
 //               Container(
 //                 child: Echarts(

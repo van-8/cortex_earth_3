@@ -42,7 +42,7 @@ class ProjectTile extends StatelessWidget {
 // GestureDetector(
 //       onTap: onTap,
 //       child: Container(
-//         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+//         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
 //         child: Column(
 //           crossAxisAlignment: CrossAxisAlignment.start,
 //           children: [

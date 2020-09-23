@@ -38,7 +38,7 @@ class _SynapseableTileState extends State<SynapseableTile> {
         });
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5),
         child: Row(
           children: [
             Icon(

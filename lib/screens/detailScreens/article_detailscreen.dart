@@ -83,14 +83,14 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   Widget _buildAbstract() {
     return Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   widget.article.title,
                   style: kArticleTitle,
@@ -98,7 +98,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               ),
               GestureDetector(
                 child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Text(
                       widget.article.correspondingAuthor,
                       style: TextStyle(fontSize: 16),
@@ -108,20 +108,20 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                 },
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 color: Colors.grey[300],
                 width: double.infinity,
                 height: 1,
               ),
               Text(widget.article.articleAbstract),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 30),
+                margin: const EdgeInsets.symmetric(vertical: 30),
                 color: Colors.grey[300],
                 width: double.infinity,
                 height: 1,
               ),
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(children: [
                     Text('Research Organism:  ', style: kArticleMetaDataLabel),
                     Text(widget.article.researchOrganism,
@@ -129,13 +129,13 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                   ])),
               // SizedBox(height: 10),
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(children: [
                     Text('Journal:  ', style: kArticleMetaDataLabel),
                     Text(widget.article.journal, style: kArticleMetaData)
                   ])),
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(children: [
                     Text('Publication Date:  ', style: kArticleMetaDataLabel),
                     Text('19 Oct 2016', style: kArticleMetaData)
@@ -150,7 +150,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   Widget _buildSection2() {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Text(
               'A brain is a network of billions of communicating neurons, bathed in chemicals called neurotransmitters, which permit neurons to pass information to one another (Doya, 2008; Bargmann, 2012). The firing of a single neuron (or a small population of neurons) repre- sents the presence or absence of some feature at a moment in time (Deneve, 2008; Deneve and Jardri, 2016). However, a given neu- ron (or group of neurons) represents different features from moment to moment (e.g. Stokes et al., 2013; Spillmann et al., 2015) because many neurons synapse onto one (many-to-one connectivity), and a neuron’s receptive field depends on the information it receives (i.e. depends on its neural context in the moment; McIntosh, 2004). Conversely, one neuron also synapses on many other neurons [one-to-many connectivity (Sporns, 2011; Sterling and Laughlin, 2015)] to help implement instances of different psychological categories. As a consequence, neurons are multipurpose [for evidence and discussion, see (Barrett and Satpute, 2013; Anderson, 2014; Anderson and Finlay, 2014)], even in subcortical regions like the amygdala (Cerf, personal communication, 30 July 2015) \n \n     When the brain is viewed as a massive network, rather than a single organ or a collection of ‘mental modules’, it becomes apparent that this one anatomic structure of neurons can create an astounding number of spatiotemporal patterns, making the brain a network of high complexity (Sporns, 2011; Bullmore and Sporns, 2012; Rigotti et al., 2013). Natural selection prefers high complexity systems as they can reconfigure themselves into a multitude of different states (Whitacre, 2010; Whitacre and Bender, 2010; Sterling and Laughlin, 2015). \n \n     The brain achieves complexity through degeneracy (Edelman and Gally, 2001), the capacity for dissimilar represen- tations (e.g. different sets of neurons) to give rise to instances of the same category (e.g. anger) in the same context (i.e. many-to- one mappings of structure to function). Degeneracy is ubiqui- tous in biology, from the workings inside a single cell to distrib- uted brain networks (e.g. see Tononi et al., 1999; Edelman and Gally, 2001; Marder and Taylor, 2011). Natural selection favors systems with degeneracy because they are high in complexity and robust to damage (Whitacre and Bender, 2010). Degeneracy explains why Roger, the patient who lost his limbic circuitry to herpes simplex type I encephalitis, still experiences emotions (Feinstein et al., 2010) and why monozygotic twins with fully cal- cified basolateral sectors of the amygdala [due to Urbach- Wiethe disease (UWD)] have markedly different emotional cap- acity, despite genetic and environmental similarity (Becker et al., 2012; Mihov et al., 2013). Degeneracy also explains how a characteristic can be highly heritable even without a single set of necessary and sufficient genes (e.g. Turkheimer et al., 2014).'),
@@ -162,7 +162,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   Widget _buildIntro() {
     return Scaffold(
       body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: GestureDetector(
               onLongPress: () {
                 setState(() {
@@ -337,13 +337,13 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   Widget _buildSynapses() {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: ListView.builder(
-          padding: const EdgeInsets.all(8),
+          padding: const const EdgeInsets.all(8),
           itemCount: entries.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              contentPadding: EdgeInsets.symmetric(vertical: 10),
+              contentPadding: const EdgeInsets.symmetric(vertical: 10),
               subtitle: Text('${entries[index]}'),
               leading: Text(
                 '${entryLineNum[index]}',

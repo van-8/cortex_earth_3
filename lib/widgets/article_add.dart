@@ -26,10 +26,10 @@ class AbstractAddScreen extends GetWidget<AuthController> {
           children: [
             SizedBox(height: 20.0),
             Card(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               elevation: 0,
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const const EdgeInsets.all(10),
                 child: Column(
                   children: [
                     TextFormField(

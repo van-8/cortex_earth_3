@@ -40,7 +40,7 @@ class ProjectAddScreen extends GetWidget<AuthController> {
 
   Widget _buildInput() {
     return Container(
-      padding: EdgeInsets.fromLTRB(14, 10, 14, 0),
+      padding: const EdgeInsets.fromLTRB(14, 10, 14, 0),
       child: Row(
         children: [
           Expanded(
@@ -68,7 +68,7 @@ class ProjectAddScreen extends GetWidget<AuthController> {
   Widget _buildDesc() {
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Expanded(
             child: TextFormField(
                 autofocus: false,

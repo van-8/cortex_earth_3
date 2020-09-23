@@ -48,7 +48,7 @@ class BarChartSample2State extends State<BarChartSample2> {
       child: AspectRatio(
         aspectRatio: 1,
         child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           color: Color(0xff2c4260),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -82,7 +82,7 @@ class BarChartSample2State extends State<BarChartSample2> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const const EdgeInsets.symmetric(horizontal: 8.0),
                   child: BarChart(
                     BarChartData(
                       maxY: 20,

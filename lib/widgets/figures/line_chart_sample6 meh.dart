@@ -67,7 +67,7 @@ class LineChartSample6 extends StatelessWidget {
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(right: 22.0, bottom: 20),
+          padding: const const EdgeInsets.only(right: 22.0, bottom: 20),
           child: SizedBox(
             width: 300,
             height: 200,

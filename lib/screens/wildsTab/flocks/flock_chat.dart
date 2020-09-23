@@ -4,7 +4,7 @@ class FlockChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
       child: Column(
         children: [
           Text('Moderator can set 2 modes: Casual and Formal.'),

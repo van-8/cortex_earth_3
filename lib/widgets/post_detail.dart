@@ -22,7 +22,7 @@ class PostDetail extends StatelessWidget {
       child: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height / 2,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class PostDetail extends StatelessWidget {
               Container(
                 color: Colors.grey[300],
                 height: 1,
-                margin: EdgeInsets.symmetric(vertical: 5.0),
+                margin: const EdgeInsets.symmetric(vertical: 5.0),
               ),
               Expanded(
                   child: SingleChildScrollView(
@@ -46,7 +46,7 @@ class PostDetail extends StatelessWidget {
               ))),
               Container(
                 child: CupertinoTextField(),
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
               ),
               ActionBarPost(),
             ],
