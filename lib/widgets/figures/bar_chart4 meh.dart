@@ -23,7 +23,7 @@ class BarChartSample4State extends State<BarChartSample4> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
             color: Colors.white,
             child: Padding(
-              padding: const const EdgeInsets.only(top: 16.0),
+              padding: const EdgeInsets.only(top: 16.0),
               child: BarChart(
                 BarChartData(
                   alignment: BarChartAlignment.center,

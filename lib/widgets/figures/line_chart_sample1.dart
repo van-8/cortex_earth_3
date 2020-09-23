@@ -42,8 +42,8 @@ class LineChartSample1State extends State<LineChartSample1> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Container(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 20),
                         child: Text(
                           'Distance-Duration-Speed Relationships in the Hippocampus',
                           style: TextStyle(
@@ -69,7 +69,7 @@ class LineChartSample1State extends State<LineChartSample1> {
                       Expanded(
                         child: Padding(
                           padding:
-                              const const EdgeInsets.only(right: 16.0, left: 6.0),
+                              const EdgeInsets.only(right: 16.0, left: 6.0),
                           child: LineChart(
                             isShowingMainData ? sampleData1() : sampleData2(),
                             swapAnimationDuration:

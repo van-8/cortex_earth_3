@@ -51,7 +51,7 @@ class _NephronAfferentScreenState extends State<NephronAfferentScreen> {
             Expanded(
               child: Container(
                 // color: Colors.amber,
-                padding: const const EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 12.0,
                 ),

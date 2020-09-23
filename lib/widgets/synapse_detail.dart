@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SynapseDetailScreen extends StatelessWidget {
   final SynapseModel synapse;
-  final const EdgeInsets _textpadding = const EdgeInsets.fromLTRB(0, 0, 0, 10);
+  final EdgeInsets _textpadding = const EdgeInsets.fromLTRB(0, 0, 0, 10);
   final TextStyle _lineNumberStyle = TextStyle(fontWeight: FontWeight.bold);
   final TextStyle _titleStyle = TextStyle(fontSize: 12);
 

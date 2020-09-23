@@ -76,7 +76,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Container(
-                padding: const const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: DataTable(
                   columnSpacing: 10,
                   sortAscending: sortContinent,

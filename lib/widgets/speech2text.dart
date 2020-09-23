@@ -126,7 +126,7 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
                           style: kDictationAutohighlighter,
                         )),
                     Container(
-                      padding: const const EdgeInsets.fromLTRB(30, 30, 30, 150),
+                      padding: const EdgeInsets.fromLTRB(30, 30, 30, 150),
                       child: TextHighlight(
                         text: _text,
                         words: _highlights,

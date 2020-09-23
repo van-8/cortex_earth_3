@@ -82,7 +82,7 @@ class BarChartSample2State extends State<BarChartSample2> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: BarChart(
                     BarChartData(
                       maxY: 20,

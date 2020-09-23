@@ -71,7 +71,7 @@ class TimerPageState extends State<TimerPage> {
         Expanded(
           flex: 0,
           child: Padding(
-            padding: const const EdgeInsets.symmetric(vertical: 10.0),
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[

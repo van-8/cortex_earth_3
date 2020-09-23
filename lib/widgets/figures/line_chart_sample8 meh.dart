@@ -51,7 +51,7 @@ class _LineChartSample8State extends State<LineChartSample8> {
                   aspectRatio: 1.70,
                   child: Container(
                     child: Padding(
-                      padding: const const EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           right: 18.0, left: 12.0, top: 24, bottom: 12),
                       child: LineChart(
                         mainData(imageSnapshot.data),
@@ -102,7 +102,7 @@ class _LineChartSample8State extends State<LineChartSample8> {
             label: HorizontalLineLabel(
               show: true,
               alignment: Alignment.topRight,
-              padding: const const EdgeInsets.only(right: 5, bottom: 5),
+              padding: const EdgeInsets.only(right: 5, bottom: 5),
               style: const TextStyle(color: Colors.black, fontSize: 9),
               labelResolver: (line) => 'H: ${line.y}',
             ),
@@ -117,7 +117,7 @@ class _LineChartSample8State extends State<LineChartSample8> {
             label: VerticalLineLabel(
               show: true,
               alignment: Alignment.topRight,
-              padding: const const EdgeInsets.only(left: 10, top: 5),
+              padding: const EdgeInsets.only(left: 10, top: 5),
               style: const TextStyle(color: Colors.black, fontSize: 9),
               labelResolver: (line) => 'V: ${line.x}',
             ),

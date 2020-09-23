@@ -14,14 +14,14 @@ class TagAddScreen extends GetWidget<AuthController> {
     return Material(
       child: SafeArea(
         child: Container(
-          padding: const const EdgeInsets.fromLTRB(14, 10, 14, 10),
+          padding: const EdgeInsets.fromLTRB(14, 10, 14, 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
                   Container(
-                      padding: const const EdgeInsets.fromLTRB(0, 0, 14, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 14, 0),
                       child: Icon(Mdi.tagMultipleOutline,
                           color: kIconActiveColor)),
                   Expanded(

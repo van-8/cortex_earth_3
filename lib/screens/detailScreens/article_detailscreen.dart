@@ -339,7 +339,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       child: ListView.builder(
-          padding: const const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           itemCount: entries.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(

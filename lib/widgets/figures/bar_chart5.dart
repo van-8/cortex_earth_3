@@ -32,7 +32,7 @@ class BarChartSample5State extends State<BarChartSample5> {
           aspectRatio: 0.8,
           child: SafeArea(
             child: Padding(
-              padding: const const EdgeInsets.only(top: 16.0),
+              padding: const EdgeInsets.only(top: 16.0),
               child: BarChart(
                 BarChartData(
                   alignment: BarChartAlignment.center,
