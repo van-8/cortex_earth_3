@@ -1,4 +1,4 @@
-import 'package:cortex_earth_3/models/issues.dart';
+import 'package:cortex_earth_3/models/issue.dart';
 import 'package:flutter/foundation.dart';
 
 class LabelModel {

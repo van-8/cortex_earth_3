@@ -98,7 +98,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
             children: <Widget>[
               ProjectDashboard(),
               ProjectTasks(),
-              ProjectIssues(),
+              IssuesListview(),
               Container(
                 padding: const EdgeInsets.all(20),
                 child: Text(

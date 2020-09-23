@@ -9,6 +9,7 @@ import 'package:cortex_earth_3/models/tag.dart';
 import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/models/user.dart';
 import 'package:cortex_earth_3/models/article.dart';
+import 'package:cortex_earth_3/models/issue.dart';
 
 class Database {
   final Firestore _firestore = Firestore.instance;
@@ -76,23 +77,6 @@ class Database {
       return retVal;
     });
   }
-
-  // Stream<List<TaskModel>> todoDoneStream(String uid) {
-  //   return _firestore
-  //       .collection("users")
-  //       .document(uid)
-  //       .collection("tasks")
-  //       .where("isDone", isEqualTo: true)
-  //       .orderBy("dateCreated", descending: true)
-  //       .snapshots()
-  //       .map((QuerySnapshot query) {
-  //     List<TaskModel> retVal = List();
-  //     query.documents.forEach((element) {
-  //       retVal.add(TaskModel.fromDocumentSnapshot(element));
-  //     });
-  //     return retVal;
-  //   });
-  // }
 
   Future<void> updateTaskisDone(
     bool newValue,
@@ -231,6 +215,83 @@ class Database {
           .collection("tags")
           .document(tagId)
           .updateData({"name": newValue});
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Future<void> addIssue(
+    String uid,
+    String title,
+    String description,
+    int issueNumber,
+    int upvoteCount,
+  ) async {
+    try {
+      await _firestore
+          .collection("users")
+          .document(uid)
+          .collection("issues")
+          .add({
+        'dateCreated': Timestamp.now(),
+        'title': title,
+        'description': description,
+        'issueNumber': issueNumber,
+        'isClosed': false,
+        'upvoteCount': upvoteCount,
+      });
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Stream<List<IssueModel>> issueStream(String uid) {
+    return _firestore
+        .collection("users")
+        .document(uid)
+        .collection("issues")
+        .orderBy("upvoteCount", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<IssueModel> retVal = List();
+      query.documents.forEach((element) {
+        retVal.add(IssueModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
+  }
+
+  Future<void> updateIssueIsClosed(
+    bool newValue,
+    String uid,
+    String issueId,
+  ) async {
+    try {
+      _firestore
+          .collection("users")
+          .document(uid)
+          .collection("issues")
+          .document(issueId)
+          .updateData({"isClosed": newValue});
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Future<void> addUpvoteToIssue(
+    String uid,
+    String issueId,
+  ) async {
+    try {
+      _firestore
+          .collection("users")
+          .document(uid)
+          .collection("issues")
+          .document(issueId)
+          .updateData({"upvoteCount": FieldValue.increment(1)});
     } catch (e) {
       print(e);
       rethrow;

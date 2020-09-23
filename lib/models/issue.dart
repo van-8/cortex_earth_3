@@ -12,7 +12,8 @@ class IssueModel {
     this.issueID,
     @required this.title,
     this.description,
-    this.isOpen,
+    this.issueNumber,
+    this.isClosed,
     this.templateDescription,
     this.author,
     this.participants,
@@ -22,8 +23,8 @@ class IssueModel {
     this.lastUpdated,
     this.milestone,
     this.commentCount,
-    this.loveCount,
-    this.dislikeCount,
+    this.upvoteCount,
+    this.downvoteCount,
     this.tags,
     this.labels,
     this.posts,
@@ -32,20 +33,34 @@ class IssueModel {
   String issueID;
   String title;
   String description;
-  bool isOpen;
+  bool isClosed;
+  int issueNumber;
+  Timestamp dateCreated;
+  int upvoteCount;
+  int downvoteCount;
+  //Not implemented yet...
   String templateDescription;
   UserModel author;
   UserModel assignee;
   List<UserModel> participants;
   ProjectModel project;
-  Timestamp dateCreated;
   DateTime lastUpdated;
   MilestoneModel milestone;
   int commentCount;
-  int loveCount;
-  int dislikeCount;
   List<TagModel> tags;
   List<LabelModel> labels;
   List<PostModel> posts;
   List<UserModel> participantsNotified;
+
+  IssueModel.fromDocumentSnapshot(
+    DocumentSnapshot documentSnapshot,
+  ) {
+    issueID = documentSnapshot.documentID;
+    dateCreated = documentSnapshot.data["dateCreated"];
+    title = documentSnapshot.data["title"];
+    description = documentSnapshot.data["description"];
+    issueNumber = documentSnapshot.data["issueNumber"];
+    isClosed = documentSnapshot.data["isClosed"];
+    upvoteCount = documentSnapshot.data["upvoteCount"];
+  }
 }

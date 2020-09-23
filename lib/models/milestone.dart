@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cortex_earth_3/models/user.dart';
 import 'package:flutter/foundation.dart';
-import 'issues.dart';
+import 'issue.dart';
 
 class MilestoneModel {
   MilestoneModel({
