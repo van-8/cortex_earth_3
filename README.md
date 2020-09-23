@@ -1,4 +1,4 @@
-# Côrtex.Earth
+# Côrtex.earth
 
 Côrtex.earth is a tool for "frictionless contemplation."
 
