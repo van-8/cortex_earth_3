@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 // import 'package:cortex_earth_3/widgets/figures/figure_param_tile.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_sinusoidals/flutter_sinusoidals.dart';
 
 import '../../constants.dart';

@@ -1,7 +1,4 @@
-import 'package:cortex_earth_3/screens/homeTab/project_detail/project_credit.dart';
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
 
 class ProjectDashboard extends StatefulWidget {
   @override
