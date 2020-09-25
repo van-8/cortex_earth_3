@@ -10,12 +10,12 @@ import 'package:cortex_earth_3/constants.dart';
 
 class GardenTab extends StatelessWidget {
   final List<String> _tabs = [
-    'Synapses',
-    'Data',
-    'Articles',
-    'Books',
-    'Models',
-    'Methods',
+    'SYNAPSES',
+    'DATA',
+    'ARTICLES',
+    'BOOKS',
+    'MODELS',
+    'METHODS',
   ];
 
   @override

@@ -1,6 +1,10 @@
+import 'package:cortex_earth_3/widgets/cascade_action.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:get/get.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
+import '../constants.dart';
 
 class ActionBar extends StatefulWidget {
   @override
@@ -58,28 +62,6 @@ class _ActionBarState extends State<ActionBar> {
                 ),
                 Text(
                   ' 22   ',
-                  style: TextStyle(fontSize: 12),
-                ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Get.snackbar(
-                'Original',
-                '45 peers agreed',
-                snackPosition: SnackPosition.BOTTOM,
-              );
-            },
-            child: Row(
-              children: [
-                Icon(
-                  Icons.blur_circular,
-                  size: 16,
-                  semanticLabel: 'Original',
-                ),
-                Text(
-                  ' 45   ',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
@@ -145,15 +127,18 @@ class _ActionBarState extends State<ActionBar> {
                       );
               }),
           IconButton(
-              icon: Icon(Mdi.share),
-              tooltip: 'Share',
-              onPressed: () {
-                Get.snackbar(
-                  'Share',
-                  'native ShareSheet for iOS and Android',
-                  snackPosition: SnackPosition.BOTTOM,
-                );
-              }),
+            icon: Icon(
+              Mdi.playlistPlay,
+              color: kIconActiveColor,
+            ),
+            tooltip: 'Cascade',
+            onPressed: () {
+              showCupertinoModalBottomSheet(
+                  barrierColor: barrierColor,
+                  context: context,
+                  builder: (context, scrollController) => CascadeActionModal());
+            },
+          ),
         ],
       ),
     );

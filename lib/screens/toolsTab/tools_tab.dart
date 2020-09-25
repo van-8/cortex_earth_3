@@ -1,6 +1,6 @@
 import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/screens/toolsTab/experiment.dart';
-import 'package:cortex_earth_3/screens/toolsTab/pdf2md.dart';
+import 'package:cortex_earth_3/screens/toolsTab/flowmark.dart';
 import 'package:cortex_earth_3/screens/toolsTab/reaction_screen.dart';
 import 'package:cortex_earth_3/screens/toolsTab/sketch.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ import 'voiceAssist_screen.dart';
 class ToolsTab extends StatelessWidget {
   final List<String> _list = [
     'VoiceAssist',
-    'PDF2md',
+    'FlowMark',
     'OCR',
     'Experiment',
     'ReactionTime',
@@ -53,7 +53,7 @@ class ToolsTab extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             VoiceAssistScreen(),
-            PDF2MarkdownScreen(),
+            FlowMarkScreen(),
             OCRScreen(),
             ExperimentScreen(),
             ReactionTest(),

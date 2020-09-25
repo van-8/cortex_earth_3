@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/homeTab/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/constants.dart';
 import 'cascades_listscreen.dart';
@@ -13,6 +14,7 @@ class HomeTab extends StatelessWidget {
     'Projects',
     'Cascades',
     'Lab',
+    'Profile',
   ];
 
   @override
@@ -54,6 +56,7 @@ class HomeTab extends StatelessWidget {
             ProjectListScreen(),
             CascadesListScreen(),
             LabManager(),
+            ProfileScreen(),
           ],
         ),
       ),

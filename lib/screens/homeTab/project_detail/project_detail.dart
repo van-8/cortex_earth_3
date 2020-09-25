@@ -5,6 +5,7 @@ import 'package:cortex_earth_3/screens/gardenTab/synapse_listscreen.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_dashboard.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_issues.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_tasks.dart';
+import 'package:cortex_earth_3/screens/homeTab/project_detail/project_team.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/project.dart';
 import 'package:get/get.dart';
@@ -21,6 +22,7 @@ class ProjectDetailScreen extends StatefulWidget {
 class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
   Color projectColor = Colors.green;
   final List<String> _tabs = [
+    'Team',
     'Dashboard',
     'Tasks',
     'Issues',
@@ -34,6 +36,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     return Material(
       child: DefaultTabController(
         length: _tabs.length,
+        initialIndex: 1,
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size(200, 90),
@@ -96,6 +99,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
           ),
           body: TabBarView(
             children: <Widget>[
+              ProjectTeamScreen(),
               ProjectDashboard(),
               ProjectTasks(),
               IssuesListview(),

@@ -5,6 +5,9 @@ import 'package:cortex_earth_3/widgets/figures/figure_beforeAfter.dart';
 import 'package:cortex_earth_3/widgets/figures/bar_chart1.dart';
 import 'package:cortex_earth_3/widgets/figures/bar_chart2.dart';
 import 'package:cortex_earth_3/widgets/figures/bar_chart5.dart';
+import 'package:cortex_earth_3/widgets/figures/figure_sin.dart';
+import 'package:cortex_earth_3/widgets/figures/figure_sinCombined.dart';
+import 'package:cortex_earth_3/widgets/figures/figure_sinStacked.dart';
 import 'package:cortex_earth_3/widgets/figures/line_chart_sample1.dart';
 import 'package:cortex_earth_3/widgets/figures/pie_chart_sample2.dart';
 import 'package:cortex_earth_3/widgets/figures/scatter_chart_sample1.dart';
@@ -88,15 +91,51 @@ class DataListScreen extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: Text('Pie Chart'),
-                  subtitle: Text('J. Xing et al. / Genomics 2010'),
+                  title: Text('(3D INTERACTIVE OBJECT) '),
+                  subtitle: Text('Lucas et al. 2013'),
                   onTap: () {
                     showCupertinoModalBottomSheet(
                         barrierColor: barrierColor,
                         expand: false,
                         context: context,
                         builder: (context, scrollController) =>
-                            PieChartSample2());
+                            Figure3DScreen());
+                  },
+                ),
+                ListTile(
+                  title: Text('(2D Sin Wave visual) '),
+                  subtitle: Text('Dungvn 2020'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            FigureSinWave());
+                  },
+                ),
+                ListTile(
+                  title: Text('(2D SinWave Stacked) '),
+                  subtitle: Text('VKY 2020'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            FigureSinWaveStacked());
+                  },
+                ),
+                ListTile(
+                  title: Text('(2D Sin Combined) '),
+                  subtitle: Text('VKY 2020'),
+                  onTap: () {
+                    showCupertinoModalBottomSheet(
+                        barrierColor: barrierColor,
+                        expand: false,
+                        context: context,
+                        builder: (context, scrollController) =>
+                            FigureSinCombined());
                   },
                 ),
                 ListTile(
@@ -136,15 +175,15 @@ class DataListScreen extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: Text('(3D INTERACTIVE OBJECT) '),
-                  subtitle: Text('Lucas et al. 2013'),
+                  title: Text('Pie Chart'),
+                  subtitle: Text('J. Xing et al. / Genomics 2010'),
                   onTap: () {
                     showCupertinoModalBottomSheet(
                         barrierColor: barrierColor,
                         expand: false,
                         context: context,
                         builder: (context, scrollController) =>
-                            Figure3DScreen());
+                            PieChartSample2());
                   },
                 ),
                 ListTile(

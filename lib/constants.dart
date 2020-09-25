@@ -95,3 +95,11 @@ const Color barrierColor = Colors.black87;
 
 // Slider
 Color kSliderActiveColor = Colors.blue;
+
+// Figure Slider Parameter
+TextStyle kFigureSliderLabelStyle =
+    TextStyle(color: Colors.white70, fontSize: 16);
+TextStyle kFigureSliderVarStyle =
+    TextStyle(color: Colors.white70, fontSize: 24);
+const EdgeInsets kFigureSliderLabelpadding =
+    EdgeInsets.symmetric(horizontal: 20);
