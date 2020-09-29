@@ -5,12 +5,6 @@ import 'package:mdi/mdi.dart';
 import '../constants.dart';
 
 class ProjectTile extends StatelessWidget {
-  final String uid;
-  final ProjectModel project;
-  final Function onTap;
-  final Function longPressCallback;
-  final Function onTapMore;
-
   const ProjectTile({
     Key key,
     this.uid,
@@ -20,6 +14,34 @@ class ProjectTile extends StatelessWidget {
     this.onTapMore,
   }) : super(key: key);
 
+  final String uid;
+  final ProjectModel project;
+  final Function onTap;
+  final Function longPressCallback;
+  final Function onTapMore;
+
+  ///Return an [Icon] matching the completion % of the project.
+  Icon completionIcon(int percentage) {
+    if (percentage == 100) {
+      return Icon(Mdi.circleSlice8);
+    } else if (percentage >= 87.5) {
+      return Icon(Mdi.circleSlice7);
+    } else if (percentage >= 75) {
+      return Icon(Mdi.circleSlice6);
+    } else if (percentage >= 62.5) {
+      return Icon(Mdi.circleSlice5);
+    } else if (percentage >= 50) {
+      return Icon(Mdi.circleSlice4);
+    } else if (percentage >= 37.5) {
+      return Icon(Mdi.circleSlice3);
+    } else if (percentage >= 25) {
+      return Icon(Mdi.circleSlice2);
+    } else if (percentage >= 12.5) {
+      return Icon(Mdi.circleSlice1);
+    }
+    return Icon(Mdi.circleOutline);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -27,12 +49,11 @@ class ProjectTile extends StatelessWidget {
         project.name,
         style: kListViewTitleStyle,
       ),
+      leading: completionIcon(project.completionPercentage),
       // subtitle: Text(
       //   project.correspondingAuthor,
       //   style: kListViewTitleStyle,
       // ),
-      leading: Icon(Mdi.circleSlice5),
-      // trailing: IconButton(icon: Icon(Icons.more_horiz), onPressed: null),
       onTap: onTap,
       onLongPress: longPressCallback,
     );

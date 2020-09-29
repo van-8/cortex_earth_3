@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/homeTab/project_detail/project_credit.dart';
 import 'package:flutter/material.dart';
 
 class ProjectDashboard extends StatefulWidget {
@@ -22,6 +23,7 @@ class _ProjectDashboardState extends State<ProjectDashboard> {
               height: 1,
               color: Colors.grey[200],
             ),
+            ContributorsList(),
           ],
         ),
       ),

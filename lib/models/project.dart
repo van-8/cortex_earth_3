@@ -14,6 +14,7 @@ class ProjectModel {
   Timestamp dateCreated;
   String correspondingAuthor;
   bool isPinned;
+  int completionPercentage;
   List<UserModel> contributors;
   List<SynapseModel> projectSynapses;
   List<TaskModel> projectTasks;
@@ -29,6 +30,7 @@ class ProjectModel {
     this.taskTotal,
     this.dateCreated,
     this.correspondingAuthor,
+    this.completionPercentage,
     this.isPinned,
     this.contributors,
     this.projectSynapses,
@@ -47,5 +49,6 @@ class ProjectModel {
     dateCreated = documentSnapshot.data["dateCreated"];
     taskTotal = documentSnapshot.data["taskTotal"];
     isPinned = documentSnapshot.data["isPinned"];
+    completionPercentage = documentSnapshot.data["completionPercentage"];
   }
 }

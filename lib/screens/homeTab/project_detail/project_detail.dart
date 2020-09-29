@@ -23,22 +23,21 @@ class ProjectDetailScreen extends StatefulWidget {
 class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
   Color projectColor = Colors.green;
   final List<String> _tabs = [
-    'Team',
-    'Dashboard',
-    'Tasks',
-    'Issues',
-    'Content',
-    'Protocol',
-    'Data',
-    'Synapses',
-    'References',
+    'REFERENCES',
+    'SYNAPSES',
+    'CONTENT',
+    'DASHBOARD',
+    'TASKS',
+    'ISSUES',
+    'PROTOCOL',
+    'DATA',
   ];
   @override
   Widget build(BuildContext context) {
     return Material(
       child: DefaultTabController(
         length: _tabs.length,
-        initialIndex: 1,
+        initialIndex: 3,
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size(200, 90),
@@ -101,19 +100,18 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
           ),
           body: TabBarView(
             children: <Widget>[
-              ProjectTeamScreen(),
+              ArticlesListScreen(),
+              SynapsesListScreen(),
+              ProjectContent(project: widget.project),
               ProjectDashboard(),
               ProjectTasks(),
               IssuesListview(),
-              ProjectContent(project: widget.project),
               Container(
                 padding: const EdgeInsets.all(20),
                 child: Text(
                     'Protocol of the project. \n\nTemplates to auto-create tasks with dependencies? \n\nCan leave device next to you and dictate what you did, then edit afterwards. But now we shift into realm of ELN Electronic Lab Notebooks? '),
               ),
               DataListScreen(),
-              SynapsesListScreen(),
-              ArticlesListScreen(),
             ],
           ),
         ),
