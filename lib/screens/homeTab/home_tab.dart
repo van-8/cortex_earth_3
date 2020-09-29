@@ -9,12 +9,12 @@ import 'task_screen.dart';
 
 class HomeTab extends StatelessWidget {
   final List<String> _list = [
-    'Tasks',
-    'Inbox',
-    'Projects',
-    'Cascades',
-    'Lab',
-    'Profile',
+    'TASKS',
+    'INBOX',
+    'PROJECTS',
+    'CASCADES',
+    'LAB',
+    'PROFILE',
   ];
 
   @override

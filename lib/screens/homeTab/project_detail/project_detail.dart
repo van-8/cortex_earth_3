@@ -38,7 +38,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     return Material(
       child: DefaultTabController(
         length: _tabs.length,
-        initialIndex: 4,
+        initialIndex: 1,
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size(200, 90),

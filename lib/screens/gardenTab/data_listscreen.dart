@@ -23,9 +23,9 @@ class DataListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(flex: 1, child: TagList()),
+        // Expanded(flex: 1, child: TagList()),
         Expanded(
-          flex: 3,
+          // flex: 3,
           child: Container(
             child: ListView(
               children: [

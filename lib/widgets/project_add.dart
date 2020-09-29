@@ -9,7 +9,7 @@ import '../constants.dart';
 class ProjectAddScreen extends GetWidget<AuthController> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _authorController = TextEditingController();
-  final TextEditingController _abstractController = TextEditingController();
+  final TextEditingController _summaryController = TextEditingController();
   final bool isPinned;
 
   ProjectAddScreen({
@@ -72,7 +72,7 @@ class ProjectAddScreen extends GetWidget<AuthController> {
         child: Expanded(
             child: TextFormField(
                 autofocus: false,
-                controller: _abstractController,
+                controller: _summaryController,
                 minLines: 1,
                 maxLines: 6,
                 keyboardType: TextInputType.text,
@@ -167,11 +167,11 @@ class ProjectAddScreen extends GetWidget<AuthController> {
                   Database().addProject(
                     controller.user.uid,
                     _nameController.text,
-                    _abstractController.text,
+                    _summaryController.text,
                     _authorController.text,
                   );
                   _nameController.clear();
-                  _abstractController.clear();
+                  _summaryController.clear();
                   _authorController.clear();
                 }
               },

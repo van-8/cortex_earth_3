@@ -8,10 +8,10 @@ import 'nephron/nephron_screen.dart';
 
 class WildsTab extends StatelessWidget {
   final List<String> _list = [
-    'Feed',
-    'Nephrons',
-    'Flocks',
-    'Frolic',
+    'FEED',
+    'NEPHRONS',
+    'FLOCKS',
+    'FROLIC',
   ];
 
   @override

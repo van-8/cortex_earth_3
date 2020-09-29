@@ -433,7 +433,7 @@ class Database {
   Future<void> addProject(
     String uid,
     String name,
-    String abstract,
+    String summary,
     String correspondingAuthor,
     // bool isPinned,
   ) async {
@@ -445,7 +445,7 @@ class Database {
           .add({
         'dateCreated': Timestamp.now(),
         'name': name,
-        'abstract': abstract,
+        'summary': summary,
         'correspondingAuthor': correspondingAuthor,
         // 'isPinned': isPinned,
       });
