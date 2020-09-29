@@ -1,75 +1,46 @@
+import 'package:cortex_earth_3/models/project.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'dart:async' show Future;
 // import 'package:flutter/services.dart' show rootBundle;
 import 'package:markdown_widget/markdown_widget.dart';
-import 'package:markdown_widget/markdown_toc.dart';
+// import 'package:markdown_widget/markdown_toc.dart';
 
 class MarkdownDetailScreen extends StatefulWidget {
-  final String initialData;
+  final ProjectModel project;
 
-  const MarkdownDetailScreen({Key key, this.initialData = ''})
-      : super(key: key);
+  MarkdownDetailScreen({Key key, this.project}) : super(key: key);
 
   @override
   _MarkdownDetailScreenState createState() => _MarkdownDetailScreenState();
 }
 
 class _MarkdownDetailScreenState extends State<MarkdownDetailScreen> {
-  final TocController _tocController = TocController();
-  String text = '';
+  // final TocController _tocController = TocController();
+  String text = 'nothing else is here';
+  bool isPreview = false;
 
   @override
   void initState() {
-    text = _markdownData;
+    text = widget.project.content;
     super.initState();
   }
 
-  final List<String> _tabs = ['Edit', 'Preview', 'ToC'];
-
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: DefaultTabController(
-      length: _tabs.length,
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size(200, 90),
-          child: Column(
-            children: [
-              Expanded(child: Text('Title')),
-              TabBar(
-                tabs: _tabs.map((e) => Tab(text: e)).toList(),
-                indicatorColor: Colors.lightBlue,
-                labelColor: Colors.lightBlue,
-              )
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            buildEditText(),
-            _buildPreview(),
-            _buildToCView(),
-          ],
-        ),
+    return Stack(children: [
+      Container(child: isPreview ? buildPreview() : buildEditText()),
+      Container(
+        alignment: Alignment.bottomCenter,
+        child: OutlineButton(
+            child: Text('PREVIEW'),
+            onPressed: () {
+              setState(() {
+                isPreview = !isPreview;
+              });
+            }),
       ),
-    ));
-  }
-
-  Widget _buildToCView() {
-    return Row(
-      children: [
-        Expanded(child: _buildTOC()),
-        Expanded(child: _buildPreview(), flex: 1)
-      ],
-    );
-  }
-
-  Widget _buildTOC() {
-    return Container(
-      child: TocListWidget(controller: _tocController),
-    );
+    ]);
   }
 
   Widget buildEditText() {
@@ -84,6 +55,7 @@ class _MarkdownDetailScreenState extends State<MarkdownDetailScreen> {
       //   ),
       // ),
       child: TextFormField(
+        autofocus: true,
         expands: true,
         maxLines: null,
         textInputAction: TextInputAction.newline,
@@ -106,30 +78,21 @@ class _MarkdownDetailScreenState extends State<MarkdownDetailScreen> {
     if (mounted) setState(() {});
   }
 
-  Widget _buildPreview() {
-    return MarkdownWidget(
-      data: text,
-      controller: _tocController,
+  Widget buildPreview() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
+      child: MarkdownWidget(
+        data: text,
+        // controller: _tocController,
+      ),
     );
   }
 
-  String _markdownData = """
-# Markdown Test
-
-This is a simple Markdown test. Provide a text string with Markdown tags to the Markdown widget and it will display the formatted output in a scrollable widget.
-
-## Section 1
-Maecenas eget **arcu egestas**, mollis ex vitae, posuere magna. Nunc eget
-aliquam tortor. Vestibulum porta sodales efficitur. Mauris interdum turpis eget est condimentum, vitae porttitor diam ornare.
-
-## Section 2
-Sed et massa finibus, blandit massa vel, vulputate velit. Vestibulum vitae venenatis libero. **__Curabitur sem lectus, feugiat eu justo in, eleifend accumsan ante.__** Sed a fermentum elit. Curabitur sodales metus id mi ornare, in ullamcorper magna congue.
-
-## Section 3
-Sed et massa finibus, blandit massa vel, vulputate velit. Vestibulum vitae venenatis libero. **__Curabitur sem lectus, feugiat eu justo in, eleifend accumsan ante.__** Sed a fermentum elit. Curabitur sodales metus id mi ornare, in ullamcorper magna congue.
-
-## Section 4
-Sed et massa finibus, blandit massa vel, vulputate velit. Vestibulum vitae venenatis libero. **__Curabitur sem lectus, feugiat eu justo in, eleifend accumsan ante.__** Sed a fermentum elit. Curabitur sodales metus id mi ornare, in ullamcorper magna congue.
-
-""";
+  // Widget _buildActionBar() {
+  //   return Container(
+  //     child: Row(
+  //       children: [IconButton(icon: Icon(Icons.save), onPressed: () {})],
+  //     ),
+  //   );
+  // }
 }

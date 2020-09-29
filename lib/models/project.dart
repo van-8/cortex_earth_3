@@ -8,7 +8,8 @@ import 'task.dart';
 class ProjectModel {
   String projectID;
   String name;
-  String description;
+  String abstract;
+  String content;
   int taskTotal;
   Timestamp dateCreated;
   String correspondingAuthor;
@@ -23,7 +24,8 @@ class ProjectModel {
   ProjectModel({
     this.projectID,
     this.name,
-    this.description,
+    this.abstract,
+    this.content,
     this.taskTotal,
     this.dateCreated,
     this.correspondingAuthor,
@@ -39,10 +41,11 @@ class ProjectModel {
   ) {
     projectID = documentSnapshot.documentID;
     name = documentSnapshot.data["name"];
-    description = documentSnapshot.data["description"];
+    abstract = documentSnapshot.data["abstract"];
     correspondingAuthor = documentSnapshot.data["correspondingAuthor"];
-    // taskTotal = documentSnapshot.data["taskTotal"];
+    content = documentSnapshot.data["content"];
     dateCreated = documentSnapshot.data["dateCreated"];
+    taskTotal = documentSnapshot.data["taskTotal"];
     isPinned = documentSnapshot.data["isPinned"];
   }
 }

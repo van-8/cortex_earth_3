@@ -7,12 +7,12 @@ import 'user.dart';
 class SynapseModel {
   String synapseID;
   String content;
-  int lineNumber;
+  // int lineNumber;
   String sourceDOI;
   String notes;
   Timestamp dateCreated;
-  UserModel correspondingAuthor;
-  List<UserModel> contributors;
+  String correspondingAuthor;
+  String contributors;
   List<TagModel> tags;
   List<CascadeModel> cascadesLinked;
   List<ProjectModel> projectsLinked;
@@ -20,7 +20,7 @@ class SynapseModel {
   SynapseModel(
       {this.synapseID,
       this.content,
-      this.lineNumber,
+      // this.lineNumber,
       this.sourceDOI,
       this.notes,
       this.dateCreated,
@@ -34,7 +34,7 @@ class SynapseModel {
     synapseID = documentSnapshot.documentID;
     dateCreated = documentSnapshot.data["dateCreated"];
     content = documentSnapshot.data["content"];
-    lineNumber = documentSnapshot.data["lineNumber"];
+    // lineNumber = documentSnapshot.data["lineNumber"];
     sourceDOI = documentSnapshot.data["sourceDOI"];
     notes = documentSnapshot.data["notes"];
   }

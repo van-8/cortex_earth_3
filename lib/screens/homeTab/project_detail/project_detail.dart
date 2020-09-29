@@ -2,6 +2,7 @@ import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/screens/gardenTab/articles_listscreen.dart';
 import 'package:cortex_earth_3/screens/gardenTab/data_listscreen.dart';
 import 'package:cortex_earth_3/screens/gardenTab/synapse_listscreen.dart';
+import 'package:cortex_earth_3/screens/homeTab/project_detail/project_content.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_dashboard.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_issues.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_tasks.dart';
@@ -26,6 +27,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     'Dashboard',
     'Tasks',
     'Issues',
+    'Content',
     'Protocol',
     'Data',
     'Synapses',
@@ -36,7 +38,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     return Material(
       child: DefaultTabController(
         length: _tabs.length,
-        initialIndex: 1,
+        initialIndex: 4,
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size(200, 90),
@@ -103,6 +105,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               ProjectDashboard(),
               ProjectTasks(),
               IssuesListview(),
+              ProjectContent(project: widget.project),
               Container(
                 padding: const EdgeInsets.all(20),
                 child: Text(

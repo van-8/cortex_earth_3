@@ -44,12 +44,12 @@ class SynapseAddScreen extends GetWidget<AuthController> {
                       Database().addSynapse(
                         controller.user.uid,
                         _synapseContentController.text,
-                        int.parse(_synapselineNumberController.text),
+                        // int.parse(_synapselineNumberController.text),
                         _synapseSourceDOIController.text,
                         _synapseNotesController.text,
                       );
                       _synapseContentController.clear();
-                      _synapselineNumberController.clear();
+                      // _synapselineNumberController.clear();
                       _synapseSourceDOIController.clear();
                       _synapseNotesController.clear();
                     }
@@ -98,15 +98,16 @@ class SynapseAddScreen extends GetWidget<AuthController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Icon(Mdi.pound, size: 12, color: kIconActiveColor),
-            Container(
-                width: 50,
-                child: TextFormField(
-                    autofocus: false,
-                    controller: _synapselineNumberController,
-                    // keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        hintText: '   ...', border: InputBorder.none))),
+            // Line Number Tracking Functionality
+            // Icon(Mdi.pound, size: 12, color: kIconActiveColor),
+            // Container(
+            //     width: 50,
+            //     child: TextFormField(
+            //         autofocus: false,
+            //         controller: _synapselineNumberController,
+            //         // keyboardType: TextInputType.number,
+            //         decoration: InputDecoration(
+            //             hintText: '   ...', border: InputBorder.none))),
             Icon(Mdi.bookmarkOutline, color: kIconActiveColor),
             Expanded(
                 child: TextFormField(

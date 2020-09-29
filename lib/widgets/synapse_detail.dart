@@ -33,12 +33,6 @@ class SynapseDetailScreen extends StatelessWidget {
                     padding: _textpadding,
                   ),
                 ),
-                Container(
-                    child: Text(
-                      synapse.lineNumber.toString(),
-                      style: _lineNumberStyle,
-                    ),
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0)),
               ],
             ),
             Container(child: Text('Date Created'), padding: _textpadding),

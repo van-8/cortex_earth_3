@@ -354,7 +354,7 @@ class Database {
   Future<void> addSynapse(
     String uid,
     String content,
-    int lineNumber,
+    // int lineNumber,
     String sourceDOI,
     String notes,
   ) async {
@@ -366,7 +366,7 @@ class Database {
           .add({
         'dateCreated': Timestamp.now(),
         'content': content,
-        'lineNumber': lineNumber,
+        // 'lineNumber': lineNumber,
         'sourceDOI': sourceDOI,
         'notes': notes,
       });
@@ -433,7 +433,7 @@ class Database {
   Future<void> addProject(
     String uid,
     String name,
-    String description,
+    String abstract,
     String correspondingAuthor,
     // bool isPinned,
   ) async {
@@ -445,7 +445,7 @@ class Database {
           .add({
         'dateCreated': Timestamp.now(),
         'name': name,
-        'description': description,
+        'abstract': abstract,
         'correspondingAuthor': correspondingAuthor,
         // 'isPinned': isPinned,
       });
@@ -454,6 +454,24 @@ class Database {
       rethrow;
     }
   }
+//TODO: update projectContent
+  // Future<void> updateProjectContent(
+  //   String uid,
+  //   String text,
+  //   String projectID,
+  // ) async {
+  //   try {
+  //     _firestore
+  //         .collection("users")
+  //         .document(uid)
+  //         .collection("projects")
+  //         .document(projectID)
+  //         .updateData({"content": text});
+  //   } catch (e) {
+  //     print(e);
+  //     rethrow;
+  //   }
+  // }
 
   Future<void> updateProjectPinned(
       bool newValue, String uid, String projectID) async {

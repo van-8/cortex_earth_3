@@ -44,10 +44,6 @@ class SynapseTile extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    synapse.lineNumber.toString(),
-                    style: kSynapseTileSubtitle,
-                  ),
                 ],
               ),
             ),
