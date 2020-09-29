@@ -30,6 +30,23 @@ Time is our most precious resource in this life. Yet think back to the endless h
 2. App furthers the gap between wealthy & poor researchers, instead of reducing it.
 3. Become another amoral villanious for-profit publisher. 
 
+
+
+Designed to compliment the data/coding/writing of JupyterLab.
+
+## App Mental Model
+Inspired by place/boundary/landmark/grid cells in the entorhinal cortex (John O'Keefe, May-Britt Moser, Edvard Moser), imagine the app as creating an intellectual landscape for you to map.
+
+### 1. HOME is a cottage in a vast landscape, where you work on your legacy.
+Manage `todos`, bring work email directly into an `inbox`, track `projects`, discuss `issues`, and manage your `lab`.
+
+### 2. Stroll outside to the GARDEN where you store knowledge objects you've collected on your intellectual journey. 
+Organize saved `articles`, `books`, `questions`, `data`, `truth claims`, and `models` using flexible `tags` instead of folders. Fast `Smart Search`. When you need inspiration, `Play` around in your `Garden` of knowledge.
+
+### 3. Beyond the fence, EXPLORE the wild untamed world. 
+Browse `journals`, `communities`, and `groups` for novel findings to bring back to your **Garden**, or even into `projects` in your **Home**.
+
+
 ### Specs
 
 Built with Flutter framework (plus GetX microframework) for JIT hot reload and AOT compiling to native Android, iOS, Web, Mac, PC, and Linux. Backend currently Firebase.
