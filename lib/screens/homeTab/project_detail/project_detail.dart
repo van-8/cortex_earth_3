@@ -5,6 +5,7 @@ import 'package:cortex_earth_3/screens/gardenTab/synapse_listscreen.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_content.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_dashboard.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_issues.dart';
+import 'package:cortex_earth_3/screens/homeTab/project_detail/project_methods.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_tasks.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_team.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,8 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     'DASHBOARD',
     'TASKS',
     'ISSUES',
-    'PROTOCOL',
     'DATA',
+    'METHODS',
   ];
   @override
   Widget build(BuildContext context) {
@@ -106,12 +107,8 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               ProjectDashboard(),
               ProjectTasks(),
               IssuesListview(),
-              Container(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                    'Protocol of the project. \n\nTemplates to auto-create tasks with dependencies? \n\nCan leave device next to you and dictate what you did, then edit afterwards. But now we shift into realm of ELN Electronic Lab Notebooks? '),
-              ),
               DataListScreen(),
+              ProjectMethods(),
             ],
           ),
         ),

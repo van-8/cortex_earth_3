@@ -59,21 +59,3 @@ class ProjectTile extends StatelessWidget {
     );
   }
 }
-
-// GestureDetector(
-//       onTap: onTap,
-//       child: Container(
-//         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Text(project.name),
-//             SizedBox(width: 10),
-//             Text(
-//               project.correspondingAuthor,
-//               style: kSynapseTileSubtitle,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );

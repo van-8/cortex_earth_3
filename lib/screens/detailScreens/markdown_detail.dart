@@ -18,7 +18,7 @@ class MarkdownDetailScreen extends StatefulWidget {
 class _MarkdownDetailScreenState extends State<MarkdownDetailScreen> {
   // final TocController _tocController = TocController();
   String text = 'nothing else is here';
-  bool isPreview = false;
+  bool isPreview = true;
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _MarkdownDetailScreenState extends State<MarkdownDetailScreen> {
       Container(
         alignment: Alignment.bottomCenter,
         child: OutlineButton(
-            child: Text('PREVIEW'),
+            child: isPreview ? Text('EDIT') : Text('PREVIEW'),
             onPressed: () {
               setState(() {
                 isPreview = !isPreview;
