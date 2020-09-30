@@ -7,7 +7,6 @@ import 'package:cortex_earth_3/screens/homeTab/project_detail/project_dashboard.
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_issues.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_methods.dart';
 import 'package:cortex_earth_3/screens/homeTab/project_detail/project_tasks.dart';
-import 'package:cortex_earth_3/screens/homeTab/project_detail/project_team.dart';
 import 'package:flutter/material.dart';
 import 'package:cortex_earth_3/models/project.dart';
 import 'package:get/get.dart';

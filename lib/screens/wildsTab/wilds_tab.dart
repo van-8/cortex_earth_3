@@ -1,3 +1,4 @@
+import 'package:cortex_earth_3/screens/wildsTab/feed2.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -48,7 +49,7 @@ class WildsTab extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            FeedScreen(),
+            FeedScreen2(),
             NephronScreen(),
             FlocksScreen(),
             FrolicScreen(),

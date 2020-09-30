@@ -13,7 +13,6 @@ import 'package:cortex_earth_3/widgets/figures/pie_chart_sample2.dart';
 import 'package:cortex_earth_3/widgets/figures/scatter_chart_sample1.dart';
 import 'package:cortex_earth_3/widgets/figures/scatter_chart_sample2.dart';
 import 'package:flutter/material.dart';
-import 'package:cortex_earth_3/widgets/tag_list.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../constants.dart';

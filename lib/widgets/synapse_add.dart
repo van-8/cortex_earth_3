@@ -9,8 +9,6 @@ import '../constants.dart';
 class SynapseAddScreen extends GetWidget<AuthController> {
   final TextEditingController _synapseContentController =
       TextEditingController();
-  final TextEditingController _synapselineNumberController =
-      TextEditingController();
   final TextEditingController _synapseSourceDOIController =
       TextEditingController();
   final TextEditingController _synapseNotesController = TextEditingController();

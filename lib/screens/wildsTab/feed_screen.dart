@@ -16,6 +16,7 @@ class FeedScreen extends GetWidget<AuthController> {
     return Scaffold(
       body: Column(
         children: [
+          _buildFilter(),
           GetX<ArticleController>(
             init: Get.put<ArticleController>(ArticleController()),
             builder: (ArticleController articleController) {
@@ -73,6 +74,18 @@ class FeedScreen extends GetWidget<AuthController> {
           ),
         ],
       ),
+      endDrawer: Container(
+        margin: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width / 4, top: 0),
+        color: Colors.white,
+        child: ListView(
+          children: <Widget>[TextField(), Text('hey there')],
+        ),
+      ),
     );
+  }
+
+  Widget _buildFilter() {
+    return Container();
   }
 }
