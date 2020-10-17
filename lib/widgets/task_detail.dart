@@ -1,6 +1,7 @@
 import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/models/task.dart';
+import 'package:cortex_earth_3/services/database.dart';
 import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
@@ -10,12 +11,10 @@ class TaskDetailScreen extends GetWidget<AuthController> {
   TaskDetailScreen({
     this.uid,
     this.task,
-    // this.checkmark,
   });
 
   final String uid;
   final TaskModel task;
-  // bool checkmark;
   final TextEditingController _titleController = TextEditingController();
 
   @override
@@ -191,15 +190,18 @@ class TaskDetailScreen extends GetWidget<AuthController> {
                   'Delete, leave, copy URL, share, Mark as milestone, mark as Approval');
             },
           ),
-          IconButton(
-            icon: task.isDone
-                ? GradientIcon(Mdi.checkBold, 24, kGradientGreenBlue)
-                : Icon(Icons.check, color: kIconActiveColor),
-            onPressed: () {},
-          ),
+          Checkbox(
+              value: task.isDone,
+              onChanged: (newValue) {
+                Database().updateTaskisDone(newValue, uid, task.taskID);
+              })
         ],
       ),
     );
+  }
+
+  void updateTask(bool newValue) {
+    Database().updateTaskisDone(newValue, uid, task.taskID);
   }
 
   Widget _buildInputText() {

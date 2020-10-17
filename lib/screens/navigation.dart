@@ -56,10 +56,7 @@ class _NavigationState extends State<Navigation> {
           BottomNavigationBarItem(
             icon: Icon(Mdi.compassOutline),
             activeIcon: GradientIcon(Mdi.compass, 20, kGradientBrownTan),
-            title: Text(
-              'Wilds',
-              style: TextStyle(color: kWildsColor),
-            ),
+            label: 'Wilds',
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.sproutOutline),
@@ -70,10 +67,7 @@ class _NavigationState extends State<Navigation> {
                     colors: [Colors.lightGreenAccent, kGardenColor],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight)),
-            title: Text(
-              'Garden',
-              style: TextStyle(color: kGardenColor),
-            ),
+            label: 'Garden',
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.homeAccount),
@@ -84,26 +78,17 @@ class _NavigationState extends State<Navigation> {
                     colors: [Colors.greenAccent, Colors.blueAccent],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight)),
-            title: Text(
-              'Home',
-              style: TextStyle(color: kHomeColor),
-            ),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.magnify),
             activeIcon: GradientIcon(Mdi.searchWeb, 20, kGradientGreenBlue),
-            title: Text(
-              'Search',
-              style: TextStyle(color: Colors.grey),
-            ),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Mdi.hammerWrench),
             activeIcon: GradientIcon(Mdi.hammerWrench, 20, kGradientGreenBlue),
-            title: Text(
-              'Tricorder',
-              style: TextStyle(color: Colors.blueAccent),
-            ),
+            label: 'Tricorder',
           ),
         ],
         currentIndex: _selectedIndex,
