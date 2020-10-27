@@ -41,19 +41,19 @@ class PostModel {
   PostModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    id = documentSnapshot.documentID;
-    dateCreated = documentSnapshot.data["dateCreated"];
-    title = documentSnapshot.data["title"];
-    content = documentSnapshot.data["content"];
-    isArchived = documentSnapshot.data["isArchived"];
-    isPublished = documentSnapshot.data["isPublished"];
-    isRead = documentSnapshot.data["isRead"];
-    likeCount = documentSnapshot.data["likeCount"];
-    dislikeCount = documentSnapshot.data["dislikeCount"];
-    loveCount = documentSnapshot.data["loveCount"];
-    congratsCount = documentSnapshot.data["congratsCount"];
-    questionCount = documentSnapshot.data["questionCount"];
-    authorID = documentSnapshot.data["authorID"];
+    id = documentSnapshot.id;
+    dateCreated = documentSnapshot.data()["dateCreated"];
+    title = documentSnapshot.data()["title"];
+    content = documentSnapshot.data()["content"];
+    isArchived = documentSnapshot.data()["isArchived"];
+    isPublished = documentSnapshot.data()["isPublished"];
+    isRead = documentSnapshot.data()["isRead"];
+    likeCount = documentSnapshot.data()["likeCount"];
+    dislikeCount = documentSnapshot.data()["dislikeCount"];
+    loveCount = documentSnapshot.data()["loveCount"];
+    congratsCount = documentSnapshot.data()["congratsCount"];
+    questionCount = documentSnapshot.data()["questionCount"];
+    authorID = documentSnapshot.data()["authorID"];
     // tags = documentSnapshot.data["tags"];
     // mentions = documentSnapshot.data["mentions"];
     // privateBetween = documentSnapshot.data["privateBetween"];

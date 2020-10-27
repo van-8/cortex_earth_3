@@ -12,11 +12,11 @@ import 'package:cortex_earth_3/models/article.dart';
 import 'package:cortex_earth_3/models/issue.dart';
 
 class Database {
-  final Firestore _firestore = Firestore.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<bool> createNewUser(UserModel user) async {
     try {
-      await _firestore.collection("users").document(user.id).setData({
+      await _firestore.collection("users").doc(user.id).set({
         "name": user.name,
         "email": user.email,
         "title": user.title,
@@ -32,7 +32,7 @@ class Database {
   Future<UserModel> getUser(String uid) async {
     try {
       DocumentSnapshot _doc =
-          await _firestore.collection("users").document(uid).get();
+          await _firestore.collection("users").doc(uid).get();
 
       return UserModel.fromDocumentSnapshot(documentSnapshot: _doc);
     } catch (e) {
@@ -46,11 +46,7 @@ class Database {
     String content,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("tasks")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("tasks").add({
         'dateCreated': Timestamp.now(),
         'content': content,
         'isDone': false,
@@ -65,13 +61,13 @@ class Database {
   Stream<List<TaskModel>> taskStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("tasks")
         .orderBy("isDone", descending: false)
         .snapshots()
         .map((QuerySnapshot query) {
       List<TaskModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(TaskModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -86,10 +82,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("tasks")
-          .document(taskId)
-          .updateData({"isDone": newValue});
+          .doc(taskId)
+          .update({"isDone": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -104,10 +100,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("tasks")
-          .document(taskId)
-          .updateData({"isPriority": newValue});
+          .doc(taskId)
+          .update({"isPriority": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -132,11 +128,7 @@ class Database {
     // List<UserModel> privateBetween;
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("posts")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("posts").add({
         'dateCreated': Timestamp.now(),
         'authorID': authorID,
         'title': title,
@@ -159,13 +151,13 @@ class Database {
   Stream<List<PostModel>> postsStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("posts")
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<PostModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(PostModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -177,11 +169,7 @@ class Database {
     String name,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("tags")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("tags").add({
         'name': name,
         'isFaved': false,
       });
@@ -194,13 +182,13 @@ class Database {
   Stream<List<TagModel>> tagStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("tags")
         .orderBy("name", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<TagModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(TagModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -211,10 +199,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("tags")
-          .document(tagId)
-          .updateData({"name": newValue});
+          .doc(tagId)
+          .update({"name": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -229,11 +217,7 @@ class Database {
     int upvoteCount,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("issues")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("issues").add({
         'dateCreated': Timestamp.now(),
         'title': title,
         'description': description,
@@ -250,13 +234,13 @@ class Database {
   Stream<List<IssueModel>> issueStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("issues")
         .orderBy("upvoteCount", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<IssueModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(IssueModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -271,10 +255,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("issues")
-          .document(issueId)
-          .updateData({"isClosed": newValue});
+          .doc(issueId)
+          .update({"isClosed": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -288,10 +272,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("issues")
-          .document(issueId)
-          .updateData({"upvoteCount": FieldValue.increment(1)});
+          .doc(issueId)
+          .update({"upvoteCount": FieldValue.increment(1)});
     } catch (e) {
       print(e);
       rethrow;
@@ -313,11 +297,7 @@ class Database {
     // List<TagModel> tags,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("articles")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("articles").add({
         'publicationDate': Timestamp.now(),
         'title': title,
         'journal': journal,
@@ -338,13 +318,13 @@ class Database {
   Stream<List<ArticleModel>> articlesStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("articles")
         .orderBy("title", descending: false)
         .snapshots()
         .map((QuerySnapshot query) {
       List<ArticleModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(ArticleModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -359,11 +339,7 @@ class Database {
     String notes,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("synapses")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("synapses").add({
         'dateCreated': Timestamp.now(),
         'content': content,
         // 'lineNumber': lineNumber,
@@ -379,13 +355,13 @@ class Database {
   Stream<List<SynapseModel>> synapseStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("synapses")
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<SynapseModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(SynapseModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -398,11 +374,7 @@ class Database {
     String description,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("cascades")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("cascades").add({
         'dateCreated': Timestamp.now(),
         'name': name,
         'description': description,
@@ -417,13 +389,13 @@ class Database {
   Stream<List<CascadeModel>> cascadeStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("cascades")
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<CascadeModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(CascadeModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -438,11 +410,7 @@ class Database {
     // bool isPinned,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("projects")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("projects").add({
         'dateCreated': Timestamp.now(),
         'name': name,
         'summary': summary,
@@ -463,9 +431,9 @@ class Database {
   //   try {
   //     _firestore
   //         .collection("users")
-  //         .document(uid)
+  //         .doc(uid)
   //         .collection("projects")
-  //         .document(projectID)
+  //         .doc(projectID)
   //         .updateData({"content": text});
   //   } catch (e) {
   //     print(e);
@@ -478,10 +446,10 @@ class Database {
     try {
       _firestore
           .collection("users")
-          .document(uid)
+          .doc(uid)
           .collection("tasks")
-          .document(projectID)
-          .updateData({"isPinned": newValue});
+          .doc(projectID)
+          .update({"isPinned": newValue});
     } catch (e) {
       print(e);
       rethrow;
@@ -491,13 +459,13 @@ class Database {
   Stream<List<ProjectModel>> projectStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("projects")
         .orderBy("dateCreated", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<ProjectModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(ProjectModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -514,11 +482,7 @@ class Database {
     // List<TagModel> tags,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("nephrons")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("nephrons").add({
         'dateCreated': Timestamp.now(),
         'name': name,
         'about': about,
@@ -540,13 +504,13 @@ class Database {
   Stream<List<NephronModel>> nephronStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("nephrons")
         .orderBy("subscriberCount", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<NephronModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(NephronModel.fromDocumentSnapshot(element));
       });
       return retVal;
@@ -564,11 +528,7 @@ class Database {
     // List<TagModel> tags,
   ) async {
     try {
-      await _firestore
-          .collection("users")
-          .document(uid)
-          .collection("flocks")
-          .add({
+      await _firestore.collection("users").doc(uid).collection("flocks").add({
         'dateCreated': Timestamp.now(),
         'name': name,
         'about': about,
@@ -591,13 +551,13 @@ class Database {
   Stream<List<FlockModel>> flockStream(String uid) {
     return _firestore
         .collection("users")
-        .document(uid)
+        .doc(uid)
         .collection("flocks")
         .orderBy("memberCount", descending: true)
         .snapshots()
         .map((QuerySnapshot query) {
       List<FlockModel> retVal = List();
-      query.documents.forEach((element) {
+      query.docs.forEach((element) {
         retVal.add(FlockModel.fromDocumentSnapshot(element));
       });
       return retVal;

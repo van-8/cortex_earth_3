@@ -16,9 +16,9 @@ class CascadeModel {
   CascadeModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    cascadeID = documentSnapshot.documentID;
-    name = documentSnapshot.data["name"];
-    description = documentSnapshot.data["description"];
-    isFaved = documentSnapshot.data["isFaved"];
+    cascadeID = documentSnapshot.id;
+    name = documentSnapshot.data()["name"];
+    description = documentSnapshot.data()["description"];
+    isFaved = documentSnapshot.data()["isFaved"];
   }
 }
