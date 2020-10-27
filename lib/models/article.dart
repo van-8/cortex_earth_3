@@ -36,17 +36,17 @@ class ArticleModel {
   ArticleModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    articleAbstractID = documentSnapshot.documentID;
-    publicationDate = documentSnapshot.data["publicationDate"];
-    title = documentSnapshot.data["title"];
-    journal = documentSnapshot.data["journal"];
-    articleAbstract = documentSnapshot.data["articleAbstract"];
-    researchOrganism = documentSnapshot.data["researchOrganism"];
-    correspondingAuthor = documentSnapshot.data["correspondingAuthor"];
-    keyFigureURL = documentSnapshot.data["keyFigureURL"];
-    sourceDOI = documentSnapshot.data["sourceDOI"];
-    content = documentSnapshot.data["content"];
-    type = documentSnapshot.data["type"];
+    articleAbstractID = documentSnapshot.id;
+    publicationDate = documentSnapshot.data()["publicationDate"];
+    title = documentSnapshot.data()["title"];
+    journal = documentSnapshot.data()["journal"];
+    articleAbstract = documentSnapshot.data()["articleAbstract"];
+    researchOrganism = documentSnapshot.data()["researchOrganism"];
+    correspondingAuthor = documentSnapshot.data()["correspondingAuthor"];
+    keyFigureURL = documentSnapshot.data()["keyFigureURL"];
+    sourceDOI = documentSnapshot.data()["sourceDOI"];
+    content = documentSnapshot.data()["content"];
+    type = documentSnapshot.data()["type"];
     // contributors = documentSnapshot.data["contributors"];
     // tags = documentSnapshot.data["tags"];
   }

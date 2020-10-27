@@ -41,14 +41,14 @@ class ProjectModel {
   ProjectModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    projectID = documentSnapshot.documentID;
-    name = documentSnapshot.data["name"];
-    summary = documentSnapshot.data["summary"];
-    correspondingAuthor = documentSnapshot.data["correspondingAuthor"];
-    content = documentSnapshot.data["content"];
-    dateCreated = documentSnapshot.data["dateCreated"];
-    taskTotal = documentSnapshot.data["taskTotal"];
-    isPinned = documentSnapshot.data["isPinned"];
-    completionPercentage = documentSnapshot.data["completionPercentage"];
+    projectID = documentSnapshot.id;
+    name = documentSnapshot.data()["name"];
+    summary = documentSnapshot.data()["summary"];
+    correspondingAuthor = documentSnapshot.data()["correspondingAuthor"];
+    content = documentSnapshot.data()["content"];
+    dateCreated = documentSnapshot.data()["dateCreated"];
+    taskTotal = documentSnapshot.data()["taskTotal"];
+    isPinned = documentSnapshot.data()["isPinned"];
+    completionPercentage = documentSnapshot.data()["completionPercentage"];
   }
 }

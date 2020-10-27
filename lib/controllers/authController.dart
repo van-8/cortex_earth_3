@@ -6,24 +6,25 @@ import 'package:cortex_earth_3/services/database.dart';
 
 class AuthController extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
-  Rx<FirebaseUser> _firebaseUser = Rx<FirebaseUser>();
+  Rx<User> _firebaseUser = Rx<User>();
 
-  FirebaseUser get user => _firebaseUser.value;
+  User get user => _firebaseUser.value;
 
   @override
   onInit() {
-    _firebaseUser.bindStream(_auth.onAuthStateChanged);
+    _firebaseUser.bindStream(_auth.authStateChanges());
   }
 
   void createUser(String name, String email, String password) async {
     try {
-      AuthResult _authResult = await _auth.createUserWithEmailAndPassword(
-          email: email.trim(), password: password);
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+              email: email.trim(), password: password);
       //create user in database.dart
       UserModel _user = UserModel(
-        id: _authResult.user.uid,
+        id: userCredential.user.uid,
         name: name,
-        email: _authResult.user.email,
+        email: userCredential.user.email,
       );
       if (await Database().createNewUser(_user)) {
         Get.find<UserController>().user = _user;
@@ -40,10 +41,10 @@ class AuthController extends GetxController {
 
   void login(String email, String password) async {
     try {
-      AuthResult _authResult = await _auth.signInWithEmailAndPassword(
+      UserCredential _userCredential = await _auth.signInWithEmailAndPassword(
           email: email.trim(), password: password);
       Get.find<UserController>().user =
-          await Database().getUser(_authResult.user.uid);
+          await Database().getUser(_userCredential.user.uid);
     } catch (e) {
       Get.snackbar(
         "Error signing in",

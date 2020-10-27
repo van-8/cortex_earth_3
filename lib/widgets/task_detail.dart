@@ -2,7 +2,6 @@ import 'package:cortex_earth_3/constants.dart';
 import 'package:cortex_earth_3/controllers/authController.dart';
 import 'package:cortex_earth_3/models/task.dart';
 import 'package:cortex_earth_3/services/database.dart';
-import 'package:cortex_earth_3/widgets/icon_gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:get/get.dart';

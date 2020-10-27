@@ -30,11 +30,11 @@ class SynapseModel {
   SynapseModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    synapseID = documentSnapshot.documentID;
-    dateCreated = documentSnapshot.data["dateCreated"];
-    content = documentSnapshot.data["content"];
+    synapseID = documentSnapshot.id;
+    dateCreated = documentSnapshot.data()["dateCreated"];
+    content = documentSnapshot.data()["content"];
     // lineNumber = documentSnapshot.data["lineNumber"];
-    sourceDOI = documentSnapshot.data["sourceDOI"];
-    notes = documentSnapshot.data["notes"];
+    sourceDOI = documentSnapshot.data()["sourceDOI"];
+    notes = documentSnapshot.data()["notes"];
   }
 }

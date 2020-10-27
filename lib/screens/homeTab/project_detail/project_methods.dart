@@ -97,8 +97,8 @@ class _ProjectMethodsState extends State<ProjectMethods> {
     _IconIndicator indicator,
     String hour,
     String weather,
-    String temperature,
-    String phrase,
+    // String temperature,
+    // String phrase,
     bool isLast = false,
   }) {
     return TimelineTile(

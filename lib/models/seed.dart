@@ -17,9 +17,9 @@ class SeedModel {
   SeedModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    seedID = documentSnapshot.documentID;
-    name = documentSnapshot.data["name"];
-    description = documentSnapshot.data["description"];
-    isFaved = documentSnapshot.data["isFaved"];
+    seedID = documentSnapshot.id;
+    name = documentSnapshot.data()["name"];
+    description = documentSnapshot.data()["description"];
+    isFaved = documentSnapshot.data()["isFaved"];
   }
 }
