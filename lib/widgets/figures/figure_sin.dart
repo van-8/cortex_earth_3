@@ -44,7 +44,7 @@ class _FigureSinWaveState extends State<FigureSinWave> {
   Widget _buildSin() {
     return Sinusoidal(
       model: SinusoidalModel(
-        // travelling: _travelling,
+        travelling: _travelling,
         amplitude: _amplitude,
         waves: _waves,
         frequency: _frequency,

@@ -95,7 +95,6 @@ class _Speech2TextScreenState extends State<Speech2TextScreen> {
   stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = 'Ready to help...';
-  // ignore: unused_field
   double _confidence = 1.0;
 
   @override

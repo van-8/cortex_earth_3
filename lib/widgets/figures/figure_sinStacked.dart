@@ -57,7 +57,7 @@ class _FigureSinWaveStackedState extends State<FigureSinWaveStacked> {
         builder: (context, index) {
           return SinusoidalItem(
             model: SinusoidalModel(
-              // travelling: _travelling,
+              travelling: _travelling,
               amplitude: _amplitude,
               waves: _waves,
               translate: _translate * (index + 1),

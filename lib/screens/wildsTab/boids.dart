@@ -222,7 +222,6 @@ class BoidSimulation extends ChangeNotifier {
   final List<Boid> boids = [];
   final TickerProvider vsync;
   Ticker _ticker;
-  // ignore: unused_field
   double _time = 0.0;
 
   BoidSimulation(this.vsync) {

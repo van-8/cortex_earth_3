@@ -2,7 +2,7 @@ import 'package:cortex_earth_3/screens/wildsTab/feed2.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
-// import 'feed_screen.dart';
+import 'feed_screen.dart';
 import 'frolic_screen.dart';
 import 'flocks/flocks_screen.dart';
 import 'nephron/nephron_screen.dart';
