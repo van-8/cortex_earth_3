@@ -50,12 +50,12 @@ class NephronModel {
   NephronModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    nephronID = documentSnapshot.id;
-    dateCreated = documentSnapshot.data()["dateCreated"];
-    name = documentSnapshot.data()["name"];
-    about = documentSnapshot.data()["about"];
-    subscriberCount = documentSnapshot.data()["subscriberCount"];
-    iconMdiCodepoint = documentSnapshot.data()["iconMdiCodepoint"];
+    nephronID = documentSnapshot.documentID;
+    dateCreated = documentSnapshot.data["dateCreated"];
+    name = documentSnapshot.data["name"];
+    about = documentSnapshot.data["about"];
+    subscriberCount = documentSnapshot.data["subscriberCount"];
+    iconMdiCodepoint = documentSnapshot.data["iconMdiCodepoint"];
     // isFavorite = documentSnapshot.data["isFavorite"];
     // readme = documentSnapshot.data["readme"];
     // iconURL = documentSnapshot.data["iconURL"];

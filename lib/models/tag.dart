@@ -10,8 +10,8 @@ class TagModel {
   TagModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    tagID = documentSnapshot.id;
-    name = documentSnapshot.data()["name"];
-    isFaved = documentSnapshot.data()["isFaved"];
+    tagID = documentSnapshot.documentID;
+    name = documentSnapshot.data["name"];
+    isFaved = documentSnapshot.data["isFaved"];
   }
 }

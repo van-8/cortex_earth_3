@@ -42,13 +42,13 @@ class FlockModel {
   FlockModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    flockID = documentSnapshot.id;
-    dateCreated = documentSnapshot.data()["dateCreated"];
-    name = documentSnapshot.data()["name"];
-    about = documentSnapshot.data()["about"];
-    memberCount = documentSnapshot.data()["memberCount"];
-    nickname = documentSnapshot.data()["nickname"];
-    iconMdiCodepoint = documentSnapshot.data()["iconMdiCodepoint"];
+    flockID = documentSnapshot.documentID;
+    dateCreated = documentSnapshot.data["dateCreated"];
+    name = documentSnapshot.data["name"];
+    about = documentSnapshot.data["about"];
+    memberCount = documentSnapshot.data["memberCount"];
+    nickname = documentSnapshot.data["nickname"];
+    iconMdiCodepoint = documentSnapshot.data["iconMdiCodepoint"];
     // isFavorite = documentSnapshot.data["isFavorite"];
     // readme = documentSnapshot.data["readme"];
     // iconURL = documentSnapshot.data["iconURL"];

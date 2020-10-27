@@ -27,11 +27,11 @@ class TaskModel {
   TaskModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    taskID = documentSnapshot.id;
-    content = documentSnapshot.data()["content"];
-    description = documentSnapshot.data()["description"];
-    dateCreated = documentSnapshot.data()["dateCreated"];
-    isDone = documentSnapshot.data()["isDone"];
-    isPriority = documentSnapshot.data()["isPriority"];
+    taskID = documentSnapshot.documentID;
+    content = documentSnapshot.data["content"];
+    description = documentSnapshot.data["description"];
+    dateCreated = documentSnapshot.data["dateCreated"];
+    isDone = documentSnapshot.data["isDone"];
+    isPriority = documentSnapshot.data["isPriority"];
   }
 }

@@ -55,12 +55,12 @@ class IssueModel {
   IssueModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
-    issueID = documentSnapshot.id;
-    dateCreated = documentSnapshot.data()["dateCreated"];
-    title = documentSnapshot.data()["title"];
-    description = documentSnapshot.data()["description"];
-    issueNumber = documentSnapshot.data()["issueNumber"];
-    isClosed = documentSnapshot.data()["isClosed"];
-    upvoteCount = documentSnapshot.data()["upvoteCount"];
+    issueID = documentSnapshot.documentID;
+    dateCreated = documentSnapshot.data["dateCreated"];
+    title = documentSnapshot.data["title"];
+    description = documentSnapshot.data["description"];
+    issueNumber = documentSnapshot.data["issueNumber"];
+    isClosed = documentSnapshot.data["isClosed"];
+    upvoteCount = documentSnapshot.data["upvoteCount"];
   }
 }
